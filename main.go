@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -13,10 +12,6 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/kelseyhightower/envconfig"
-)
-
-var (
-	createCommands = flag.Bool("create_commands", false, "Create commands?")
 )
 
 type config struct {
@@ -449,8 +444,6 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 }
 
 func main() {
-	flag.Parse()
-
 	var c config
 	if err := envconfig.Process("gumby", &c); err != nil {
 		log.Fatalf("Failed to parse envconfing: %s", err)
@@ -481,15 +474,15 @@ func main() {
 
 	defer discord.Close()
 
-	if *createCommands {
+	discord.AddHandler(func(d *discordgo.Session, g *discordgo.GuildCreate) {
 		for _, cmd := range commands {
-			if _, err := discord.ApplicationCommandCreate(discord.State.User.ID, "", cmd); err != nil {
+			if _, err := discord.ApplicationCommandCreate(discord.State.User.ID, g.Guild.ID, cmd); err != nil {
 				log.Fatalf("Unable to create command %s: %v\n", cmd.Name, err)
 			}
 
-			log.Printf("Created command: %s", cmd.Name)
+			log.Printf("Created command %s for %s", cmd.Name, g.Guild.ID)
 		}
-	}
+	})
 
 	bot := bot{db: db, discord: discord}
 	discord.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
