@@ -361,6 +361,9 @@ func makeEntryOutput(word string, definitions []definition) *discordgo.MessageEm
 		Title:       word,
 		Color:       0x005BAC,
 		Description: strings.Join(prettyDefs, "\n\n"),
+		Footer: &discordgo.MessageEmbedFooter{
+			Text: "www.shanghaivernacular.com",
+		},
 	}
 }
 
