@@ -12,12 +12,17 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/jackc/pgx/v4/pgxpool"
+	"github.com/kelseyhightower/envconfig"
 )
 
 var (
-	databaseURL = flag.String("database_url", "", "Database URL.")
-	token       = flag.String("token", "", "Token to use for Discord.")
+	createCommands = flag.Bool("create_commands", false, "Create commands?")
 )
+
+type config struct {
+	DiscordToken string
+	DatabaseURL  string
+}
 
 var (
 	commands = []*discordgo.ApplicationCommand{
@@ -446,14 +451,19 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 func main() {
 	flag.Parse()
 
-	db, err := pgxpool.Connect(context.Background(), *databaseURL)
+	var c config
+	if err := envconfig.Process("gumby", &c); err != nil {
+		log.Fatalf("Failed to parse envconfing: %s", err)
+	}
+
+	db, err := pgxpool.Connect(context.Background(), c.DatabaseURL)
 	if err != nil {
 		log.Fatalf("Unable to connect to database: %v\n", err)
 	}
 
 	log.Printf("Connected to database.")
 
-	discord, err := discordgo.New(*token)
+	discord, err := discordgo.New(c.DiscordToken)
 	if err != nil {
 		log.Fatalf("Unable to connect to Discord: %v\n", err)
 	}
@@ -465,16 +475,20 @@ func main() {
 		log.Fatalf("Unable to connect to Discord: %v\n", err)
 	}
 
+	discord.UpdateGameStatus(0, "/shdef")
+
 	log.Printf("Connected to Discord.")
 
 	defer discord.Close()
 
-	for _, cmd := range commands {
-		if _, err := discord.ApplicationCommandCreate(discord.State.User.ID, "", cmd); err != nil {
-			log.Fatalf("Unable to create command %s: %v\n", cmd.Name, err)
-		}
+	if *createCommands {
+		for _, cmd := range commands {
+			if _, err := discord.ApplicationCommandCreate(discord.State.User.ID, "", cmd); err != nil {
+				log.Fatalf("Unable to create command %s: %v\n", cmd.Name, err)
+			}
 
-		log.Printf("Created command: %s", cmd.Name)
+			log.Printf("Created command: %s", cmd.Name)
+		}
 	}
 
 	bot := bot{db: db, discord: discord}

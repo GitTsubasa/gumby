@@ -1,0 +1,12 @@
+[Unit]
+Description=gumby
+
+[Service]
+User=gumby
+EnvironmentFile=/etc/default/gumby
+ExecStart=/opt/gumby/live/build/gumby
+WorkingDirectory=/opt/gumby/live
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

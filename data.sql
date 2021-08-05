@@ -4,7 +4,7 @@ begin;
 create temporary table t (
     j jsonb
 );
-\copy t from 'out.ndjson' with (format csv, quote '|', delimiter E'\t');
+\copy t from 'dict.ndjson' with (format csv, quote '|', delimiter E'\t');
 create temporary view v as
 select
     (j ->> 'word') word,
