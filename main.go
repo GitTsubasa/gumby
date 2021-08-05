@@ -357,6 +357,7 @@ func makeEntryOutput(word string, definitions []definition) *discordgo.MessageEm
 
 	return &discordgo.MessageEmbed{
 		Title:       word,
+		Color:       0x005BAC,
 		Description: strings.Join(prettyDefs, "\n\n"),
 	}
 }
@@ -388,10 +389,10 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
 			Data: &discordgo.InteractionResponseData{
+				Content: fmt.Sprintf("**Results for “%s”**", query),
 				Embeds: []*discordgo.MessageEmbed{
 					{
 						Color:       0x4B5563,
-						Title:       fmt.Sprintf("Search results for “%s”", query),
 						Description: "No results found.",
 					},
 				},
