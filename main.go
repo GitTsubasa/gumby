@@ -68,38 +68,94 @@ type definition struct {
 	meanings []string
 }
 
-func (b *bot) findDefinitions(ctx context.Context, word string) ([]definition, error) {
-	var definitions []definition
+func (b *bot) findEntries(ctx context.Context, words []string) (map[string][]*definition, error) {
+	entries := make(map[string][]*definition)
 
-	rows, err := b.db.Query(ctx, `
-		select
-			readings, array_agg(meanings.meaning order by meanings.id)
-		from
-			definitions, meanings
-		where
-			word = $1 and
-			meanings.definition_id = definitions.id
-		group by
-			readings
-	`, word)
-	if err != nil {
-		return nil, err
-	}
+	definitionsByID := make(map[int64]*definition)
 
-	for rows.Next() {
-		var def definition
-		if err := rows.Scan(&def.readings, &def.meanings); err != nil {
-			return nil, err
+	// Get all readings first.
+	if err := func() error {
+		rows, err := b.db.Query(ctx, `
+			select
+				id, word, readings
+			from
+				definitions
+			where
+				word = any($1)
+			order by id
+		`, words)
+		if err != nil {
+			return err
+		}
+		defer rows.Close()
+
+		for rows.Next() {
+			var id int64
+			var word string
+			var readings []string
+
+			if err := rows.Scan(&id, &word, &readings); err != nil {
+				return err
+			}
+
+			definition := &definition{
+				readings: readings,
+			}
+			entries[word] = append(entries[word], definition)
+
+			definitionsByID[id] = definition
 		}
 
-		definitions = append(definitions, def)
-	}
+		if err := rows.Err(); err != nil {
+			return err
+		}
 
-	if err := rows.Err(); err != nil {
+		return nil
+	}(); err != nil {
 		return nil, err
 	}
 
-	return definitions, nil
+	definitionIDs := make([]int64, 0, len(definitionsByID))
+	for id := range definitionsByID {
+		definitionIDs = append(definitionIDs, id)
+	}
+
+	// Get all meanings now.
+	if err := func() error {
+		rows, err := b.db.Query(ctx, `
+			select
+				definition_id, meaning
+			from
+				meanings
+			where
+				definition_id = any($1)
+			order by definition_id, id
+		`, definitionIDs)
+		if err != nil {
+			return err
+		}
+		defer rows.Close()
+
+		for rows.Next() {
+			var definitionID int64
+			var meaning string
+
+			if err := rows.Scan(&definitionID, &meaning); err != nil {
+				return err
+			}
+
+			definitionsByID[definitionID].meanings = append(definitionsByID[definitionID].meanings, meaning)
+		}
+
+		if err := rows.Err(); err != nil {
+			return err
+		}
+
+		return nil
+	}(); err != nil {
+		return nil, err
+	}
+	return entries, nil
 }
 
 func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
@@ -129,13 +185,13 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			hasNext = true
 		}
 
-		meanings, err := b.findMeanings(ctx, words)
+		entries, err := b.findEntries(ctx, words)
 		if err != nil {
-			log.Printf("Failed to find meanings: %s", err)
+			log.Printf("Failed to find entries: %s", err)
 			return
 		}
 
-		searchOutput, err := makeSearchOutput(payload.Query, words, meanings, payload.Page, hasNext)
+		searchOutput, err := makeSearchOutput(payload.Query, words, entries, payload.Page, hasNext)
 		if err != nil {
 			log.Printf("Failed to make search output: %s", err)
 			return
@@ -154,9 +210,15 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 	case customIDPrefixShdefSelect:
 		word := i.Interaction.MessageComponentData().Values[0]
 
-		definitions, err := b.findDefinitions(ctx, word)
+		entries, err := b.findEntries(ctx, []string{word})
 		if err != nil {
-			log.Printf("Failed to get definitions: %s", err)
+			log.Printf("Failed to get entries: %s", err)
+			return
+		}
+
+		definitions, ok := entries[word]
+		if !ok {
+			log.Printf("Failed to get definitions", err)
 			return
 		}
 
@@ -260,49 +322,22 @@ func (b *bot) lookup(ctx context.Context, query string, limit int, offset int) (
 	return b.lookupByMeaning(ctx, query, limit, offset)
 }
 
-func (b *bot) findMeanings(ctx context.Context, words []string) (map[string]string, error) {
-	definitions := make(map[string]string, len(words))
-
-	rows, err := b.db.Query(ctx, `
-		select
-			definitions.word, string_agg(meanings.meaning, '; ' order by meanings.id)
-		from
-			definitions, meanings
-		where
-			definitions.word = any($1) and
-			meanings.definition_id = definitions.id
-		group by
-			definitions.word
-	`, words)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	for rows.Next() {
-		var word string
-		var meanings string
-
-		if err := rows.Scan(&word, &meanings); err != nil {
-			return nil, err
-		}
-
-		definitions[word] = meanings
-	}
-
-	if err := rows.Err(); err != nil {
-		return nil, err
-	}
-
-	return definitions, nil
-}
-
-func makeSearchOutput(query string, words []string, meanings map[string]string, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
+func makeSearchOutput(query string, words []string, entries map[string][]*definition, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
 	for _, word := range words {
+		var readings []string
+		for _, definition := range entries[word] {
+			readings = append(readings, definition.readings...)
+		}
+
+		var meanings []string
+		for _, definition := range entries[word] {
+			meanings = append(meanings, definition.meanings...)
+		}
+
 		selectMenuOptions = append(selectMenuOptions, discordgo.SelectMenuOption{
-			Label:       word,
-			Description: meanings[word],
+			Label:       fmt.Sprintf("%s (%s)", word, strings.Join(readings, ", ")),
+			Description: strings.Join(meanings, ", "),
 			Value:       word,
 		})
 	}
@@ -351,10 +386,10 @@ func makeSearchOutput(query string, words []string, meanings map[string]string, 
 	}, nil
 }
 
-func makeEntryOutput(word string, definitions []definition) *discordgo.MessageEmbed {
+func makeEntryOutput(word string, definitions []*definition) *discordgo.MessageEmbed {
 	prettyDefs := make([]string, len(definitions))
 	for i, def := range definitions {
-		prettyDefs[i] = fmt.Sprintf("_%s_\n%s", strings.Join(def.readings, ", "), strings.Join(def.meanings, "; "))
+		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), strings.Join(def.meanings, ", "))
 	}
 
 	return &discordgo.MessageEmbed{
@@ -412,13 +447,13 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		hasNext = true
 	}
 
-	meanings, err := b.findMeanings(ctx, words)
+	entries, err := b.findEntries(ctx, words)
 	if err != nil {
 		log.Printf("Failed to find meanings: %s", err)
 		return
 	}
 
-	searchOutput, err := makeSearchOutput(query, words, meanings, 0, hasNext)
+	searchOutput, err := makeSearchOutput(query, words, entries, 0, hasNext)
 	if err != nil {
 		log.Printf("Failed to make search output: %s", err)
 		return
@@ -427,9 +462,16 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 	var embeds []*discordgo.MessageEmbed
 	if len(words) == 1 {
 		word := words[0]
-		definitions, err := b.findDefinitions(ctx, word)
+
+		entries, err := b.findEntries(ctx, []string{word})
 		if err != nil {
-			log.Printf("Failed to get definitions: %s", err)
+			log.Printf("Failed to get entries: %s", err)
+			return
+		}
+
+		definitions, ok := entries[word]
+		if !ok {
+			log.Printf("Failed to get definitions", err)
 			return
 		}
 

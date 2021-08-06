@@ -21,6 +21,8 @@ create table meanings (
 
 create index on meanings using gin (meaning_index_col);
 
+create index on meanings (definition_id, id);
+
 create or replace function quote_like (text)
     returns text
     language SQL
