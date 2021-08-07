@@ -1,3 +1,16 @@
+create text search dictionary english_stem_nostop (
+    template = snowball,
+    language =
+    english
+);
+
+create text search configuration english_nostop (
+    copy = pg_catalog.english
+);
+
+alter text search configuration english_nostop
+    alter mapping for asciiword, asciihword, hword_asciipart, hword, hword_part, word with english_stem_nostop;
+
 create table words (
     word text not null primary key
 );

@@ -52,7 +52,7 @@ select
             word = v.word
             and readings = v.readings),
     meaning,
-    to_tsvector(meaning)
+    to_tsvector('english_nostop', meaning)
 from
     v,
     unnest(v.meanings) meaning

@@ -280,12 +280,12 @@ func (b *bot) lookupByMeaning(ctx context.Context, query string, limit int, offs
 		from
 			meanings, definitions
 		where
-			meaning_index_col @@ plainto_tsquery('english', $1) and
+			meaning_index_col @@ plainto_tsquery('english_nostop', $1) and
 			meanings.definition_id = definitions.id
 		group by
 			word
 		order by
-			max(ts_rank_cd(meaning_index_col, plainto_tsquery('english', $1), 8)) desc
+			max(ts_rank_cd(meaning_index_col, plainto_tsquery('english_nostop', $1), 8)) desc
 		limit $2 offset $3
 	`, query, limit, offset)
 	if err != nil {
