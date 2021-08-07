@@ -407,7 +407,7 @@ func makeEntryOutput(word string, definitions []*definition) *discordgo.MessageE
 const queryLimit = 25
 
 func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
-	query := strings.Trim(i.ApplicationCommandData().Options[0].StringValue())
+	query := strings.TrimSpace(i.ApplicationCommandData().Options[0].StringValue())
 
 	if query == "" {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
