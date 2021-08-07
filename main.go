@@ -322,6 +322,24 @@ func (b *bot) lookup(ctx context.Context, query string, limit int, offset int) (
 	return b.lookupByMeaning(ctx, query, limit, offset)
 }
 
+func truncate(s string, length int, ellipsis string) string {
+	if len(s) <= length {
+		return s
+	}
+
+	length -= len(ellipsis)
+	var buf strings.Builder
+	for _, r := range []rune(s) {
+		next := string(r)
+		if buf.Len()+len(next) > length {
+			break
+		}
+		buf.WriteString(next)
+	}
+
+	return buf.String() + ellipsis
+}
+
 func makeSearchOutput(query string, words []string, entries map[string][]*definition, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
 	for _, word := range words {
@@ -337,7 +355,7 @@ func makeSearchOutput(query string, words []string, entries map[string][]*defini
 
 		selectMenuOptions = append(selectMenuOptions, discordgo.SelectMenuOption{
 			Label:       fmt.Sprintf("%s (%s)", word, strings.Join(readings, ", ")),
-			Description: strings.Join(meanings, ", "),
+			Description: truncate(strings.Join(meanings, ", "), 100, "..."),
 			Value:       word,
 		})
 	}
