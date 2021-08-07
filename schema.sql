@@ -17,6 +17,14 @@ create table words (
 
 create index on words (word text_pattern_ops);
 
+create table word_fts_tsvectors (
+    word text not null references words (word),
+    tsvector tsvector,
+    primary key (word, tsvector)
+);
+
+create index on word_fts_tsvectors using gin (tsvector);
+
 create table definitions (
     id bigserial primary key,
     word text not null references words (word),
@@ -28,11 +36,8 @@ create unique index on definitions (word, readings);
 create table meanings (
     id bigserial primary key,
     definition_id bigint not null references definitions (id),
-    meaning text not null,
-    meaning_index_col tsvector
+    meaning text not null
 );
-
-create index on meanings using gin (meaning_index_col);
 
 create index on meanings (definition_id, id);
 

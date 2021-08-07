@@ -19,6 +19,7 @@ select
 from
     t,
     jsonb_array_elements(j -> 'definitions') ds;
+delete from word_fts_tsvectors;
 delete from meanings;
 delete from definitions;
 delete from words;
@@ -41,7 +42,7 @@ group by
     word,
     readings;
 --
-insert into meanings (definition_id, meaning, meaning_index_col)
+insert into meanings (definition_id, meaning)
 select
     (
         select
@@ -51,13 +52,34 @@ select
         where
             word = v.word
             and readings = v.readings),
-    meaning,
-    to_tsvector('english_nostop', meaning)
+    meaning
 from
     v,
     unnest(v.meanings) meaning
 where
     v.readings != '{}';
+--
+insert into word_fts_tsvectors (word, tsvector)
+select
+    v.word,
+    to_tsvector('english_nostop', meaning)
+from
+    v,
+    unnest(v.meanings) meaning
+on conflict (word,
+    tsvector)
+    do nothing;
+--
+insert into word_fts_tsvectors (word, tsvector)
+select
+    v.word,
+    to_tsvector('english_nostop', v.word)
+from
+    v,
+    unnest(v.meanings) meaning
+on conflict (word,
+    tsvector)
+    do nothing;
 --
 commit;
 

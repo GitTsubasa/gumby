@@ -173,6 +173,12 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
+		count, err := b.count(ctx, payload.Query)
+		if err != nil {
+			log.Printf("Failed to find words: %s", err)
+			return
+		}
+
 		words, err := b.lookup(ctx, payload.Query, queryLimit+1, payload.Page*queryLimit)
 		if err != nil {
 			log.Printf("Failed to find words: %s", err)
@@ -191,7 +197,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		searchOutput, err := makeSearchOutput(payload.Query, words, entries, payload.Page, hasNext)
+		searchOutput, err := makeSearchOutput(payload.Query, count, words, entries, payload.Page, hasNext)
 		if err != nil {
 			log.Printf("Failed to make search output: %s", err)
 			return
@@ -236,90 +242,58 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 	}
 }
 
-func (b *bot) lookupByWord(ctx context.Context, query string, limit int, offset int) ([]string, error) {
-	var words []string
+func (b *bot) count(ctx context.Context, query string) (int, error) {
+	var count int
 
-	rows, err := b.db.Query(ctx, `
+	if err := b.db.QueryRow(ctx, `
 		select
-			word
+			count(*)
 		from
-			words
+			word_fts_tsvectors
 		where
-			word like quote_like($1) || '%'
-		order by
-			word
-		limit $2 offset $3
-	`, query, limit, offset)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	for rows.Next() {
-		var word string
-		if err := rows.Scan(&word); err != nil {
-			return nil, err
-		}
-
-		words = append(words, word)
+			tsvector @@ plainto_tsquery('english_nostop', $1)
+	`, query).Scan(&count); err != nil {
+		return 0, err
 	}
 
-	if err := rows.Err(); err != nil {
-		return nil, err
-	}
-
-	return words, nil
-}
-
-func (b *bot) lookupByMeaning(ctx context.Context, query string, limit int, offset int) ([]string, error) {
-	var words []string
-
-	rows, err := b.db.Query(ctx, `
-		select
-			word
-		from
-			meanings, definitions
-		where
-			meaning_index_col @@ plainto_tsquery('english_nostop', $1) and
-			meanings.definition_id = definitions.id
-		group by
-			word
-		order by
-			max(ts_rank_cd(meaning_index_col, plainto_tsquery('english_nostop', $1), 8)) desc
-		limit $2 offset $3
-	`, query, limit, offset)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	for rows.Next() {
-		var word string
-		if err := rows.Scan(&word); err != nil {
-			return nil, err
-		}
-
-		words = append(words, word)
-	}
-
-	if err := rows.Err(); err != nil {
-		return nil, err
-	}
-
-	return words, nil
+	return count, nil
 }
 
 func (b *bot) lookup(ctx context.Context, query string, limit int, offset int) ([]string, error) {
-	words, err := b.lookupByWord(ctx, query, limit, offset)
+	var words []string
+
+	rows, err := b.db.Query(ctx, `
+		select
+			word
+		from
+			word_fts_tsvectors
+		where
+			tsvector @@ plainto_tsquery('english_nostop', $1)
+		group by
+			word
+		order by
+			max(ts_rank_cd(tsvector, plainto_tsquery('english_nostop', $1), 8)) desc
+		limit $2 offset $3
+	`, query, limit, offset)
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
-	if len(words) > 0 {
-		return words, nil
+	for rows.Next() {
+		var word string
+		if err := rows.Scan(&word); err != nil {
+			return nil, err
+		}
+
+		words = append(words, word)
 	}
 
-	return b.lookupByMeaning(ctx, query, limit, offset)
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return words, nil
 }
 
 func truncate(s string, length int, ellipsis string) string {
@@ -340,7 +314,7 @@ func truncate(s string, length int, ellipsis string) string {
 	return buf.String() + ellipsis
 }
 
-func makeSearchOutput(query string, words []string, entries map[string][]*definition, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
+func makeSearchOutput(query string, count int, words []string, entries map[string][]*definition, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
 	for _, word := range words {
 		var readings []string
@@ -360,19 +334,24 @@ func makeSearchOutput(query string, words []string, entries map[string][]*defini
 		})
 	}
 
-	prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Page: page - 1})
-	if err != nil {
-		return nil, err
-	}
+	var title string
+	var components []discordgo.MessageComponent
+	if count == 1 {
+		title = fmt.Sprintf("1 result for “%s”", query)
+	} else {
+		title = fmt.Sprintf("%d results for “%s”", count, query)
 
-	nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Page: page + 1})
-	if err != nil {
-		return nil, err
-	}
+		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Page: page - 1})
+		if err != nil {
+			return nil, err
+		}
 
-	return &discordgo.WebhookEdit{
-		Content: fmt.Sprintf("**Results for “%s”**", query),
-		Components: []discordgo.MessageComponent{
+		nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Page: page + 1})
+		if err != nil {
+			return nil, err
+		}
+
+		components = []discordgo.MessageComponent{
 			discordgo.ActionsRow{
 				Components: []discordgo.MessageComponent{
 					discordgo.SelectMenu{
@@ -400,7 +379,12 @@ func makeSearchOutput(query string, words []string, entries map[string][]*defini
 					},
 				},
 			},
-		},
+		}
+	}
+
+	return &discordgo.WebhookEdit{
+		Content:    fmt.Sprintf("**%s**", title),
+		Components: components,
 	}, nil
 }
 
@@ -425,8 +409,40 @@ const queryLimit = 25
 func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 	query := i.ApplicationCommandData().Options[0].StringValue()
 
-	words, err := b.lookup(ctx, query, queryLimit+1, 0)
+	count, err := b.count(ctx, query)
+	if err != nil {
+		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Embeds: []*discordgo.MessageEmbed{
+					{
+						Color:       0xDC2626,
+						Description: "An error occurred.",
+					},
+				},
+			},
+		})
+		log.Printf("Failed to count results: %s", err)
+		return
+	}
 
+	if count == 0 {
+		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Content: fmt.Sprintf("**0 results for “%s”**", query),
+				Embeds: []*discordgo.MessageEmbed{
+					{
+						Color:       0x4B5563,
+						Description: "No results found.",
+					},
+				},
+			},
+		})
+		return
+	}
+
+	words, err := b.lookup(ctx, query, queryLimit+1, 0)
 	if err != nil {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -443,22 +459,6 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		return
 	}
 
-	if len(words) == 0 {
-		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-			Type: discordgo.InteractionResponseChannelMessageWithSource,
-			Data: &discordgo.InteractionResponseData{
-				Content: fmt.Sprintf("**Results for “%s”**", query),
-				Embeds: []*discordgo.MessageEmbed{
-					{
-						Color:       0x4B5563,
-						Description: "No results found.",
-					},
-				},
-			},
-		})
-		return
-	}
-
 	hasNext := false
 	if len(words) > queryLimit {
 		words = words[:queryLimit]
@@ -471,7 +471,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		return
 	}
 
-	searchOutput, err := makeSearchOutput(query, words, entries, 0, hasNext)
+	searchOutput, err := makeSearchOutput(query, count, words, entries, 0, hasNext)
 	if err != nil {
 		log.Printf("Failed to make search output: %s", err)
 		return
