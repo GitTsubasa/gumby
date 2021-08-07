@@ -8,6 +8,7 @@ create temporary table t (
 create temporary view v as
 select
     (j ->> 'word') word,
+    (j ->> 'simplified_guess') simplified_guess,
     ((
         select
             array_agg(m)
@@ -58,7 +59,7 @@ from
     unnest(v.meanings) meaning
 where
     v.readings != '{}';
---
+-- insert english meanings
 insert into word_fts_tsvectors (word, tsvector)
 select
     v.word,
@@ -69,17 +70,17 @@ from
 on conflict (word,
     tsvector)
     do nothing;
---
+-- insert plain words
 insert into word_fts_tsvectors (word, tsvector)
 select
     v.word,
-    to_tsvector('english_nostop', v.word)
+    to_tsvector('english_nostop', v.simplified_guess)
 from
     v,
     unnest(v.meanings) meaning
 on conflict (word,
     tsvector)
     do nothing;
---
+-- insert simplified forms
 commit;
 

@@ -3,6 +3,7 @@ import dataclasses
 import json
 import csv
 import html2text
+import opencc
 import sys
 
 
@@ -22,6 +23,7 @@ class Definition:
 @dataclasses.dataclass
 class Entry:
     word: str
+    simplified_guess: typing.List[str]
     definitions: typing.List[Definition]
 
 
@@ -73,11 +75,15 @@ def safe_split(s):
 
     return [''.join(p).strip() for p in parts]
 
+occ = opencc.OpenCC('t2s')
+
 
 with open('dict.txt') as f:
     rd = csv.reader(f, delimiter="\t", quotechar='"')
     for row in rd:
         word, rest = row
+        simplified_guess = occ.convert(word)
+
         raw_readings, raw_meanings = rest.split('<hr>')
         word = text_maker.handle(word).strip()
 
@@ -90,7 +96,7 @@ with open('dict.txt') as f:
         # Simple case
         if not any('(' in r for r in readings):
             # this case is easy!
-            entry = Entry(word, [Definition([r for r in readings if r], [c for r in meanings if r for c in safe_split(r)])])
+            entry = Entry(word, simplified_guess, [Definition([r for r in readings if r], [c for r in meanings if r for c in safe_split(r)])])
             out.append(entry)
             continue
 
@@ -149,7 +155,7 @@ with open('dict.txt') as f:
             if len(reading_groups) != len(meaning_groups):
                 raise Exception
 
-            entry = Entry(word, [Definition(rs, ms) for rs, ms in zip(reading_groups, meaning_groups)])
+            entry = Entry(word, simplified_guess, [Definition(rs, ms) for rs, ms in zip(reading_groups, meaning_groups)])
             out.append(entry)
 
             continue
@@ -158,6 +164,7 @@ with open('dict.txt') as f:
         print('SKIPPED', word, readings, file=sys.stderr)
 
 
-for entry in out:
-    json.dump(entry, sys.stdout, ensure_ascii=False, cls=EnhancedJSONEncoder)
-    sys.stdout.write('\n')
+with open('dict.ndjson', 'w') as f:
+    for entry in out:
+        json.dump(entry, f, ensure_ascii=False, cls=EnhancedJSONEncoder)
+        f.write('\n')
