@@ -407,7 +407,22 @@ func makeEntryOutput(word string, definitions []*definition) *discordgo.MessageE
 const queryLimit = 25
 
 func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
-	query := i.ApplicationCommandData().Options[0].StringValue()
+	query := strings.Trim(i.ApplicationCommandData().Options[0].StringValue())
+
+	if query == "" {
+		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Embeds: []*discordgo.MessageEmbed{
+					{
+						Color:       0xDC2626,
+						Description: "You have to provide something to look up!",
+					},
+				},
+			},
+		})
+		return
+	}
 
 	count, err := b.count(ctx, query)
 	if err != nil {
