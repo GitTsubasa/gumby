@@ -19,29 +19,6 @@ type config struct {
 	DatabaseURL  string
 }
 
-var (
-	commands = []*discordgo.ApplicationCommand{
-		{
-			Name:        "shdef",
-			Description: "Look up in dictionary.",
-			Options: []*discordgo.ApplicationCommandOption{
-				{
-					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "query",
-					Description: "What to look up (by word or by meaning)",
-					Required:    true,
-				},
-				{
-					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "dict",
-					Description: "Which dictionary to look up from",
-					Required:    false,
-				},
-			},
-		},
-	}
-)
-
 type bot struct {
 	db      *pgxpool.Pool
 	discord *discordgo.Session
@@ -60,8 +37,9 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 }
 
 type shdefActionGoToPage struct {
-	Query string `json:"query"`
-	Page  int    `json:"page"`
+	Query   string   `json:"query"`
+	Sources []string `json:"sources"`
+	Page    int      `json:"page"`
 }
 
 const (
@@ -184,13 +162,13 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		count, err := b.count(ctx, payload.Query)
+		count, err := b.count(ctx, payload.Query, payload.Sources)
 		if err != nil {
 			log.Printf("Failed to find words: %s", err)
 			return
 		}
 
-		words, err := b.lookup(ctx, payload.Query, queryLimit+1, payload.Page*queryLimit)
+		words, err := b.lookup(ctx, payload.Query, payload.Sources, queryLimit+1, payload.Page*queryLimit)
 		if err != nil {
 			log.Printf("Failed to find words: %s", err)
 			return
@@ -208,7 +186,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		searchOutput, err := makeSearchOutput(payload.Query, count, words, entries, payload.Page, hasNext)
+		searchOutput, err := makeSearchOutput(payload.Query, payload.Sources, count, words, entries, payload.Page, hasNext)
 		if err != nil {
 			log.Printf("Failed to make search output: %s", err)
 			return
@@ -253,7 +231,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 	}
 }
 
-func (b *bot) count(ctx context.Context, query string) (int, error) {
+func (b *bot) count(ctx context.Context, query string, sources []string) (int, error) {
 	var count int
 
 	if err := b.db.QueryRow(ctx, `
@@ -262,15 +240,16 @@ func (b *bot) count(ctx context.Context, query string) (int, error) {
 		from
 			word_fts_tsvectors
 		where
-			tsvector @@ plainto_tsquery('english_nostop', $1)
-	`, query).Scan(&count); err != nil {
+			tsvector @@ plainto_tsquery('english_nostop', $1) and
+			(coalesce($2::text[], array[]::text[]) = array[]::text[] or source_code = any($2))
+	`, query, sources).Scan(&count); err != nil {
 		return 0, err
 	}
 
 	return count, nil
 }
 
-func (b *bot) lookup(ctx context.Context, query string, limit int, offset int) ([]string, error) {
+func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]string, error) {
 	var words []string
 
 	rows, err := b.db.Query(ctx, `
@@ -279,13 +258,14 @@ func (b *bot) lookup(ctx context.Context, query string, limit int, offset int) (
 		from
 			word_fts_tsvectors
 		where
-			tsvector @@ plainto_tsquery('english_nostop', $1)
+			tsvector @@ plainto_tsquery('english_nostop', $1) and
+			(coalesce($2::text[], array[]::text[]) = array[]::text[] or source_code = any($2))
 		group by
 			word
 		order by
 			max(ts_rank_cd(tsvector, plainto_tsquery('english_nostop', $1), 8)) desc
-		limit $2 offset $3
-	`, query, limit, offset)
+		limit $3 offset $4
+	`, query, sources, limit, offset)
 	if err != nil {
 		return nil, err
 	}
@@ -325,7 +305,7 @@ func truncate(s string, length int, ellipsis string) string {
 	return buf.String() + ellipsis
 }
 
-func makeSearchOutput(query string, count int, words []string, entries map[string][]*definition, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
+func makeSearchOutput(query string, sources []string, count int, words []string, entries map[string][]*definition, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
 	for _, word := range words {
 		var readings []string
@@ -352,12 +332,12 @@ func makeSearchOutput(query string, count int, words []string, entries map[strin
 	} else {
 		title = fmt.Sprintf("%d results for “%s”", count, query)
 
-		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Page: page - 1})
+		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Sources: sources, Page: page - 1})
 		if err != nil {
 			return nil, err
 		}
 
-		nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Page: page + 1})
+		nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Sources: sources, Page: page + 1})
 		if err != nil {
 			return nil, err
 		}
@@ -418,7 +398,15 @@ func makeEntryOutput(word string, definitions []*definition) *discordgo.MessageE
 const queryLimit = 25
 
 func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
-	query := strings.TrimSpace(i.ApplicationCommandData().Options[0].StringValue())
+	options := i.ApplicationCommandData().Options
+
+	query := strings.TrimSpace(options[0].StringValue())
+
+	var sources []string
+	if len(options) > 1 {
+		sourceCode := options[1].StringValue()
+		sources = []string{sourceCode}
+	}
 
 	if query == "" {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
@@ -435,7 +423,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		return
 	}
 
-	count, err := b.count(ctx, query)
+	count, err := b.count(ctx, query, sources)
 	if err != nil {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -468,7 +456,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		return
 	}
 
-	words, err := b.lookup(ctx, query, queryLimit+1, 0)
+	words, err := b.lookup(ctx, query, sources, queryLimit+1, 0)
 	if err != nil {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -497,7 +485,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		return
 	}
 
-	searchOutput, err := makeSearchOutput(query, count, words, entries, 0, hasNext)
+	searchOutput, err := makeSearchOutput(query, sources, count, words, entries, 0, hasNext)
 	if err != nil {
 		log.Printf("Failed to make search output: %s", err)
 		return
@@ -535,6 +523,32 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 	}
 }
 
+type source struct {
+	code string
+	name string
+}
+
+func (b *bot) sources(ctx context.Context) ([]source, error) {
+	rows, err := b.db.Query(ctx, `
+		select code, name from sources order by code
+	`)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var sources []source
+	for rows.Next() {
+		var s source
+		if err := rows.Scan(&s.code, &s.name); err != nil {
+			return nil, err
+		}
+		sources = append(sources, s)
+	}
+
+	return sources, nil
+}
+
 func main() {
 	var c config
 	if err := envconfig.Process("gumby", &c); err != nil {
@@ -554,7 +568,7 @@ func main() {
 	}
 
 	discord.StateEnabled = false
-	discord.Identify.Intents = discordgo.IntentsNone
+	discord.Identify.Intents = discordgo.IntentsGuilds
 
 	if err := discord.Open(); err != nil {
 		log.Fatalf("Unable to connect to Discord: %v\n", err)
@@ -566,17 +580,64 @@ func main() {
 
 	defer discord.Close()
 
+	bot := bot{db: db, discord: discord}
+
+	ss, err := bot.sources(context.Background())
+	if err != nil {
+		log.Fatalf("Unable to list sources: %v\n", err)
+	}
+
+	choices := make([]*discordgo.ApplicationCommandOptionChoice, len(ss))
+	for i, s := range ss {
+		choices[i] = &discordgo.ApplicationCommandOptionChoice{Name: s.name, Value: s.code}
+	}
+
+	commands := []*discordgo.ApplicationCommand{
+		{
+			Name:        "shdef",
+			Description: "Look up in dictionary.",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "query",
+					Description: "What to look up (by word or by meaning)",
+					Required:    true,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "dict",
+					Description: "Which dictionary to look up from",
+					Required:    false,
+					Choices:     choices,
+				},
+			},
+		},
+	}
+
 	discord.AddHandler(func(d *discordgo.Session, g *discordgo.GuildCreate) {
+		oldCmds, err := discord.ApplicationCommands(discord.State.User.ID, g.Guild.ID)
+		if err != nil {
+			log.Printf("Unable to get commands for %s: %v\n", g.Guild.ID, err)
+			return
+		}
+
+		for _, cmd := range oldCmds {
+			if err := discord.ApplicationCommandDelete(discord.State.User.ID, g.Guild.ID, cmd.ID); err != nil {
+				log.Printf("Unable to delete command %s for %s: %v\n", cmd.Name, g.Guild.ID, err)
+				continue
+			}
+			log.Printf("Deleted command %s for %s", cmd.Name, g.Guild.ID)
+		}
+
 		for _, cmd := range commands {
 			if _, err := discord.ApplicationCommandCreate(discord.State.User.ID, g.Guild.ID, cmd); err != nil {
-				log.Fatalf("Unable to create command %s: %v\n", cmd.Name, err)
+				log.Printf("Unable to create command %s for %s: %v\n", cmd.Name, g.Guild.ID, err)
+				continue
 			}
-
 			log.Printf("Created command %s for %s", cmd.Name, g.Guild.ID)
 		}
 	})
 
-	bot := bot{db: db, discord: discord}
 	discord.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		bot.handleInteraction(context.Background(), i)
 	})
