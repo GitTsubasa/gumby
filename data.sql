@@ -49,7 +49,8 @@ select
         from
             definitions
         where
-            word = v.word
+            source_code = v.source_code
+            and word = v.word
             and readings = v.readings),
     meaning
 from
@@ -90,7 +91,6 @@ select
     v.word,
     to_tsvector('english_nostop', v.simplified_guess)
 from
-    v.source_code,
     v,
     unnest(v.meanings) meaning
 on conflict (source_code,
