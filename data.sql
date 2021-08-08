@@ -74,7 +74,7 @@ on conflict (word,
 insert into word_fts_tsvectors (word, tsvector)
 select
     v.word,
-    to_tsvector('english_nostop', v.simplified_guess)
+    to_tsvector('english_nostop', v.word)
 from
     v,
     unnest(v.meanings) meaning
@@ -82,5 +82,15 @@ on conflict (word,
     tsvector)
     do nothing;
 -- insert simplified forms
+insert into word_fts_tsvectors (word, tsvector)
+select
+    v.word,
+    to_tsvector('english_nostop', v.simplified_guess)
+from
+    v,
+    unnest(v.meanings) meaning
+on conflict (word,
+    tsvector)
+    do nothing;
 commit;
 
