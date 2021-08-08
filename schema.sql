@@ -11,27 +11,28 @@ create text search configuration english_nostop (
 alter text search configuration english_nostop
     alter mapping for asciiword, asciihword, hword_asciipart, hword, hword_part, word with english_stem_nostop;
 
-create table words (
-    word text not null primary key
+create table sources (
+    code text not null primary key,
+    name text not null
 );
 
-create index on words (word text_pattern_ops);
-
 create table word_fts_tsvectors (
-    word text not null references words (word),
+    source_code text not null references sources (code),
+    word text not null,
     tsvector tsvector,
-    primary key (word, tsvector)
+    primary key (source_code, word, tsvector)
 );
 
 create index on word_fts_tsvectors using gin (tsvector);
 
 create table definitions (
     id bigserial primary key,
-    word text not null references words (word),
+    source_code text not null references sources (code),
+    word text not null,
     readings text[] not null
 );
 
-create unique index on definitions (word, readings);
+create unique index on definitions (source_code, word, readings);
 
 create table meanings (
     id bigserial primary key,
@@ -43,13 +44,11 @@ create index on meanings (definition_id, id);
 
 create or replace function quote_like (text)
     returns text
-    language SQL
+    language sql
     immutable strict
     as $func$
     select
-        replace(replace(replace($1, '\', ' \\ ')
-        ,' _ ', ' _ ')
-        ,' % ', ' % ');
+        replace(replace(replace($1, '\', ' \\ '),' _ ', ' _ '),' % ', ' % ');
 
 $func$;
 

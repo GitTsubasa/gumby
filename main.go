@@ -31,6 +31,12 @@ var (
 					Description: "What to look up (by word or by meaning)",
 					Required:    true,
 				},
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "dict",
+					Description: "Which dictionary to look up from",
+					Required:    false,
+				},
 			},
 		},
 	}
@@ -64,8 +70,9 @@ const (
 )
 
 type definition struct {
-	readings []string
-	meanings []string
+	sourceName string
+	readings   []string
+	meanings   []string
 }
 
 func (b *bot) findEntries(ctx context.Context, words []string) (map[string][]*definition, error) {
@@ -77,9 +84,11 @@ func (b *bot) findEntries(ctx context.Context, words []string) (map[string][]*de
 	if err := func() error {
 		rows, err := b.db.Query(ctx, `
 			select
-				id, word, readings
+				id, word, readings, sources.name
 			from
 				definitions
+			inner join
+				sources on sources.code = definitions.source_code
 			where
 				word = any($1)
 			order by id
@@ -93,13 +102,15 @@ func (b *bot) findEntries(ctx context.Context, words []string) (map[string][]*de
 			var id int64
 			var word string
 			var readings []string
+			var sourceName string
 
-			if err := rows.Scan(&id, &word, &readings); err != nil {
+			if err := rows.Scan(&id, &word, &readings, &sourceName); err != nil {
 				return err
 			}
 
 			definition := &definition{
-				readings: readings,
+				readings:   readings,
+				sourceName: sourceName,
 			}
 			entries[word] = append(entries[word], definition)
 
@@ -224,7 +235,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 
 		definitions, ok := entries[word]
 		if !ok {
-			log.Printf("Failed to get definitions", err)
+			log.Printf("Failed to get definitions")
 			return
 		}
 
@@ -391,7 +402,7 @@ func makeSearchOutput(query string, count int, words []string, entries map[strin
 func makeEntryOutput(word string, definitions []*definition) *discordgo.MessageEmbed {
 	prettyDefs := make([]string, len(definitions))
 	for i, def := range definitions {
-		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), strings.Join(def.meanings, ", "))
+		prettyDefs[i] = fmt.Sprintf("**%s**\n%s\n_%s_", strings.Join(def.readings, ", "), strings.Join(def.meanings, ", "), def.sourceName)
 	}
 
 	return &discordgo.MessageEmbed{

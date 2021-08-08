@@ -9,6 +9,7 @@ create temporary view v as
 select
     (j ->> 'word') word,
     (j ->> 'simplified_guess') simplified_guess,
+    (j ->> 'source_code') source_code,
     ((
         select
             array_agg(m)
@@ -23,23 +24,20 @@ from
 delete from word_fts_tsvectors;
 delete from meanings;
 delete from definitions;
-delete from words;
+delete from sources;
 --
-insert into words (word)
-select
-    word
-from
-    v
-group by
-    word;
+insert into sources (code, name)
+    values ('c', 'Chinese characters used between 1870–1910'), ('r', 'Formal Republican terms');
 --
-insert into definitions (word, readings)
+insert into definitions (source_code, word, readings)
 select
+    source_code,
     word,
     coalesce(readings, array[]::text[])
 from
     v
 group by
+    source_code,
     word,
     readings;
 --
@@ -60,36 +58,43 @@ from
 where
     v.readings != '{}';
 -- insert english meanings
-insert into word_fts_tsvectors (word, tsvector)
+insert into word_fts_tsvectors (source_code, word, tsvector)
 select
+    v.source_code,
     v.word,
     to_tsvector('english_nostop', meaning)
 from
     v,
     unnest(v.meanings) meaning
-on conflict (word,
+on conflict (source_code,
+    word,
     tsvector)
     do nothing;
 -- insert plain words
-insert into word_fts_tsvectors (word, tsvector)
+insert into word_fts_tsvectors (source_code, word, tsvector)
 select
+    v.source_code,
     v.word,
     to_tsvector('english_nostop', v.word)
 from
     v,
     unnest(v.meanings) meaning
-on conflict (word,
+on conflict (source_code,
+    word,
     tsvector)
     do nothing;
 -- insert simplified forms
-insert into word_fts_tsvectors (word, tsvector)
+insert into word_fts_tsvectors (source_code, word, tsvector)
 select
+    v.source_code,
     v.word,
     to_tsvector('english_nostop', v.simplified_guess)
 from
+    v.source_code,
     v,
     unnest(v.meanings) meaning
-on conflict (word,
+on conflict (source_code,
+    word,
     tsvector)
     do nothing;
 commit;

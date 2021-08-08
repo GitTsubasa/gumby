@@ -23,7 +23,8 @@ class Definition:
 @dataclasses.dataclass
 class Entry:
     word: str
-    simplified_guess: typing.List[str]
+    simplified_guess: str
+    source_code: str
     definitions: typing.List[Definition]
 
 
@@ -49,6 +50,7 @@ out = []
 
 text_maker = html2text.HTML2Text()
 text_maker.ignore_emphasis = True
+text_maker.body_width = None
 
 def safe_split(s):
     in_paren = 0
@@ -90,13 +92,13 @@ with open('dict.txt') as f:
         if len(word) > 1:
             print('WEIRD', word, file=sys.stderr)
 
-        readings =  [r.strip() for r in html2text.html2text(raw_readings.replace('<font', '*<font')).replace('\n\n', '\n').strip().split('\n')]
-        meanings = [r.strip() for r in html2text.html2text(raw_meanings).replace('\n\n', '\n').strip().split('\n')]
+        readings =  [r.strip() for r in text_maker.handle(raw_readings.replace('<font', '*<font')).replace('\n\n', '\n').strip().split('\n')]
+        meanings = [r.strip() for r in text_maker.handle(raw_meanings).replace('\n\n', '\n').strip().split('\n')]
 
         # Simple case
         if not any('(' in r for r in readings):
             # this case is easy!
-            entry = Entry(word, simplified_guess, [Definition([r for r in readings if r], [c for r in meanings if r for c in safe_split(r)])])
+            entry = Entry(word, simplified_guess, 'c', [Definition([r for r in readings if r], [c for r in meanings if r for c in safe_split(r)])])
             out.append(entry)
             continue
 
@@ -155,7 +157,7 @@ with open('dict.txt') as f:
             if len(reading_groups) != len(meaning_groups):
                 raise Exception
 
-            entry = Entry(word, simplified_guess, [Definition(rs, ms) for rs, ms in zip(reading_groups, meaning_groups)])
+            entry = Entry(word, simplified_guess, 'c', [Definition(rs, ms) for rs, ms in zip(reading_groups, meaning_groups)])
             out.append(entry)
 
             continue
@@ -164,7 +166,7 @@ with open('dict.txt') as f:
         print('SKIPPED', word, readings, file=sys.stderr)
 
 
-with open('dict.ndjson', 'w') as f:
+with open('dict.ndjson', 'a') as f:
     for entry in out:
         json.dump(entry, f, ensure_ascii=False, cls=EnhancedJSONEncoder)
         f.write('\n')
