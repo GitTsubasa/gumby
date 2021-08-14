@@ -4284,7 +4284,7 @@
 濾	lü<div><br></div><div>lih</div> <hr> To filter, to strain
 瀑	bóh<div><br></div><div>boh</div> <hr> A cataract
 瀋	sung <hr> The elements of water, a river
-瀉	sie (sin)<div><br></div><div>siá</div> <hr> To leak, to purge, diarrhoea
+瀉	(two words)<br>sie<br>sin<div><br></div><div>siá</div> <hr> To leak, to purge, diarrhoea
 濺	tsin <hr> A swift current, to dash up
 瀚	hön <hr> North sea
 瀝	lih <hr> To drain out, filter
@@ -5659,7 +5659,7 @@
 罡	kong <hr> Four stars of the Dipper, four guardians of Buddhist temples
 罛	kú <hr> A fish net
 罟	kú <hr> A fish net
-罝	"tsie <font color=""#ff0000"">(tsin)</font> <hr> A rabbit net  "
+罝	"tsie<br><font color=""#ff0000"">tsin</font> <hr> A rabbit net  "
 罣	kwó <hr> To think of, to keep in mind
 罩	tsau <hr> A cover, a shade
 𦋐	tsau <hr> A cover, a shade
@@ -6038,7 +6038,7 @@
 茶	dsó <hr> Tea
 茱	tsû <hr> A flower
 茯	vóh <hr> China root
-荇	"ying (<font color=""#ff0000"">yung</font>) <hr> Aquatic plant  "
+荇	"ying<br><font color=""#ff0000"">yung</font> <hr> Aquatic plant  "
 荒	hwong <hr> Wild, barren, distant
 茴	we <hr> Fennel, medicinal plant
 荏	zung <hr> A large bean, gentle
@@ -6493,7 +6493,7 @@
 袂	me <hr> A sleeve
 衲	"neh <hr> A priest's robe  "
 衰	"<font color=""#ff0000"">ts'öi</font><div>se</div> <hr> To destroy, vanquish  "
-衺	zie (zin) <hr> A buskin (high boots), uncouth (lack of good manners)
+衺	zie<br>zin <hr> A buskin (high boots), uncouth (lack of good manners)
 袁	yön <hr> A robe
 袗	tsung <hr> A garment of one thickness
 袈	kyá<div><br></div><div>ká</div> <hr> Buddhist robes

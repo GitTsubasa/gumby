@@ -98,7 +98,7 @@ with open('dict.txt') as f:
         # Simple case
         if not any('(' in r for r in readings):
             # this case is easy!
-            entry = Entry(word, simplified_guess, 'c', [Definition([r for r in readings if r], [c for r in meanings if r for c in safe_split(r)])])
+            entry = Entry(word, simplified_guess, 'c', [Definition(sorted([r for r in readings if r]), [c for r in meanings if r for c in safe_split(r)])])
             out.append(entry)
             continue
 
@@ -157,7 +157,7 @@ with open('dict.txt') as f:
             if len(reading_groups) != len(meaning_groups):
                 raise Exception
 
-            entry = Entry(word, simplified_guess, 'c', [Definition(rs, ms) for rs, ms in zip(reading_groups, meaning_groups)])
+            entry = Entry(word, simplified_guess, 'c', [Definition(sorted(rs), ms) for rs, ms in zip(reading_groups, meaning_groups)])
             out.append(entry)
 
             continue
