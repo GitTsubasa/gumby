@@ -240,7 +240,7 @@ func (b *bot) count(ctx context.Context, query string, sources []string) (int, e
 		from
 			word_fts_tsvectors
 		where
-			tsvector @@ plainto_tsquery('english_nostop', $1) and
+			tsvector @@ (plainto_tsquery('english_nostop', $1) || plainto_tsquery('simple_nostop', $1)) and
 			(coalesce($2::text[], array[]::text[]) = array[]::text[] or source_code = any($2))
 	`, query, sources).Scan(&count); err != nil {
 		return 0, err
@@ -258,12 +258,12 @@ func (b *bot) lookup(ctx context.Context, query string, sources []string, limit 
 		from
 			word_fts_tsvectors
 		where
-			tsvector @@ plainto_tsquery('english_nostop', $1) and
+			tsvector @@ (plainto_tsquery('english_nostop', $1) || plainto_tsquery('simple_nostop', $1)) and
 			(coalesce($2::text[], array[]::text[]) = array[]::text[] or source_code = any($2))
 		group by
 			word
 		order by
-			max(ts_rank_cd(tsvector, plainto_tsquery('english_nostop', $1), 8)) desc
+			max(ts_rank_cd(tsvector, plainto_tsquery('english_nostop', $1) || plainto_tsquery('simple_nostop', $1), 8)) desc
 		limit $3 offset $4
 	`, query, sources, limit, offset)
 	if err != nil {
@@ -503,7 +503,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 
 		definitions, ok := entries[word]
 		if !ok {
-			log.Printf("Failed to get definitions", err)
+			log.Printf("Failed to get definitions")
 			return
 		}
 

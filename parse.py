@@ -84,10 +84,10 @@ with open('dict.txt') as f:
     rd = csv.reader(f, delimiter="\t", quotechar='"')
     for row in rd:
         word, rest = row
-        simplified_guess = occ.convert(word)
 
         raw_readings, raw_meanings = rest.split('<hr>')
         word = text_maker.handle(word).strip()
+        simplified_guess = occ.convert(word)
 
         if len(word) > 1:
             print('WEIRD', word, file=sys.stderr)

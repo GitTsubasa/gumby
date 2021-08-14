@@ -57,7 +57,7 @@
 {"word": "广", "simplified_guess": "广", "source_code": "c", "definitions": [{"readings": ["yin"], "meanings": ["A roof", "shelter", "spacious covering"]}]}
 {"word": "辶", "simplified_guess": "辶", "source_code": "c", "definitions": [{"readings": ["ts'eh", "ts'iáh"], "meanings": ["Walking"]}]}
 {"word": "廾", "simplified_guess": "廾", "source_code": "c", "definitions": [{"readings": ["kúng"], "meanings": ["Joined hands"]}]}
-{"word": "弋", "simplified_guess": "<b><span style=\"font-weight: 400;\">弋</span></b>", "source_code": "c", "definitions": [{"readings": ["yuh"], "meanings": ["A spear", "a dart"]}]}
+{"word": "弋", "simplified_guess": "弋", "source_code": "c", "definitions": [{"readings": ["yuh"], "meanings": ["A spear", "a dart"]}]}
 {"word": "弓", "simplified_guess": "弓", "source_code": "c", "definitions": [{"readings": ["kúng"], "meanings": ["A bow", "archery"]}]}
 {"word": "彐", "simplified_guess": "彐", "source_code": "c", "definitions": [{"readings": ["kyi"], "meanings": ["A pig's head", "pointed"]}]}
 {"word": "彑", "simplified_guess": "彑", "source_code": "c", "definitions": [{"readings": ["kyi"], "meanings": ["A pig's head", "pointed"]}]}
@@ -83,10 +83,12 @@
 {"word": "木", "simplified_guess": "木", "source_code": "c", "definitions": [{"readings": ["móh"], "meanings": ["Wood", "a tree"]}]}
 {"word": "欠", "simplified_guess": "欠", "source_code": "c", "definitions": [{"readings": ["ky'in"], "meanings": ["To owe", "deficient"]}]}
 {"word": "止", "simplified_guess": "止", "source_code": "c", "definitions": [{"readings": ["tsz"], "meanings": ["To stop", "rest"]}]}
+{"word": "歹", "simplified_guess": "歹", "source_code": "c", "definitions": [{"readings": ["öh", "te"], "meanings": ["Rotten bone"]}, {"readings": ["ti"], "meanings": ["Bad", "vicious"]}]}
+{"word": "歺", "simplified_guess": "歺", "source_code": "c", "definitions": [{"readings": ["öh", "te"], "meanings": ["Rotten bone"]}, {"readings": ["ti"], "meanings": ["Bad", "vicious"]}]}
 {"word": "殳", "simplified_guess": "殳", "source_code": "c", "definitions": [{"readings": ["zû"], "meanings": ["To kill", "pole-ax", "spear"]}]}
 {"word": "毋", "simplified_guess": "毋", "source_code": "c", "definitions": [{"readings": ["vú", "mú", "m"], "meanings": ["To deny", "do not"]}]}
 {"word": "比", "simplified_guess": "比", "source_code": "c", "definitions": [{"readings": ["pi"], "meanings": ["To compare"]}, {"readings": ["bi"], "meanings": ["To harmonize", "with", "equal"]}]}
-{"word": "毛", "simplified_guess": "<b><span style=\"font-weight: 400;\">毛</span></b>", "source_code": "c", "definitions": [{"readings": ["mau"], "meanings": ["Hair", "wool"]}]}
+{"word": "毛", "simplified_guess": "毛", "source_code": "c", "definitions": [{"readings": ["mau"], "meanings": ["Hair", "wool"]}]}
 {"word": "氏", "simplified_guess": "氏", "source_code": "c", "definitions": [{"readings": ["zz"], "meanings": ["Family name"]}]}
 {"word": "气", "simplified_guess": "气", "source_code": "c", "definitions": [{"readings": ["ky'i"], "meanings": ["Breath", "vapour", "breach"]}]}
 {"word": "水", "simplified_guess": "水", "source_code": "c", "definitions": [{"readings": ["söi", "sz"], "meanings": ["Water"]}]}
@@ -115,7 +117,7 @@
 {"word": "疒", "simplified_guess": "疒", "source_code": "c", "definitions": [{"readings": ["nyuh", "dsih"], "meanings": ["Disease"]}]}
 {"word": "癶", "simplified_guess": "癶", "source_code": "c", "definitions": [{"readings": ["peh"], "meanings": ["back to back"]}]}
 {"word": "白", "simplified_guess": "白", "source_code": "c", "definitions": [{"readings": ["*puh", "buh", "báh"], "meanings": ["White", "in vain"]}]}
-{"word": "皮", "simplified_guess": "<b><span style=\"font-weight: 400;\">皮</span></b>", "source_code": "c", "definitions": [{"readings": ["bi"], "meanings": ["Skin", "bark"]}]}
+{"word": "皮", "simplified_guess": "皮", "source_code": "c", "definitions": [{"readings": ["bi"], "meanings": ["Skin", "bark"]}]}
 {"word": "皿", "simplified_guess": "皿", "source_code": "c", "definitions": [{"readings": ["ming"], "meanings": ["A dish", "a platter", "a vessel"]}]}
 {"word": "目", "simplified_guess": "目", "source_code": "c", "definitions": [{"readings": ["*máh", "*má", "móh"], "meanings": ["The eye", "director", "index"]}]}
 {"word": "矛", "simplified_guess": "矛", "source_code": "c", "definitions": [{"readings": ["meu", "mieu", "miau", "mau"], "meanings": ["A lance", "halberd", "dart"]}]}
@@ -520,8 +522,8 @@
 {"word": "個", "simplified_guess": "个", "source_code": "c", "definitions": [{"readings": ["kú", "kuh"], "meanings": ["One", "a piece"]}]}
 {"word": "倝", "simplified_guess": "倝", "source_code": "c", "definitions": [{"readings": ["kön"], "meanings": ["The down (dawn)"]}]}
 {"word": "倨", "simplified_guess": "倨", "source_code": "c", "definitions": [{"readings": ["kyü"], "meanings": ["Haughty", "bold", "strong"]}]}
-{"word": "𠈄", "simplified_guess": "𠈄<br>", "source_code": "c", "definitions": [{"readings": ["wen"], "meanings": ["One who serves"]}]}
-{"word": "倦", "simplified_guess": "倦<br>", "source_code": "c", "definitions": [{"readings": ["gyön"], "meanings": ["Weary"]}]}
+{"word": "𠈄", "simplified_guess": "𠈄", "source_code": "c", "definitions": [{"readings": ["wen"], "meanings": ["One who serves"]}]}
+{"word": "倦", "simplified_guess": "倦", "source_code": "c", "definitions": [{"readings": ["gyön"], "meanings": ["Weary"]}]}
 {"word": "倥", "simplified_guess": "倥", "source_code": "c", "definitions": [{"readings": ["k'úng"], "meanings": ["Rude", "clownish"]}]}
 {"word": "倌", "simplified_guess": "倌", "source_code": "c", "definitions": [{"readings": ["kwen"], "meanings": ["Servant", "assist in office"]}]}
 {"word": "倈", "simplified_guess": "俫", "source_code": "c", "definitions": [{"readings": ["le"], "meanings": ["To meet one"]}]}
@@ -635,8 +637,8 @@
 {"word": "儋", "simplified_guess": "儋", "source_code": "c", "definitions": [{"readings": ["tan"], "meanings": ["Burden", "weight"]}]}
 {"word": "億", "simplified_guess": "亿", "source_code": "c", "definitions": [{"readings": ["y'uh"], "meanings": ["Repose (state of rest, sleep or tranquility)"]}]}
 {"word": "儕", "simplified_guess": "侪", "source_code": "c", "definitions": [{"readings": ["dse"], "meanings": ["A class", "sign of plural"]}]}
-{"word": "亻山丁 (radicals)", "simplified_guess": "<div>亻山丁 (radicals)</div>", "source_code": "c", "definitions": [{"readings": ["ts'ú"], "meanings": ["To wait"]}]}
-{"word": "丿亅丶 (radicals)", "simplified_guess": "<div>丿亅丶 (radicals)</div>", "source_code": "c", "definitions": [{"readings": ["dsin"], "meanings": ["Copper money"]}]}
+{"word": "亻山丁 (radicals)", "simplified_guess": "亻山丁 (radicals)", "source_code": "c", "definitions": [{"readings": ["ts'ú"], "meanings": ["To wait"]}]}
+{"word": "丿亅丶 (radicals)", "simplified_guess": "丿亅丶 (radicals)", "source_code": "c", "definitions": [{"readings": ["dsin"], "meanings": ["Copper money"]}]}
 {"word": "儔", "simplified_guess": "俦", "source_code": "c", "definitions": [{"readings": ["dseu"], "meanings": ["Companion"]}]}
 {"word": "儗", "simplified_guess": "儗", "source_code": "c", "definitions": [{"readings": ["ny'i"], "meanings": ["To compare", "decide"]}]}
 {"word": "儒", "simplified_guess": "儒", "source_code": "c", "definitions": [{"readings": ["*lú", "zû"], "meanings": ["Scholar", "literati"]}]}
@@ -690,7 +692,7 @@
 {"word": "兜", "simplified_guess": "兜", "source_code": "c", "definitions": [{"readings": ["teu"], "meanings": ["A surround", "a cap"]}]}
 {"word": "兠", "simplified_guess": "兠", "source_code": "c", "definitions": [{"readings": ["teu"], "meanings": ["To surround", "a cap"]}]}
 {"word": "兢", "simplified_guess": "兢", "source_code": "c", "definitions": [{"readings": ["kyung"], "meanings": ["To fear", "caution", "brambles (thorns)"]}]}
-{"word": "丶曲几", "simplified_guess": "丶曲几", "source_code": "c", "definitions": [{"readings": ["teu"], "meanings": ["To surround"]}]}
+{"word": "丶曲几\n\n![]()  \n\n\n\"", "simplified_guess": "丶曲几\n\n![]()  \n\n\n\"", "source_code": "c", "definitions": [{"readings": ["teu"], "meanings": ["To surround"]}]}
 {"word": "亾", "simplified_guess": "亾", "source_code": "c", "definitions": [{"readings": ["wáng"], "meanings": ["Lost"]}]}
 {"word": "內", "simplified_guess": "内", "source_code": "c", "definitions": [{"readings": ["ne"], "meanings": ["Within"]}]}
 {"word": "内", "simplified_guess": "内", "source_code": "c", "definitions": [{"readings": ["ne"], "meanings": ["Within"]}]}
@@ -711,6 +713,7 @@
 {"word": "冀", "simplified_guess": "冀", "source_code": "c", "definitions": [{"readings": ["kyi"], "meanings": ["Desire", "expect"]}]}
 {"word": "徤", "simplified_guess": "徤", "source_code": "c", "definitions": [{"readings": ["gyin"], "meanings": ["To be strong"]}]}
 {"word": "冇", "simplified_guess": "冇", "source_code": "c", "definitions": [{"readings": ["vú", "m"], "meanings": ["Not"]}]}
+{"word": "冄", "simplified_guess": "冄", "source_code": "c", "definitions": [{"readings": ["ren", "zen"], "meanings": ["Tender", "weak"]}]}
 {"word": "𠕇", "simplified_guess": "𠕇", "source_code": "c", "definitions": [{"readings": ["din"], "meanings": ["Firm", "solid"]}]}
 {"word": "囘", "simplified_guess": "囘", "source_code": "c", "definitions": [{"readings": ["*wöi", "we"], "meanings": ["Return", "a time", "once"]}]}
 {"word": "回", "simplified_guess": "回", "source_code": "c", "definitions": [{"readings": ["*wöi", "we"], "meanings": ["Return", "a time", "once"]}]}
@@ -835,7 +838,7 @@
 {"word": "别", "simplified_guess": "别", "source_code": "c", "definitions": [{"readings": ["pih", "*peh"], "meanings": ["To divide seperate"]}, {"readings": ["bih", "*beh"], "meanings": ["Other"]}]}
 {"word": "別", "simplified_guess": "别", "source_code": "c", "definitions": [{"readings": ["pih", "*peh"], "meanings": ["To divide", "seperate"]}, {"readings": ["bih", "*beh"], "meanings": ["Other"]}]}
 {"word": "删", "simplified_guess": "删", "source_code": "c", "definitions": [{"readings": ["san"], "meanings": ["To explain", "amend"]}]}
-{"word": "㓟", "simplified_guess": "㓟<br>", "source_code": "c", "definitions": [{"readings": ["p'i"], "meanings": ["To peel"]}]}
+{"word": "㓟", "simplified_guess": "㓟", "source_code": "c", "definitions": [{"readings": ["p'i"], "meanings": ["To peel"]}]}
 {"word": "㓠", "simplified_guess": "㓠", "source_code": "c", "definitions": [{"readings": ["tin"], "meanings": ["To recommend"]}]}
 {"word": "剎", "simplified_guess": "刹", "source_code": "c", "definitions": [{"readings": ["ts'ah", "*sah"], "meanings": ["A spire on a temple"]}]}
 {"word": "創", "simplified_guess": "创", "source_code": "c", "definitions": [{"readings": ["ts'ong"], "meanings": ["Create", "first", "a cut", "wound"]}]}
@@ -1059,7 +1062,7 @@
 {"word": "卺", "simplified_guess": "卺", "source_code": "c", "definitions": [{"readings": ["kyung"], "meanings": ["Bridal veil and cup"]}]}
 {"word": "卸", "simplified_guess": "卸", "source_code": "c", "definitions": [{"readings": ["siá"], "meanings": ["To unload", "lay aside"]}]}
 {"word": "卹", "simplified_guess": "恤", "source_code": "c", "definitions": [{"readings": ["sih"], "meanings": ["To pity"]}]}
-{"word": "卿", "simplified_guess": "卿<br>", "source_code": "c", "definitions": [{"readings": ["ky'ung"], "meanings": ["A high officer"]}]}
+{"word": "卿", "simplified_guess": "卿", "source_code": "c", "definitions": [{"readings": ["ky'ung"], "meanings": ["A high officer"]}]}
 {"word": "𠨜", "simplified_guess": "𠨜", "source_code": "c", "definitions": [{"readings": ["ngeh"], "meanings": ["Disquieted", "hazardous"]}]}
 {"word": "卼", "simplified_guess": "卼", "source_code": "c", "definitions": [{"readings": ["ngeh"], "meanings": ["Disquieted", "hazardous"]}]}
 {"word": "厄", "simplified_guess": "厄", "source_code": "c", "definitions": [{"readings": ["*nguh", "uh"], "meanings": ["Impede", "cramped"]}]}
@@ -1111,7 +1114,7 @@
 {"word": "變", "simplified_guess": "变", "source_code": "c", "definitions": [{"readings": ["pin"], "meanings": ["To change"]}]}
 {"word": "叚", "simplified_guess": "叚", "source_code": "c", "definitions": [{"readings": ["yá"], "meanings": ["A surname"]}, {"readings": ["kyá"], "meanings": ["To borrow"]}, {"readings": ["dön"], "meanings": ["A piece"]}]}
 {"word": "叛", "simplified_guess": "叛", "source_code": "c", "definitions": [{"readings": ["ben"], "meanings": ["To rebel"]}]}
-{"word": "叙", "simplified_guess": "叙<br>", "source_code": "c", "definitions": [{"readings": ["dsü", "zû", "zü"], "meanings": ["To converse together"]}]}
+{"word": "叙", "simplified_guess": "叙", "source_code": "c", "definitions": [{"readings": ["dsü", "zû", "zü"], "meanings": ["To converse together"]}]}
 {"word": "叟", "simplified_guess": "叟", "source_code": "c", "definitions": [{"readings": ["seu"], "meanings": ["An old man"]}]}
 {"word": "叠", "simplified_guess": "叠", "source_code": "c", "definitions": [{"readings": ["deh"], "meanings": ["To pile up"]}]}
 {"word": "疉", "simplified_guess": "疉", "source_code": "c", "definitions": [{"readings": ["deh"], "meanings": ["To pile up"]}]}
@@ -1144,6 +1147,7 @@
 {"word": "號", "simplified_guess": "号", "source_code": "c", "definitions": [{"readings": ["hau"], "meanings": ["A mark", "sign", "To cry aloud"]}]}
 {"word": "后", "simplified_guess": "后", "source_code": "c", "definitions": [{"readings": ["heu"], "meanings": ["Queen"]}]}
 {"word": "向", "simplified_guess": "向", "source_code": "c", "definitions": [{"readings": ["hyáng"], "meanings": ["Toward", "formerly"]}]}
+{"word": "合", "simplified_guess": "合", "source_code": "c", "definitions": [{"readings": ["keh"], "meanings": ["Collect", "correspond", "unite"]}, {"readings": ["heh", "*h'eh"], "meanings": ["A gill"]}]}
 {"word": "吁", "simplified_guess": "吁", "source_code": "c", "definitions": [{"readings": ["hyü"], "meanings": ["Sigh", "groan"]}]}
 {"word": "叿", "simplified_guess": "叿", "source_code": "c", "definitions": [{"readings": ["h'úng"], "meanings": ["Clamour (noise)"]}]}
 {"word": "吉", "simplified_guess": "吉", "source_code": "c", "definitions": [{"readings": ["kyih"], "meanings": ["Luckily"]}]}
@@ -1198,7 +1202,7 @@
 {"word": "吤", "simplified_guess": "吤", "source_code": "c", "definitions": [{"readings": ["kyá"], "meanings": ["One by one", "single one"]}]}
 {"word": "呆", "simplified_guess": "呆", "source_code": "c", "definitions": [{"readings": ["nge", "*te"], "meanings": ["Foolish", "stupid"]}]}
 {"word": "獃", "simplified_guess": "呆", "source_code": "c", "definitions": [{"readings": ["nge", "te"], "meanings": ["Foolish stupid", "silly"]}]}
-{"word": "呔", "simplified_guess": "呔<br>", "source_code": "c", "definitions": [{"readings": ["t'á"], "meanings": ["Used in names"]}]}
+{"word": "呔", "simplified_guess": "呔", "source_code": "c", "definitions": [{"readings": ["t'á"], "meanings": ["Used in names"]}]}
 {"word": "吡", "simplified_guess": "吡", "source_code": "c", "definitions": [{"readings": ["pi"], "meanings": ["Used in names"]}]}
 {"word": "咋", "simplified_guess": "咋", "source_code": "c", "definitions": [{"readings": ["tsuh"], "meanings": ["A loud noise"]}]}
 {"word": "周", "simplified_guess": "周", "source_code": "c", "definitions": [{"readings": ["tseu"], "meanings": ["To surround", "supply"]}]}
@@ -1252,6 +1256,7 @@
 {"word": "哄", "simplified_guess": "哄", "source_code": "c", "definitions": [{"readings": ["h'úng"], "meanings": ["Sound of reverlry (lively festival)"]}]}
 {"word": "咿", "simplified_guess": "咿", "source_code": "c", "definitions": [{"readings": ["i"], "meanings": ["Giddy laughter"]}]}
 {"word": "咳", "simplified_guess": "咳", "source_code": "c", "definitions": [{"readings": ["k'e", "k'eh"], "meanings": ["To cough"]}, {"readings": ["he"], "meanings": ["Laughter of a child"]}]}
+{"word": "欬", "simplified_guess": "欬", "source_code": "c", "definitions": [{"readings": ["k'e", "k'eh"], "meanings": ["To cough"]}, {"readings": ["he"], "meanings": ["laughter of a child"]}]}
 {"word": "咾", "simplified_guess": "咾", "source_code": "c", "definitions": [{"readings": ["lau"], "meanings": ["A final sound", "and", "also"]}]}
 {"word": "咧", "simplified_guess": "咧", "source_code": "c", "definitions": [{"readings": ["lih"], "meanings": ["The call of birds"]}]}
 {"word": "咯", "simplified_guess": "咯", "source_code": "c", "definitions": [{"readings": ["loh"], "meanings": ["Contend", "dispute", "as."]}, {"readings": ["koh"], "meanings": ["Fowl", "to cough", "hack"]}]}
@@ -1466,7 +1471,7 @@
 {"word": "𠻗", "simplified_guess": "𠻗", "source_code": "c", "definitions": [{"readings": ["li"], "meanings": ["Much talk"]}]}
 {"word": "嗹", "simplified_guess": "𪡏", "source_code": "c", "definitions": [{"readings": ["lin"], "meanings": ["Used in names"]}]}
 {"word": "𠻳", "simplified_guess": "𠻳", "source_code": "c", "definitions": [{"readings": ["seu"], "meanings": ["To cough", "hack"]}]}
-{"word": "嘂", "simplified_guess": "嘂<br>", "source_code": "c", "definitions": [{"readings": ["kyau"], "meanings": ["A great noise"]}]}
+{"word": "嘂", "simplified_guess": "嘂", "source_code": "c", "definitions": [{"readings": ["kyau"], "meanings": ["A great noise"]}]}
 {"word": "𠻢", "simplified_guess": "𠻢", "source_code": "c", "definitions": [{"readings": ["h'ú"], "meanings": ["To menace (to be a threat)"]}]}
 {"word": "嘋", "simplified_guess": "嘋", "source_code": "c", "definitions": [{"readings": ["hyau"], "meanings": ["To quarrel"]}]}
 {"word": "㗧", "simplified_guess": "㗧", "source_code": "c", "definitions": [{"readings": ["tseh"], "meanings": ["Verbose (not concise)"]}]}
@@ -1610,7 +1615,7 @@
 {"word": "囹", "simplified_guess": "囹", "source_code": "c", "definitions": [{"readings": ["ling"], "meanings": ["A prison"]}]}
 {"word": "囿", "simplified_guess": "囿", "source_code": "c", "definitions": [{"readings": ["yeu"], "meanings": ["A garden"]}]}
 {"word": "圅", "simplified_guess": "圅", "source_code": "c", "definitions": [{"readings": ["hen"], "meanings": ["Envelop(e)"]}]}
-{"word": "圂", "simplified_guess": "圂<br>", "source_code": "c", "definitions": [{"readings": ["wung"], "meanings": ["A (pig) sty", "privy (toilet)"]}]}
+{"word": "圂", "simplified_guess": "圂", "source_code": "c", "definitions": [{"readings": ["wung"], "meanings": ["A (pig) sty", "privy (toilet)"]}]}
 {"word": "圃", "simplified_guess": "圃", "source_code": "c", "definitions": [{"readings": ["pú"], "meanings": ["Vegetable garden"]}]}
 {"word": "圄", "simplified_guess": "圄", "source_code": "c", "definitions": [{"readings": ["ngú"], "meanings": ["A prison"]}]}
 {"word": "圈", "simplified_guess": "圈", "source_code": "c", "definitions": [{"readings": ["ky'ön"], "meanings": ["A circle"]}, {"readings": ["gyön"], "meanings": ["A pen for animals"]}]}
@@ -1641,7 +1646,7 @@
 {"word": "坂", "simplified_guess": "坂", "source_code": "c", "definitions": [{"readings": ["fan"], "meanings": ["A mountain path"]}]}
 {"word": "坋", "simplified_guess": "坋", "source_code": "c", "definitions": [{"readings": ["vung"], "meanings": ["Dust"]}]}
 {"word": "坌", "simplified_guess": "坌", "source_code": "c", "definitions": [{"readings": ["bung"], "meanings": ["Dust"]}]}
-{"word": "坊", "simplified_guess": "<div>坊<br></div>", "source_code": "c", "definitions": [{"readings": ["fong"], "meanings": ["An alley", "alley", "hamlet", "store"]}]}
+{"word": "坊", "simplified_guess": "坊", "source_code": "c", "definitions": [{"readings": ["fong"], "meanings": ["An alley", "alley", "hamlet", "store"]}]}
 {"word": "圿", "simplified_guess": "圿", "source_code": "c", "definitions": [{"readings": ["kyah"], "meanings": ["A pile of rubbish"]}]}
 {"word": "坎", "simplified_guess": "坎", "source_code": "c", "definitions": [{"readings": ["k'en"], "meanings": ["A hole in the earth"]}]}
 {"word": "坑", "simplified_guess": "坑", "source_code": "c", "definitions": [{"readings": ["k'ong", "k'áng"], "meanings": ["A pit", "hole"]}]}
@@ -1857,6 +1862,7 @@
 {"word": "塸", "simplified_guess": "塸", "source_code": "c", "definitions": [{"readings": ["eu"], "meanings": ["Earth", "mounds", "graves"]}]}
 {"word": "塼", "simplified_guess": "塼", "source_code": "c", "definitions": [{"readings": ["dön"], "meanings": ["Round"]}, {"readings": ["tsen"], "meanings": ["Brick"]}]}
 {"word": "甎", "simplified_guess": "甎", "source_code": "c", "definitions": [{"readings": ["tsen"], "meanings": ["Brick"]}]}
+{"word": "塽", "simplified_guess": "塽", "source_code": "c", "definitions": [{"readings": ["siung", "song"], "meanings": ["High land"]}]}
 {"word": "㙣", "simplified_guess": "㙣", "source_code": "c", "definitions": [{"readings": ["tsáng"], "meanings": ["To pile up soil"]}]}
 {"word": "㙤", "simplified_guess": "㙤", "source_code": "c", "definitions": [{"readings": ["hyá"], "meanings": ["A seam"]}]}
 {"word": "罅", "simplified_guess": "罅", "source_code": "c", "definitions": [{"readings": ["hyá"], "meanings": ["A minute hole", "pore", "A seam", "Cleft in a rock"]}]}
@@ -1948,6 +1954,7 @@
 {"word": "天", "simplified_guess": "天", "source_code": "c", "definitions": [{"readings": ["t'in"], "meanings": ["Heaven"]}]}
 {"word": "夭", "simplified_guess": "夭", "source_code": "c", "definitions": [{"readings": ["y'au"], "meanings": ["Fair"]}, {"readings": ["y'au"], "meanings": ["Premature death"]}]}
 {"word": "夯", "simplified_guess": "夯", "source_code": "c", "definitions": [{"readings": ["h'ong", "*h'áng"], "meanings": ["The asthma", "to pant"]}]}
+{"word": "殀", "simplified_guess": "殀", "source_code": "c", "definitions": [{"readings": ["y'au"], "meanings": ["To die prematurely"]}, {"readings": ["h'ong", "h'áng"], "meanings": ["The asthma", "to pant"]}]}
 {"word": "失", "simplified_guess": "失", "source_code": "c", "definitions": [{"readings": ["seh"], "meanings": ["To loose"]}]}
 {"word": "夲", "simplified_guess": "夲", "source_code": "c", "definitions": [{"readings": ["dau"], "meanings": ["To enter", "going and coming"]}, {"readings": ["pung"], "meanings": ["Origin", "original", "classifier for books (wrongly used)"]}]}
 {"word": "央", "simplified_guess": "央", "source_code": "c", "definitions": [{"readings": ["y'áng"], "meanings": ["In the centre"]}]}
@@ -2763,7 +2770,7 @@
 {"word": "愀", "simplified_guess": "愀", "source_code": "c", "definitions": [{"readings": ["ts'iau"], "meanings": ["Angry look", "sad"]}]}
 {"word": "愠", "simplified_guess": "愠", "source_code": "c", "definitions": [{"readings": ["w'ung", "y'ün"], "meanings": ["To be angry"]}]}
 {"word": "愚", "simplified_guess": "愚", "source_code": "c", "definitions": [{"readings": ["*yü", "nyü"], "meanings": ["Stupid"]}]}
-{"word": "愉", "simplified_guess": "愉<br>", "source_code": "c", "definitions": [{"readings": ["yü"], "meanings": ["Contented", "pleased"]}]}
+{"word": "愉", "simplified_guess": "愉", "source_code": "c", "definitions": [{"readings": ["yü"], "meanings": ["Contented", "pleased"]}]}
 {"word": "愈", "simplified_guess": "愈", "source_code": "c", "definitions": [{"readings": ["yü", "*yöh"], "meanings": ["To exceed more", "Overcome", "healed"]}]}
 {"word": "愴", "simplified_guess": "怆", "source_code": "c", "definitions": [{"readings": ["ts'iáng"], "meanings": ["Afflicted in mind"]}]}
 {"word": "愾", "simplified_guess": "忾", "source_code": "c", "definitions": [{"readings": ["hyi"], "meanings": ["A sigh", "grief"]}]}
@@ -3025,6 +3032,8 @@
 {"word": "捧", "simplified_guess": "捧", "source_code": "c", "definitions": [{"readings": ["fúng"], "meanings": ["To take in the hands"]}]}
 {"word": "掀", "simplified_guess": "掀", "source_code": "c", "definitions": [{"readings": ["hyin", "hyung"], "meanings": ["To push down"]}]}
 {"word": "掐", "simplified_guess": "掐", "source_code": "c", "definitions": [{"readings": ["k'ah"], "meanings": ["To pinch", "claw", "indent"]}]}
+{"word": "捦", "simplified_guess": "捦", "source_code": "c", "definitions": [{"readings": ["gyung", "gying"], "meanings": ["To seize", "take in the hand"]}]}
+{"word": "擒", "simplified_guess": "擒", "source_code": "c", "definitions": [{"readings": ["gyung", "gying"], "meanings": ["To clutch (as a hawk)", "", "to seize", "take in the hand"]}]}
 {"word": "据", "simplified_guess": "据", "source_code": "c", "definitions": [{"readings": ["kyü"], "meanings": ["Embarrassed", "pressed", "(take possession)"]}]}
 {"word": "據", "simplified_guess": "据", "source_code": "c", "definitions": [{"readings": ["kyü"], "meanings": ["Tangible", "evidence", "Embarrassed", "pressed"]}]}
 {"word": "掘", "simplified_guess": "掘", "source_code": "c", "definitions": [{"readings": ["gyöh"], "meanings": ["To dig up"]}]}
@@ -3057,6 +3066,7 @@
 {"word": "采", "simplified_guess": "采", "source_code": "c", "definitions": [{"readings": ["ts'e"], "meanings": ["To pluck", "a colour", "To pick", "select"]}]}
 {"word": "接", "simplified_guess": "接", "source_code": "c", "definitions": [{"readings": ["tsih"], "meanings": ["To accept", "recieve"]}]}
 {"word": "捷", "simplified_guess": "捷", "source_code": "c", "definitions": [{"readings": ["dsih"], "meanings": ["Swift", "victorious"]}]}
+{"word": "措", "simplified_guess": "措", "source_code": "c", "definitions": [{"readings": ["ts'ú"], "meanings": ["To arrange", "employ"]}, {"readings": ["djeh", "*dsah"], "meanings": ["To pursue after and seize"]}]}
 {"word": "捽", "simplified_guess": "捽", "source_code": "c", "definitions": [{"readings": ["dseh", "tsöh"], "meanings": ["To clinch", "grasp"]}]}
 {"word": "捱", "simplified_guess": "挨", "source_code": "c", "definitions": [{"readings": ["yá"], "meanings": ["To crowd in", "push"]}]}
 {"word": "掩", "simplified_guess": "掩", "source_code": "c", "definitions": [{"readings": ["in", "en"], "meanings": ["To cover"]}]}
@@ -3100,6 +3110,7 @@
 {"word": "搽", "simplified_guess": "搽", "source_code": "c", "definitions": [{"readings": ["dsó"], "meanings": ["To rub", "to wipe"]}]}
 {"word": "搌", "simplified_guess": "搌", "source_code": "c", "definitions": [{"readings": ["tsen"], "meanings": ["To turn about"]}]}
 {"word": "搐", "simplified_guess": "搐", "source_code": "c", "definitions": [{"readings": ["ts'óh"], "meanings": ["To drag along"]}]}
+{"word": "搥", "simplified_guess": "搥", "source_code": "c", "definitions": [{"readings": ["te", "teh"], "meanings": ["To throw as a stone"]}, {"readings": ["dsöi"], "meanings": ["To beat"]}]}
 {"word": "磓", "simplified_guess": "磓", "source_code": "c", "definitions": [{"readings": ["te", "dsöi"], "meanings": ["Sound of stones", "to collect stones for rockwork", "To throw as a stone"]}, {"readings": ["teh"], "meanings": ["To beat"]}]}
 {"word": "携", "simplified_guess": "携", "source_code": "c", "definitions": [{"readings": ["yi"], "meanings": ["To lead by the hand"]}]}
 {"word": "攜", "simplified_guess": "携", "source_code": "c", "definitions": [{"readings": ["yi"], "meanings": ["To toke in hand", "lead by the hand"]}]}
@@ -3415,6 +3426,7 @@
 {"word": "暵", "simplified_guess": "暵", "source_code": "c", "definitions": [{"readings": ["h'ön"], "meanings": ["Dry", "parched"]}]}
 {"word": "暮", "simplified_guess": "暮", "source_code": "c", "definitions": [{"readings": ["mú"], "meanings": ["Sunset", "end of life"]}]}
 {"word": "暱", "simplified_guess": "暱", "source_code": "c", "definitions": [{"readings": ["nyuh"], "meanings": ["Near at hand", "to draw near"]}]}
+{"word": "暴", "simplified_guess": "暴", "source_code": "c", "definitions": [{"readings": ["bau", "bóh"], "meanings": ["Cruel", "fierce"]}, {"readings": ["pau"], "meanings": ["To show", "proclaim"]}]}
 {"word": "㬓", "simplified_guess": "㬓", "source_code": "c", "definitions": [{"readings": ["p'iau"], "meanings": ["To dry in the sun"]}]}
 {"word": "暫", "simplified_guess": "暂", "source_code": "c", "definitions": [{"readings": ["dsan"], "meanings": ["A brief time"]}]}
 {"word": "曉", "simplified_guess": "晓", "source_code": "c", "definitions": [{"readings": ["hyau"], "meanings": ["Early light", "understand"]}]}
@@ -3628,6 +3640,7 @@
 {"word": "棧", "simplified_guess": "栈", "source_code": "c", "definitions": [{"readings": ["dsan"], "meanings": ["Warehouse", "inn"]}]}
 {"word": "棦", "simplified_guess": "棦", "source_code": "c", "definitions": [{"readings": ["tsung"], "meanings": ["A thorn on a tree"]}]}
 {"word": "棖", "simplified_guess": "枨", "source_code": "c", "definitions": [{"readings": ["dsung", "dsáng"], "meanings": ["Door posts"]}]}
+{"word": "棹", "simplified_guess": "棹", "source_code": "c", "definitions": [{"readings": ["dau"], "meanings": ["An oar for boats"]}, {"readings": ["tsoh", "dsoh"], "meanings": ["Table"]}]}
 {"word": "櫂", "simplified_guess": "櫂", "source_code": "c", "definitions": [{"readings": ["dau"], "meanings": ["An oar for boats"]}]}
 {"word": "植", "simplified_guess": "植", "source_code": "c", "definitions": [{"readings": ["dsuh"], "meanings": ["To plant", "to place"]}]}
 {"word": "椎", "simplified_guess": "椎", "source_code": "c", "definitions": [{"readings": ["dsöi", "dsz", "zz"], "meanings": ["Wooden mallet", "beetle", "to beat"]}]}
@@ -3740,6 +3753,7 @@
 {"word": "樏", "simplified_guess": "樏", "source_code": "c", "definitions": [{"readings": ["le"], "meanings": ["Partitions of a tray"]}]}
 {"word": "樓", "simplified_guess": "楼", "source_code": "c", "definitions": [{"readings": ["leu"], "meanings": ["A chamber", "upper storey"]}]}
 {"word": "樑", "simplified_guess": "梁", "source_code": "c", "definitions": [{"readings": ["liáng"], "meanings": ["A beam", "ridge pole"]}]}
+{"word": "樂", "simplified_guess": "乐", "source_code": "c", "definitions": [{"readings": ["yáh", "ngoh"], "meanings": ["Music"]}, {"readings": ["loh"], "meanings": ["Happy", "joyous"]}, {"readings": ["yau"], "meanings": ["To take delight"]}]}
 {"word": "樐", "simplified_guess": "樐", "source_code": "c", "definitions": [{"readings": ["lú"], "meanings": ["An oar", "paddle"]}]}
 {"word": "櫓", "simplified_guess": "橹", "source_code": "c", "definitions": [{"readings": ["lú"], "meanings": ["An oar for boats", "paddle"]}]}
 {"word": "模", "simplified_guess": "模", "source_code": "c", "definitions": [{"readings": ["mú"], "meanings": ["A pattern", "model"]}]}
@@ -4446,7 +4460,7 @@
 {"word": "犢", "simplified_guess": "犊", "source_code": "c", "definitions": [{"readings": ["dóh"], "meanings": ["A calf"]}]}
 {"word": "犧", "simplified_guess": "牺", "source_code": "c", "definitions": [{"readings": ["hyi"], "meanings": ["Victims for sacrifice"]}]}
 {"word": "犯", "simplified_guess": "犯", "source_code": "c", "definitions": [{"readings": ["van"], "meanings": ["To offend", "a criminal"]}]}
-{"word": "犴", "simplified_guess": "犴<br>", "source_code": "c", "definitions": [{"readings": ["hön"], "meanings": ["A wild dog"]}, {"readings": ["ngön"], "meanings": ["A country jail"]}]}
+{"word": "犴", "simplified_guess": "犴", "source_code": "c", "definitions": [{"readings": ["hön"], "meanings": ["A wild dog"]}, {"readings": ["ngön"], "meanings": ["A country jail"]}]}
 {"word": "狀", "simplified_guess": "状", "source_code": "c", "definitions": [{"readings": ["zong", "dsong"], "meanings": ["Form", "appearance", "accuse"]}]}
 {"word": "状", "simplified_guess": "状", "source_code": "c", "definitions": [{"readings": ["zong", "dsong"], "meanings": ["Form", "appearance", "accuse"]}]}
 {"word": "狂", "simplified_guess": "狂", "source_code": "c", "definitions": [{"readings": ["gwong", "*wong"], "meanings": ["Wild", "mad", "daft (silly and foolish)"]}]}
@@ -5709,6 +5723,7 @@
 {"word": "聆", "simplified_guess": "聆", "source_code": "c", "definitions": [{"readings": ["ling"], "meanings": ["To hear"]}]}
 {"word": "聒", "simplified_guess": "聒", "source_code": "c", "definitions": [{"readings": ["kwah"], "meanings": ["Angry look", "dim sighted"]}]}
 {"word": "聘", "simplified_guess": "聘", "source_code": "c", "definitions": [{"readings": ["p'ing"], "meanings": ["To invite", "betroth"]}]}
+{"word": "聞", "simplified_guess": "闻", "source_code": "c", "definitions": [{"readings": ["mung", "vung"], "meanings": ["Hear", "smell"]}, {"readings": ["vung"], "meanings": ["To state to", "fame"]}]}
 {"word": "聧", "simplified_guess": "聧", "source_code": "c", "definitions": [{"readings": ["gwe"], "meanings": ["Deaf"]}]}
 {"word": "聯", "simplified_guess": "联", "source_code": "c", "definitions": [{"readings": ["lin"], "meanings": ["Connected"]}]}
 {"word": "聳", "simplified_guess": "耸", "source_code": "c", "definitions": [{"readings": ["súng"], "meanings": ["Born deaf", "ambitious"]}]}
@@ -6031,6 +6046,7 @@
 {"word": "菲", "simplified_guess": "菲", "source_code": "c", "definitions": [{"readings": ["fi"], "meanings": ["A marsh plant", "coarse", "shabby"]}]}
 {"word": "菔", "simplified_guess": "菔", "source_code": "c", "definitions": [{"readings": ["bóh", "vóh"], "meanings": ["Turnips"]}]}
 {"word": "菡", "simplified_guess": "菡", "source_code": "c", "definitions": [{"readings": ["hen"], "meanings": ["Buds (of plant)"]}]}
+{"word": "華", "simplified_guess": "华", "source_code": "c", "definitions": [{"readings": ["*wá", "wó", "*wá", "wó", "hwó"], "meanings": ["Flowery", "splendor", "A surname", "A flower"]}]}
 {"word": "萁", "simplified_guess": "萁", "source_code": "c", "definitions": [{"readings": ["gyi"], "meanings": ["Stalks", "tendrils"]}]}
 {"word": "菅", "simplified_guess": "菅", "source_code": "c", "definitions": [{"readings": ["kyan"], "meanings": ["A coarse grass for mats"]}]}
 {"word": "菳", "simplified_guess": "菳", "source_code": "c", "definitions": [{"readings": ["ky'ung"], "meanings": ["A kind of plant"]}]}
@@ -6121,7 +6137,7 @@
 {"word": "蔞", "simplified_guess": "蒌", "source_code": "c", "definitions": [{"readings": ["leu"], "meanings": ["Parsley", "celery"]}]}
 {"word": "蔴", "simplified_guess": "蔴", "source_code": "c", "definitions": [{"readings": ["mó"], "meanings": ["Hemp"]}]}
 {"word": "蔑", "simplified_guess": "蔑", "source_code": "c", "definitions": [{"readings": ["mih"], "meanings": ["Not", "minute", "to pare"]}]}
-{"word": "𦸑", "simplified_guess": "𦸑<br>", "source_code": "c", "definitions": [{"readings": ["mih"], "meanings": ["Not", "minute", "to pare"]}]}
+{"word": "𦸑", "simplified_guess": "𦸑", "source_code": "c", "definitions": [{"readings": ["mih"], "meanings": ["Not", "minute", "to pare"]}]}
 {"word": "𦸅", "simplified_guess": "𦸅", "source_code": "c", "definitions": [{"readings": ["k'eu"], "meanings": ["Nutmegs", "flowers"]}]}
 {"word": "蔦", "simplified_guess": "茑", "source_code": "c", "definitions": [{"readings": ["nyau"], "meanings": ["Cypress vine"]}]}
 {"word": "蓬", "simplified_guess": "蓬", "source_code": "c", "definitions": [{"readings": ["*púng", "búng"], "meanings": ["Flag", "confused"]}]}
@@ -6192,6 +6208,7 @@
 {"word": "薹", "simplified_guess": "苔", "source_code": "c", "definitions": [{"readings": ["de"], "meanings": ["A vegetable"]}]}
 {"word": "藏", "simplified_guess": "藏", "source_code": "c", "definitions": [{"readings": ["*tsong", "dsong"], "meanings": ["Conceal", "hide", "A storehouse"]}]}
 {"word": "薺", "simplified_guess": "荠", "source_code": "c", "definitions": [{"readings": ["zi"], "meanings": ["A kind of greens"]}]}
+{"word": "藉", "simplified_guess": "藉", "source_code": "c", "definitions": [{"readings": ["dsie", "*dsin"], "meanings": ["A means of", "through", "to help", "to rely on"]}, {"readings": ["dsih"], "meanings": ["In confusion", "to offer as tribute"]}]}
 {"word": "藎", "simplified_guess": "荩", "source_code": "c", "definitions": [{"readings": ["tsing"], "meanings": ["To promote"]}]}
 {"word": "藩", "simplified_guess": "藩", "source_code": "c", "definitions": [{"readings": ["van"], "meanings": ["To protect", "defend"]}]}
 {"word": "藕", "simplified_guess": "藕", "source_code": "c", "definitions": [{"readings": ["ngeu"], "meanings": ["Lotus root"]}]}
@@ -6439,6 +6456,7 @@
 {"word": "袈", "simplified_guess": "袈", "source_code": "c", "definitions": [{"readings": ["kyá", "ká"], "meanings": ["Buddhist robes"]}]}
 {"word": "袪", "simplified_guess": "袪", "source_code": "c", "definitions": [{"readings": ["ky'ü"], "meanings": ["The opening in sleeves"]}]}
 {"word": "袞", "simplified_guess": "衮", "source_code": "c", "definitions": [{"readings": ["kwung"], "meanings": ["Court robes"]}]}
+{"word": "袜", "simplified_guess": "袜", "source_code": "c", "definitions": [{"readings": ["meh"], "meanings": ["Napkin", "stomacher"]}, {"readings": ["meh", "mah"], "meanings": ["Socks", "stockings"]}]}
 {"word": "襪", "simplified_guess": "袜", "source_code": "c", "definitions": [{"readings": ["meh", "mah"], "meanings": ["Socks", "stockings"]}]}
 {"word": "袤", "simplified_guess": "袤", "source_code": "c", "definitions": [{"readings": ["meu"], "meanings": ["A waist"]}]}
 {"word": "袍", "simplified_guess": "袍", "source_code": "c", "definitions": [{"readings": ["bau"], "meanings": ["A gown", "robe"]}]}
@@ -6486,6 +6504,7 @@
 {"word": "襃", "simplified_guess": "襃", "source_code": "c", "definitions": [{"readings": ["peu", "pau"], "meanings": ["To praise", "a long robe"]}]}
 {"word": "褓", "simplified_guess": "褓", "source_code": "c", "definitions": [{"readings": ["pau"], "meanings": ["Swaddling clothes"]}]}
 {"word": "褙", "simplified_guess": "褙", "source_code": "c", "definitions": [{"readings": ["pe"], "meanings": ["To paste"]}]}
+{"word": "褆", "simplified_guess": "褆", "source_code": "c", "definitions": [{"readings": ["zz", "di"], "meanings": ["Handsomely dressed"]}, {"readings": ["yeu"], "meanings": ["Embroidered clothes"]}]}
 {"word": "褫", "simplified_guess": "褫", "source_code": "c", "definitions": [{"readings": ["dsz", "ts'z"], "meanings": ["To undress", "put off"]}]}
 {"word": "褥", "simplified_guess": "褥", "source_code": "c", "definitions": [{"readings": ["zóh", "nyóh", "nyoh"], "meanings": ["Cushion"]}]}
 {"word": "褰", "simplified_guess": "褰", "source_code": "c", "definitions": [{"readings": ["ky'in"], "meanings": ["Pants", "trousers"]}]}
@@ -6547,6 +6566,7 @@
 {"word": "覰", "simplified_guess": "覰", "source_code": "c", "definitions": [{"readings": ["ts'i"], "meanings": ["To spy", "watch for"]}]}
 {"word": "覷", "simplified_guess": "觑", "source_code": "c", "definitions": [{"readings": ["ts'i"], "meanings": ["To spy", "watch for"]}]}
 {"word": "覶", "simplified_guess": "覶", "source_code": "c", "definitions": [{"readings": ["lú", "l'ú"], "meanings": ["To look about"]}]}
+{"word": "覺", "simplified_guess": "觉", "source_code": "c", "definitions": [{"readings": ["kyoh", "kyáh", "koh"], "meanings": ["Perception", "intelligence"]}, {"readings": ["kyau", "kau"], "meanings": ["To awaken from a dream or from sleep"]}]}
 {"word": "覻", "simplified_guess": "覻", "source_code": "c", "definitions": [{"readings": ["ts'i"], "meanings": ["To spy", "watch for"]}]}
 {"word": "覽", "simplified_guess": "览", "source_code": "c", "definitions": [{"readings": ["lan"], "meanings": ["To inspect"]}]}
 {"word": "覿", "simplified_guess": "觌", "source_code": "c", "definitions": [{"readings": ["dih"], "meanings": ["To see face to face"]}]}
@@ -6554,6 +6574,8 @@
 {"word": "觖", "simplified_guess": "觖", "source_code": "c", "definitions": [{"readings": ["kyöh"], "meanings": ["Expect impatiently"]}]}
 {"word": "觚", "simplified_guess": "觚", "source_code": "c", "definitions": [{"readings": ["kú"], "meanings": ["A wine vase", "a corner"]}]}
 {"word": "觝", "simplified_guess": "觝", "source_code": "c", "definitions": [{"readings": ["ti"], "meanings": ["To gore", "butt"]}]}
+{"word": "觜", "simplified_guess": "觜", "source_code": "c", "definitions": [{"readings": ["tsöi", "tsz"], "meanings": ["31st zodiacal constellation"]}, {"readings": ["tsöi"], "meanings": ["To look incensed", "a beak"]}]}
+{"word": "觧", "simplified_guess": "觧", "source_code": "c", "definitions": [{"readings": ["kyá", "ká"], "meanings": ["To open", "extricate"]}, {"readings": ["ká"], "meanings": ["To transmit"]}]}
 {"word": "觥", "simplified_guess": "觥", "source_code": "c", "definitions": [{"readings": ["kwung", "kúng"], "meanings": ["A winejar"]}]}
 {"word": "觫", "simplified_guess": "觫", "source_code": "c", "definitions": [{"readings": ["sóh"], "meanings": ["To start", "tremble"]}]}
 {"word": "䚝", "simplified_guess": "䚝", "source_code": "c", "definitions": [{"readings": ["ts'ön"], "meanings": ["To squeeze"]}]}
@@ -6633,6 +6655,8 @@
 {"word": "誡", "simplified_guess": "诫", "source_code": "c", "definitions": [{"readings": ["kyá", "ká"], "meanings": ["Commandment", "law"]}]}
 {"word": "誑", "simplified_guess": "诳", "source_code": "c", "definitions": [{"readings": ["kw'áng", "kw'ong", "hwong"], "meanings": ["False talk"]}]}
 {"word": "誓", "simplified_guess": "誓", "source_code": "c", "definitions": [{"readings": ["zz"], "meanings": ["An oath"]}]}
+{"word": "說", "simplified_guess": "说", "source_code": "c", "definitions": [{"readings": ["söh", "seh"], "meanings": ["To speak"]}, {"readings": ["söi"], "meanings": ["Urge", "persuade"]}, {"readings": ["yöh"], "meanings": ["Happy"]}]}
+{"word": "説", "simplified_guess": "说", "source_code": "c", "definitions": [{"readings": ["söh", "seh"], "meanings": ["To speak"]}, {"readings": ["söi"], "meanings": ["Urge", "persuade"]}, {"readings": ["yöh"], "meanings": ["Happy"]}]}
 {"word": "誦", "simplified_guess": "诵", "source_code": "c", "definitions": [{"readings": ["*súng", "dsúng"], "meanings": ["To study", "read"]}]}
 {"word": "誕", "simplified_guess": "诞", "source_code": "c", "definitions": [{"readings": ["tan"], "meanings": ["Boastful talk", "Birthday", "to bear children"]}]}
 {"word": "誚", "simplified_guess": "诮", "source_code": "c", "definitions": [{"readings": ["dsiau", "ts'iau", "siau"], "meanings": ["To revile"]}]}
@@ -6763,6 +6787,7 @@
 {"word": "豹", "simplified_guess": "豹", "source_code": "c", "definitions": [{"readings": ["pau"], "meanings": ["A panther", "leopard"]}]}
 {"word": "貂", "simplified_guess": "貂", "source_code": "c", "definitions": [{"readings": ["tiau"], "meanings": ["A sable"]}]}
 {"word": "貅", "simplified_guess": "貅", "source_code": "c", "definitions": [{"readings": ["hyeu"], "meanings": ["A ferocious beast"]}]}
+{"word": "貉", "simplified_guess": "貉", "source_code": "c", "definitions": [{"readings": ["ngoh", "h'oh"], "meanings": ["The Malacca Tapir"]}, {"readings": ["muh"], "meanings": ["A wild tribe"]}]}
 {"word": "貊", "simplified_guess": "貊", "source_code": "c", "definitions": [{"readings": ["muh"], "meanings": ["Barbarian"]}]}
 {"word": "貌", "simplified_guess": "貌", "source_code": "c", "definitions": [{"readings": ["mau"], "meanings": ["Appearance", "manner"]}]}
 {"word": "貋", "simplified_guess": "貋", "source_code": "c", "definitions": [{"readings": ["ngön", "hön"], "meanings": ["A ferocious dog"]}]}
@@ -6793,6 +6818,7 @@
 {"word": "貸", "simplified_guess": "贷", "source_code": "c", "definitions": [{"readings": ["t'e", "de"], "meanings": ["To lend", "forgive"]}]}
 {"word": "貰", "simplified_guess": "贳", "source_code": "c", "definitions": [{"readings": ["sz"], "meanings": ["To borrow", "get on credit"]}]}
 {"word": "賄", "simplified_guess": "贿", "source_code": "c", "definitions": [{"readings": ["hwe"], "meanings": ["A bribe"]}]}
+{"word": "賈", "simplified_guess": "贾", "source_code": "c", "definitions": [{"readings": ["kú"], "meanings": ["A trader"]}, {"readings": ["kyá", "ká"], "meanings": ["Price"]}, {"readings": ["kyá"], "meanings": ["A surname"]}]}
 {"word": "賂", "simplified_guess": "赂", "source_code": "c", "definitions": [{"readings": ["lú"], "meanings": ["A bribe"]}]}
 {"word": "賃", "simplified_guess": "赁", "source_code": "c", "definitions": [{"readings": ["nyung"], "meanings": ["To rent", "charter"]}]}
 {"word": "賊", "simplified_guess": "贼", "source_code": "c", "definitions": [{"readings": ["*dsuh", "zuh"], "meanings": ["A thief", "to rob", "injure"]}]}
@@ -6855,7 +6881,7 @@
 {"word": "越", "simplified_guess": "越", "source_code": "c", "definitions": [{"readings": ["yöh"], "meanings": ["To pass over", "much more"]}]}
 {"word": "趋", "simplified_guess": "趋", "source_code": "c", "definitions": [{"readings": ["ts'ü"], "meanings": ["To walk fast"]}]}
 {"word": "趨", "simplified_guess": "趋", "source_code": "c", "definitions": [{"readings": ["ts'ü"], "meanings": ["To walk fast"]}]}
-{"word": "趙", "simplified_guess": "赵<br>", "source_code": "c", "definitions": [{"readings": ["dsau", "zau"], "meanings": ["To hasten to", "a long time"]}]}
+{"word": "趙", "simplified_guess": "赵", "source_code": "c", "definitions": [{"readings": ["dsau", "zau"], "meanings": ["To hasten to", "a long time"]}]}
 {"word": "趣", "simplified_guess": "趣", "source_code": "c", "definitions": [{"readings": ["ts'ü"], "meanings": ["Beautiful"]}]}
 {"word": "趫", "simplified_guess": "趫", "source_code": "c", "definitions": [{"readings": ["gyau", "ky'au"], "meanings": ["Nimble", "robust"]}]}
 {"word": "𧾜", "simplified_guess": "𧾜", "source_code": "c", "definitions": [{"readings": ["pung"], "meanings": ["To flee"]}]}
@@ -6905,7 +6931,7 @@
 {"word": "踪", "simplified_guess": "踪", "source_code": "c", "definitions": [{"readings": ["tsúng"], "meanings": ["A footprint"]}]}
 {"word": "蹤", "simplified_guess": "踪", "source_code": "c", "definitions": [{"readings": ["tsúng"], "meanings": ["Trace", "a footprint"]}]}
 {"word": "踵", "simplified_guess": "踵", "source_code": "c", "definitions": [{"readings": ["tsúng"], "meanings": ["The heel", "to follow"]}]}
-{"word": "蹂", "simplified_guess": "蹂<br>", "source_code": "c", "definitions": [{"readings": ["*lóh", "*leu", "dseu"], "meanings": ["To tread", "calamity"]}]}
+{"word": "蹂", "simplified_guess": "蹂", "source_code": "c", "definitions": [{"readings": ["*lóh", "*leu", "dseu"], "meanings": ["To tread", "calamity"]}]}
 {"word": "踽", "simplified_guess": "踽", "source_code": "c", "definitions": [{"readings": ["kyü"], "meanings": ["To walk alone"]}]}
 {"word": "蹁", "simplified_guess": "蹁", "source_code": "c", "definitions": [{"readings": ["pin"], "meanings": ["To walk lamely"]}]}
 {"word": "踶", "simplified_guess": "踶", "source_code": "c", "definitions": [{"readings": ["di"], "meanings": ["To tread on", "to kick"]}]}
@@ -6999,7 +7025,7 @@
 {"word": "輅", "simplified_guess": "辂", "source_code": "c", "definitions": [{"readings": ["lú"], "meanings": ["A state carriage"]}]}
 {"word": "軾", "simplified_guess": "轼", "source_code": "c", "definitions": [{"readings": ["suh"], "meanings": ["Leaning board of a cart or sedan chair"]}]}
 {"word": "載", "simplified_guess": "载", "source_code": "c", "definitions": [{"readings": ["tse"], "meanings": ["A load", "to contain", "A year"]}]}
-{"word": "輒", "simplified_guess": "辄<br>", "source_code": "c", "definitions": [{"readings": ["ts'eh"], "meanings": ["Side of a carriage", "suddenly"]}]}
+{"word": "輒", "simplified_guess": "辄", "source_code": "c", "definitions": [{"readings": ["ts'eh"], "meanings": ["Side of a carriage", "suddenly"]}]}
 {"word": "輔", "simplified_guess": "辅", "source_code": "c", "definitions": [{"readings": ["vú", "fú"], "meanings": ["To help"]}]}
 {"word": "輕", "simplified_guess": "轻", "source_code": "c", "definitions": [{"readings": ["ky'ung"], "meanings": ["Light", "slightly"]}]}
 {"word": "輓", "simplified_guess": "挽", "source_code": "c", "definitions": [{"readings": ["w'an", "wan"], "meanings": ["To pull"]}]}
@@ -7189,6 +7215,7 @@
 {"word": "邢", "simplified_guess": "邢", "source_code": "c", "definitions": [{"readings": ["yung"], "meanings": ["An ancient principality"]}]}
 {"word": "邦", "simplified_guess": "邦", "source_code": "c", "definitions": [{"readings": ["pong"], "meanings": ["State", "country"]}]}
 {"word": "邠", "simplified_guess": "邠", "source_code": "c", "definitions": [{"readings": ["ping"], "meanings": ["A place in Shensi"]}]}
+{"word": "邪", "simplified_guess": "邪", "source_code": "c", "definitions": [{"readings": ["zie", "ziá"], "meanings": ["Heterodox", "vicious", "evil"]}, {"readings": ["yá"], "meanings": ["Final particle"]}]}
 {"word": "邯", "simplified_guess": "邯", "source_code": "c", "definitions": [{"readings": ["hön"], "meanings": ["Name of a district and river"]}]}
 {"word": "邳", "simplified_guess": "邳", "source_code": "c", "definitions": [{"readings": ["p'e"], "meanings": ["A place", "district"]}]}
 {"word": "邵", "simplified_guess": "邵", "source_code": "c", "definitions": [{"readings": ["zau"], "meanings": ["A city in Shansi"]}]}
@@ -7339,6 +7366,7 @@
 {"word": "錄", "simplified_guess": "录", "source_code": "c", "definitions": [{"readings": ["lóh"], "meanings": ["To record", "records"]}]}
 {"word": "錫", "simplified_guess": "锡", "source_code": "c", "definitions": [{"readings": ["sih"], "meanings": ["Tin", "to give"]}]}
 {"word": "錠", "simplified_guess": "锭", "source_code": "c", "definitions": [{"readings": ["ding"], "meanings": ["A silver ingot"]}]}
+{"word": "錯", "simplified_guess": "错", "source_code": "c", "definitions": [{"readings": ["ts'óh", "ts'oh", "ts'ó"], "meanings": ["Wrong", "error", "to polish"]}, {"readings": ["ts'ú"], "meanings": ["To wash", "with", "gold"]}, {"readings": ["ts'ú"], "meanings": ["To hide", "to place"]}]}
 {"word": "錙", "simplified_guess": "锱", "source_code": "c", "definitions": [{"readings": ["tsz"], "meanings": ["Quarter tael", "ancient weight"]}]}
 {"word": "錗", "simplified_guess": "錗", "source_code": "c", "definitions": [{"readings": ["dsöi"], "meanings": ["A steelyard weight"]}]}
 {"word": "鍤", "simplified_guess": "锸", "source_code": "c", "definitions": [{"readings": ["ts'ah"], "meanings": ["A peck", "crowbar"]}]}
@@ -7420,7 +7448,7 @@
 {"word": "鑼", "simplified_guess": "锣", "source_code": "c", "definitions": [{"readings": ["lú"], "meanings": ["A gong"]}]}
 {"word": "鑾", "simplified_guess": "銮", "source_code": "c", "definitions": [{"readings": ["lön"], "meanings": ["Little bells", "royal", "term of respect"]}]}
 {"word": "鑿", "simplified_guess": "凿", "source_code": "c", "definitions": [{"readings": ["zoh"], "meanings": ["A chisel", "to chisel"]}]}
-{"word": "钃", "simplified_guess": "<div>钃<br></div>", "source_code": "c", "definitions": [{"readings": ["zóh"], "meanings": ["A kind of hoe"]}]}
+{"word": "钃", "simplified_guess": "钃", "source_code": "c", "definitions": [{"readings": ["zóh"], "meanings": ["A kind of hoe"]}]}
 {"word": "𨱥", "simplified_guess": "𨱥", "source_code": "c", "definitions": [{"readings": ["á"], "meanings": ["Short"]}]}
 {"word": "閂", "simplified_guess": "闩", "source_code": "c", "definitions": [{"readings": ["sen"], "meanings": ["Bolt"]}]}
 {"word": "閃", "simplified_guess": "闪", "source_code": "c", "definitions": [{"readings": ["sen"], "meanings": ["A flash", "to evade"]}]}
@@ -7430,6 +7458,7 @@
 {"word": "閆", "simplified_guess": "闫", "source_code": "c", "definitions": [{"readings": ["nyin"], "meanings": ["A hamlet", "hamlet gate"]}]}
 {"word": "閻", "simplified_guess": "阎", "source_code": "c", "definitions": [{"readings": ["nyin"], "meanings": ["The gate of a village", "A hamlet", "hamlet gate"]}]}
 {"word": "閑", "simplified_guess": "闲", "source_code": "c", "definitions": [{"readings": ["yan", "han"], "meanings": ["To restrain", "leisure"]}]}
+{"word": "間", "simplified_guess": "间", "source_code": "c", "definitions": [{"readings": ["kan", "kyin"], "meanings": ["Space", "a limit", "room"]}, {"readings": ["kan"], "meanings": ["To sunder", "to alternate"]}]}
 {"word": "閏", "simplified_guess": "闰", "source_code": "c", "definitions": [{"readings": ["zung", "nyung"], "meanings": ["Intercalary (insertion of leap day/year)", "extra"]}]}
 {"word": "開", "simplified_guess": "开", "source_code": "c", "definitions": [{"readings": ["k'e"], "meanings": ["To open", "explain"]}]}
 {"word": "閔", "simplified_guess": "闵", "source_code": "c", "definitions": [{"readings": ["ming"], "meanings": ["To mourn with", "grieve"]}]}
@@ -7479,6 +7508,7 @@
 {"word": "阱", "simplified_guess": "阱", "source_code": "c", "definitions": [{"readings": ["dsing"], "meanings": ["A pitfall", "a hole"]}]}
 {"word": "阮", "simplified_guess": "阮", "source_code": "c", "definitions": [{"readings": ["nyön"], "meanings": ["A mountain", "feudal state"]}]}
 {"word": "阻", "simplified_guess": "阻", "source_code": "c", "definitions": [{"readings": ["tsú"], "meanings": ["Hinder"]}]}
+{"word": "阿", "simplified_guess": "阿", "source_code": "c", "definitions": [{"readings": ["ú"], "meanings": ["A high ridge", "or slope", "a phonetic much used in names"]}, {"readings": ["áh", "ah"], "meanings": ["Exclamation", "brother", "a phonetic particle", "final particle"]}]}
 {"word": "陂", "simplified_guess": "陂", "source_code": "c", "definitions": [{"readings": ["pe"], "meanings": ["A bank", "a side"]}]}
 {"word": "陀", "simplified_guess": "陀", "source_code": "c", "definitions": [{"readings": ["dú"], "meanings": ["Rugged paths"]}]}
 {"word": "阽", "simplified_guess": "阽", "source_code": "c", "definitions": [{"readings": ["nyin"], "meanings": ["Dangerous", "ready to fall"]}]}
@@ -7534,6 +7564,7 @@
 {"word": "隼", "simplified_guess": "隼", "source_code": "c", "definitions": [{"readings": ["sung"], "meanings": ["A falcon"]}]}
 {"word": "难", "simplified_guess": "难", "source_code": "c", "definitions": [{"readings": ["nan"], "meanings": ["Difficult", "harrass", "Shanghai: now", "Calamity", "trouble"]}]}
 {"word": "難", "simplified_guess": "难", "source_code": "c", "definitions": [{"readings": ["nan"], "meanings": ["Difficult", "grievous", "Shanghai: now", "Distress", "calamity"]}]}
+{"word": "隺", "simplified_guess": "隺", "source_code": "c", "definitions": [{"readings": ["ky'ah"], "meanings": ["A bird flying high", "truly"]}, {"readings": ["ky'ah"], "meanings": ["An aspiring ambitious mind"]}, {"readings": ["ngoh"], "meanings": ["A crane", "egret"]}]}
 {"word": "鶴", "simplified_guess": "鹤", "source_code": "c", "definitions": [{"readings": ["ngoh"], "meanings": ["A crane", "egret", "stork", "emblem of longevity"]}]}
 {"word": "雀", "simplified_guess": "雀", "source_code": "c", "definitions": [{"readings": ["ts'iáh"], "meanings": ["A sparrow"]}]}
 {"word": "雄", "simplified_guess": "雄", "source_code": "c", "definitions": [{"readings": ["yúng"], "meanings": ["A male", "brave"]}]}
@@ -7609,6 +7640,7 @@
 {"word": "靡", "simplified_guess": "靡", "source_code": "c", "definitions": [{"readings": ["mi"], "meanings": ["Laid out", "poured out", "extravagant", "not"]}]}
 {"word": "靦", "simplified_guess": "腼", "source_code": "c", "definitions": [{"readings": ["t'in"], "meanings": ["To feel ashamed", "to blush"]}]}
 {"word": "靨", "simplified_guess": "靥", "source_code": "c", "definitions": [{"readings": ["ih"], "meanings": ["A dimpled cheek"]}, {"readings": ["in"], "meanings": ["A spot or pimple on the face"]}]}
+{"word": "𩉖", "simplified_guess": "𩉖", "source_code": "c", "definitions": [{"readings": ["hwe"], "meanings": ["To wash the face"]}, {"readings": ["hwe", "me"], "meanings": ["Fat", "flesh"]}]}
 {"word": "𩔁", "simplified_guess": "𩔁", "source_code": "c", "definitions": [{"readings": ["hwe", "me"], "meanings": ["Fat", "flesh"]}]}
 {"word": "靭", "simplified_guess": "靭", "source_code": "c", "definitions": [{"readings": ["zung", "nyung"], "meanings": ["Soft and tough"]}]}
 {"word": "韌", "simplified_guess": "韧", "source_code": "c", "definitions": [{"readings": ["zung", "nyung"], "meanings": ["Soft but tough catgut"]}]}
@@ -7850,6 +7882,7 @@
 {"word": "𩧢", "simplified_guess": "𩧢", "source_code": "c", "definitions": [{"readings": ["ts'ung"], "meanings": ["A horse running"]}]}
 {"word": "驫", "simplified_guess": "骉", "source_code": "c", "definitions": [{"readings": ["piau", "pieu"], "meanings": ["A moving herd of horses"]}]}
 {"word": "骯", "simplified_guess": "肮", "source_code": "c", "definitions": [{"readings": ["ong", "áng"], "meanings": ["Dirty"]}]}
+{"word": "骰", "simplified_guess": "骰", "source_code": "c", "definitions": [{"readings": ["só", "deu"], "meanings": ["A dice"]}, {"readings": ["deu"], "meanings": ["Dice"]}]}
 {"word": "骱", "simplified_guess": "骱", "source_code": "c", "definitions": [{"readings": ["gá"], "meanings": ["A joint"]}]}
 {"word": "骷", "simplified_guess": "骷", "source_code": "c", "definitions": [{"readings": ["k'ú"], "meanings": ["A skeleton"]}]}
 {"word": "骸", "simplified_guess": "骸", "source_code": "c", "definitions": [{"readings": ["ye"], "meanings": ["The bones of the body"]}]}
@@ -7864,6 +7897,7 @@
 {"word": "髒", "simplified_guess": "脏", "source_code": "c", "definitions": [{"readings": ["tsong", "tsáng"], "meanings": ["Dirty"]}]}
 {"word": "髗", "simplified_guess": "髗", "source_code": "c", "definitions": [{"readings": ["lú"], "meanings": ["The skull"]}]}
 {"word": "𩫇", "simplified_guess": "𩫇", "source_code": "c", "definitions": [{"readings": ["ti"], "meanings": ["Beneath", "low"]}]}
+{"word": "𩫊", "simplified_guess": "𩫊", "source_code": "c", "definitions": [{"readings": ["t'áh", "*t'ah"], "meanings": ["Pagoda", "tower"]}]}
 {"word": "髠", "simplified_guess": "髠", "source_code": "c", "definitions": [{"readings": ["kwung"], "meanings": ["To shave the head"]}]}
 {"word": "髣", "simplified_guess": "髣", "source_code": "c", "definitions": [{"readings": ["fong"], "meanings": ["Similar", "seeming"]}]}
 {"word": "𩬂", "simplified_guess": "𩬂", "source_code": "c", "definitions": [{"readings": ["tsih"], "meanings": ["A knot of hair"]}]}
@@ -8021,6 +8055,7 @@
 {"word": "鵝", "simplified_guess": "鹅", "source_code": "c", "definitions": [{"readings": ["ngú"], "meanings": ["A goose"]}]}
 {"word": "䳘", "simplified_guess": "䳘", "source_code": "c", "definitions": [{"readings": ["ngú"], "meanings": ["A goose"]}]}
 {"word": "鵞", "simplified_guess": "鵞", "source_code": "c", "definitions": [{"readings": ["ngú"], "meanings": ["A goose"]}]}
+{"word": "鵠", "simplified_guess": "鹄", "source_code": "c", "definitions": [{"readings": ["ngoh"], "meanings": ["Snow goose"]}, {"readings": ["koh", "kóh"], "meanings": ["Venerable", "a target"]}]}
 {"word": "鵑", "simplified_guess": "鹃", "source_code": "c", "definitions": [{"readings": ["kyön"], "meanings": ["The cuckoo"]}]}
 {"word": "鵓", "simplified_guess": "鹁", "source_code": "c", "definitions": [{"readings": ["beh"], "meanings": ["A wood pigeon"]}]}
 {"word": "鵜", "simplified_guess": "鹈", "source_code": "c", "definitions": [{"readings": ["di"], "meanings": ["A pelican", "pheasant"]}]}

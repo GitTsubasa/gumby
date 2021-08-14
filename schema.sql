@@ -11,6 +11,17 @@ create text search configuration english_nostop (
 alter text search configuration english_nostop
     alter mapping for asciiword, asciihword, hword_asciipart, hword, hword_part, word with english_stem_nostop;
 
+create text search dictionary simple_nostop (
+    template = simple
+);
+
+create text search configuration simple_nostop (
+    copy = pg_catalog.simple
+);
+
+alter text search configuration simple_nostop
+    alter mapping for asciiword, asciihword, hword_asciipart, hword, hword_part, word with simple_nostop;
+
 create table sources (
     code text not null primary key,
     name text not null
