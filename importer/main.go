@@ -144,6 +144,8 @@ func main() {
 			log.Fatalf("Failed to process entry %d: %s", i, err)
 		}
 
+		doc["_type"] = "entry"
+
 		if err := batch.Index(doc["source_code"].(string)+":"+doc["word"].(string), doc); err != nil {
 			log.Fatalf("Failed to index index entry %d: %s", i, err)
 		}
