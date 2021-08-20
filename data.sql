@@ -71,25 +71,12 @@ on conflict (source_code,
     word,
     tsvector)
     do nothing;
--- insert readings
-insert into word_fts_tsvectors (source_code, word, tsvector)
-select
-    v.source_code,
-    v.word,
-    to_tsvector('spaces', reading)
-from
-    v,
-    unnest(v.readings) reading
-on conflict (source_code,
-    word,
-    tsvector)
-    do nothing;
 -- insert plain words
 insert into word_fts_tsvectors (source_code, word, tsvector)
 select
     v.source_code,
     v.word,
-    to_tsvector('spaces', v.word)
+    to_tsvector('simple_nostop', v.word)
 from
     v,
     unnest(v.meanings) meaning
@@ -102,7 +89,7 @@ insert into word_fts_tsvectors (source_code, word, tsvector)
 select
     v.source_code,
     v.word,
-    to_tsvector('spaces', v.simplified_guess)
+    to_tsvector('simple_nostop', v.simplified_guess)
 from
     v,
     unnest(v.meanings) meaning
