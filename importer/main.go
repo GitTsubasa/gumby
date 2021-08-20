@@ -111,7 +111,7 @@ func main() {
 	}
 
 	os.RemoveAll(*indexPath)
-	index, err := bleve.New(*indexPath, mapping)
+	idx, err := bleve.New(*indexPath, mapping)
 	if err != nil {
 		log.Fatalf("Failed to open index: %s", err)
 	}
@@ -122,7 +122,7 @@ func main() {
 	}
 	defer input.Close()
 
-	batch := index.NewBatch()
+	batch := idx.NewBatch()
 
 	dec := json.NewDecoder(input)
 	i := 0
@@ -139,12 +139,12 @@ func main() {
 			log.Fatalf("Failed to process entry %d: %s", i, err)
 		}
 
-		if err := batch.Index(doc["word"].(string), doc); err != nil {
+		if err := batch.Index(doc["source_code"].(string)+":"+doc["word"].(string), doc); err != nil {
 			log.Fatalf("Failed to index index entry %d: %s", i, err)
 		}
 	}
 
-	if err := index.Batch(batch); err != nil {
+	if err := idx.Batch(batch); err != nil {
 		log.Fatalf("Failed to run batch: %s", err)
 	}
 
