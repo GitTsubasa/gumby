@@ -75,9 +75,10 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 		wordFieldMapping.Analyzer = "unicode_tokenize"
 		entryDocumentMapping.AddFieldMappingsAt("word", wordFieldMapping)
 
-		simplifiedGuessFieldMapping := bleve.NewTextFieldMapping()
-		simplifiedGuessFieldMapping.Analyzer = "unicode_tokenize"
-		entryDocumentMapping.AddFieldMappingsAt("simplified_guess", simplifiedGuessFieldMapping)
+		simplifiedMapping := bleve.NewTextFieldMapping()
+		simplifiedMapping.Analyzer = "unicode_tokenize"
+		simplifiedMapping.IncludeInAll = false
+		entryDocumentMapping.AddFieldMappingsAt("simplified", simplifiedMapping)
 
 		sourceCodeMapping := bleve.NewTextFieldMapping()
 		sourceCodeMapping.Analyzer = "single_tokenize"
@@ -94,6 +95,10 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 			readingsMapping.Analyzer = "whitespace_tokenize"
 			definitionDocumentMapping.AddFieldMappingsAt("readings", readingsMapping)
 
+			readingsNoDiacritics := bleve.NewTextFieldMapping()
+			readingsNoDiacritics.IncludeInAll = false
+			readingsNoDiacritics.Analyzer = "whitespace_tokenize"
+			definitionDocumentMapping.AddFieldMappingsAt("readings_no_diacritics", readingsNoDiacritics)
 		}
 		entryDocumentMapping.AddSubDocumentMapping("definition", definitionDocumentMapping)
 	}

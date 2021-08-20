@@ -7,6 +7,21 @@ import opencc
 import sys
 
 
+
+_diacritics_trans = str.maketrans({
+    'á': 'aa',
+    'ó': 'o',
+    'ú': 'oo',
+    'ü': 'ui',
+    'û': 'u',
+    'ö': 'oe',
+    '\'': 'h',
+})
+
+def replace_diacritics(reading):
+    return reading.translate(_diacritics_trans)
+
+
 class EnhancedJSONEncoder(json.JSONEncoder):
     def default(self, o):
         if dataclasses.is_dataclass(o):
@@ -17,13 +32,14 @@ class EnhancedJSONEncoder(json.JSONEncoder):
 @dataclasses.dataclass
 class Definition:
     readings: typing.List[str]
+    readings_no_diacritics: typing.List[str]
     meanings: typing.List[str]
 
 
 @dataclasses.dataclass
 class Entry:
     word: str
-    simplified_guess: str
+    simplified: typing.List[str]
     source_code: str
     definitions: typing.List[Definition]
 
@@ -87,7 +103,7 @@ with open('dict.txt') as f:
 
         raw_readings, raw_meanings = rest.split('<hr>')
         word = text_maker.handle(word).strip()
-        simplified_guess = occ.convert(word)
+        simplified = occ.convert(word)
 
         if len(word) > 1:
             print('WEIRD', word, file=sys.stderr)
@@ -98,7 +114,8 @@ with open('dict.txt') as f:
         # Simple case
         if not any('(' in r for r in readings):
             # this case is easy!
-            entry = Entry(word, simplified_guess, 'c', [Definition(sorted([r for r in readings if r]), [c for r in meanings if r for c in safe_split(r)])])
+            readings = sorted([r for r in readings if r])
+            entry = Entry(word, [simplified], 'c', [Definition(readings, [replace_diacritics(reading) for reading in readings], [c for r in meanings if r for c in safe_split(r)])])
             out.append(entry)
             continue
 
@@ -157,7 +174,7 @@ with open('dict.txt') as f:
             if len(reading_groups) != len(meaning_groups):
                 raise Exception
 
-            entry = Entry(word, simplified_guess, 'c', [Definition(sorted(rs), ms) for rs, ms in zip(reading_groups, meaning_groups)])
+            entry = Entry(word, [simplified], 'c', [Definition(sorted(rs), [replace_diacritics(reading) for reading in sorted(rs)], ms) for rs, ms in zip(reading_groups, meaning_groups)])
             out.append(entry)
 
             continue
