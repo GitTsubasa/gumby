@@ -158,7 +158,7 @@
 艸	"ts'au <hr> Grass  "
 艹	"ts'au <hr> grass  "
 虍	"<div><font color=""#ff0000"">hwú</font></div><div><br></div>h'ú <hr> A tiger  "
-虫	hwe (1st)<div>dsúng (2nd and 3rd)</div> <hr> An insect<div><br></div><div>To eat into things</div><div><br></div><div>An insect</div>
+虫	(three words)<br>hwe<div>dsúng</div>dsúng <hr> An insect<div><br></div><div>To eat into things</div><div><br></div><div>An insect</div>
 血	hyöh <hr> Blood
 行	yung (1st and 3rd)<div>hong</div><div><br><div>háng (1st)</div><div><br></div></div> <hr> Act, do<div><br></div><div>A row, class, a firm</div><div><br></div><div>To travel, actions, conduct</div>
 衣	i <hr> Clothes<div><br></div><div>To dress</div>
@@ -3256,7 +3256,7 @@
 攉	hoh <hr> To move the hand to and fro
 攏	lúng <hr> All, the whole, to unite
 攘	záng <hr> To reject, to appropriate, seize
-攔	"lan<div><br></div><div>lah</div><div><font color=""#ff0000"">láng</font> (ráng)</div> <hr> To fence off, separate  "
+攔	"lan<div><br></div><div>lah</div><div><font color=""#ff0000"">láng</font><br>ráng</div> <hr> To fence off, separate  "
 攖	"y'ung <hr> To assail, audacious  "
 攙	"ts'an <hr> To push off, support  "
 攝	seh <hr> To take, control, act for
@@ -3674,7 +3674,7 @@
 椎	<div>dsöi<br></div><div><br></div><div>dsz</div><div>zz</div> <hr> Wooden mallet, beetle, to beat
 棼	vung <hr> Confused
 棻	vung <hr> A fragrant wood
-椅	"(two words)<div>i (for both)</div><div>y'ü (only for second)</div> <hr> A kind of tree<div><br></div><div>A chair</div>  "
+椅	"(two words)<div>i</div><div><br></div><div>i<br>y'ü</div> <hr> A kind of tree<div><br></div><div>A chair</div>  "
 棋	gyi <hr> Chess men
 棊	gyi <hr> Chess men
 棨	"ky'i <hr> A signal flag or board  "
@@ -4821,7 +4821,7 @@
 瘵	tsi <hr> A wasting disease
 瘴	tsáng<div>tsong</div> <hr> Malaria, miasma
 瘳	"ts'eu<div>liau</div> <hr> Cured, healed  "
-瘸	"gyó (<font color=""#ff0000"">gyau</font>) <hr> Lame  "
+瘸	"gyó<br><font color=""#ff0000"">gyau</font> <hr> Lame  "
 瘻	leu <hr> A wen (cyst)
 瘰	<div>lú</div>le <hr> A gland, swelling
 癇	yin<div><br></div><div>gyin</div> <hr> Fits, convulsions
@@ -7279,7 +7279,7 @@
 郤	"ky'áh<div>hyih</div> <hr> Intimate relative, a city  "
 郡	gyün <hr> A district
 郎	long <hr> A district
-郢	"ying (<font color=""#ff0000"">yung</font>) <hr> City in Hupeh  "
+郢	"ying<br><font color=""#ff0000"">yung</font> <hr> City in Hupeh  "
 郭	kwoh <hr> Suburb, second wall of a city
 部	bú <hr> Official board, class, division
 郵	yeu <hr> A lodge, post offices

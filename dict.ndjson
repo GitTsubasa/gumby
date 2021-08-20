@@ -158,6 +158,7 @@
 {"word": "艸", "simplified": ["艸"], "source_code": "c", "definitions": [{"readings": ["ts'au"], "readings_no_diacritics": ["tshau"], "meanings": ["Grass"]}]}
 {"word": "艹", "simplified": ["艹"], "source_code": "c", "definitions": [{"readings": ["ts'au"], "readings_no_diacritics": ["tshau"], "meanings": ["grass"]}]}
 {"word": "虍", "simplified": ["虍"], "source_code": "c", "definitions": [{"readings": ["*hwú", "h'ú"], "readings_no_diacritics": ["*hwoo", "hhoo"], "meanings": ["A tiger"]}]}
+{"word": "虫", "simplified": ["虫"], "source_code": "c", "definitions": [{"readings": ["hwe"], "readings_no_diacritics": ["hwe"], "meanings": ["An insect"]}, {"readings": ["dsúng"], "readings_no_diacritics": ["dsoong"], "meanings": ["To eat into things"]}, {"readings": ["dsúng"], "readings_no_diacritics": ["dsoong"], "meanings": ["An insect"]}]}
 {"word": "血", "simplified": ["血"], "source_code": "c", "definitions": [{"readings": ["hyöh"], "readings_no_diacritics": ["hyoeh"], "meanings": ["Blood"]}]}
 {"word": "衣", "simplified": ["衣"], "source_code": "c", "definitions": [{"readings": ["i"], "readings_no_diacritics": ["i"], "meanings": ["Clothes", "To dress"]}]}
 {"word": "衤", "simplified": ["衤"], "source_code": "c", "definitions": [{"readings": ["i"], "readings_no_diacritics": ["i"], "meanings": ["Clothes"]}]}
@@ -3236,6 +3237,7 @@
 {"word": "攉", "simplified": ["攉"], "source_code": "c", "definitions": [{"readings": ["hoh"], "readings_no_diacritics": ["hoh"], "meanings": ["To move the hand to and fro"]}]}
 {"word": "攏", "simplified": ["拢"], "source_code": "c", "definitions": [{"readings": ["lúng"], "readings_no_diacritics": ["loong"], "meanings": ["All", "the whole", "to unite"]}]}
 {"word": "攘", "simplified": ["攘"], "source_code": "c", "definitions": [{"readings": ["záng"], "readings_no_diacritics": ["zaang"], "meanings": ["To reject", "to appropriate", "seize"]}]}
+{"word": "攔", "simplified": ["拦"], "source_code": "c", "definitions": [{"readings": ["*láng", "lah", "lan", "ráng"], "readings_no_diacritics": ["*laang", "lah", "lan", "raang"], "meanings": ["To fence off", "separate"]}]}
 {"word": "攖", "simplified": ["撄"], "source_code": "c", "definitions": [{"readings": ["y'ung"], "readings_no_diacritics": ["yhung"], "meanings": ["To assail", "audacious"]}]}
 {"word": "攙", "simplified": ["搀"], "source_code": "c", "definitions": [{"readings": ["ts'an"], "readings_no_diacritics": ["tshan"], "meanings": ["To push off", "support"]}]}
 {"word": "攝", "simplified": ["摄"], "source_code": "c", "definitions": [{"readings": ["seh"], "readings_no_diacritics": ["seh"], "meanings": ["To take", "control", "act for"]}]}
@@ -3646,6 +3648,7 @@
 {"word": "椎", "simplified": ["椎"], "source_code": "c", "definitions": [{"readings": ["dsz", "dsöi", "zz"], "readings_no_diacritics": ["dsz", "dsoei", "zz"], "meanings": ["Wooden mallet", "beetle", "to beat"]}]}
 {"word": "棼", "simplified": ["棼"], "source_code": "c", "definitions": [{"readings": ["vung"], "readings_no_diacritics": ["vung"], "meanings": ["Confused"]}]}
 {"word": "棻", "simplified": ["棻"], "source_code": "c", "definitions": [{"readings": ["vung"], "readings_no_diacritics": ["vung"], "meanings": ["A fragrant wood"]}]}
+{"word": "椅", "simplified": ["椅"], "source_code": "c", "definitions": [{"readings": ["i"], "readings_no_diacritics": ["i"], "meanings": ["A kind of tree"]}, {"readings": ["i", "y'ü"], "readings_no_diacritics": ["i", "yhui"], "meanings": ["A chair"]}]}
 {"word": "棋", "simplified": ["棋"], "source_code": "c", "definitions": [{"readings": ["gyi"], "readings_no_diacritics": ["gyi"], "meanings": ["Chess men"]}]}
 {"word": "棊", "simplified": ["棋"], "source_code": "c", "definitions": [{"readings": ["gyi"], "readings_no_diacritics": ["gyi"], "meanings": ["Chess men"]}]}
 {"word": "棨", "simplified": ["棨"], "source_code": "c", "definitions": [{"readings": ["ky'i"], "readings_no_diacritics": ["kyhi"], "meanings": ["A signal flag or board"]}]}
@@ -4788,6 +4791,7 @@
 {"word": "瘵", "simplified": ["瘵"], "source_code": "c", "definitions": [{"readings": ["tsi"], "readings_no_diacritics": ["tsi"], "meanings": ["A wasting disease"]}]}
 {"word": "瘴", "simplified": ["瘴"], "source_code": "c", "definitions": [{"readings": ["tsong", "tsáng"], "readings_no_diacritics": ["tsong", "tsaang"], "meanings": ["Malaria", "miasma"]}]}
 {"word": "瘳", "simplified": ["瘳"], "source_code": "c", "definitions": [{"readings": ["liau", "ts'eu"], "readings_no_diacritics": ["liau", "tsheu"], "meanings": ["Cured", "healed"]}]}
+{"word": "瘸", "simplified": ["瘸"], "source_code": "c", "definitions": [{"readings": ["*gyau", "gyó"], "readings_no_diacritics": ["*gyau", "gyo"], "meanings": ["Lame"]}]}
 {"word": "瘻", "simplified": ["瘘"], "source_code": "c", "definitions": [{"readings": ["leu"], "readings_no_diacritics": ["leu"], "meanings": ["A wen (cyst)"]}]}
 {"word": "瘰", "simplified": ["瘰"], "source_code": "c", "definitions": [{"readings": ["le", "lú"], "readings_no_diacritics": ["le", "loo"], "meanings": ["A gland", "swelling"]}]}
 {"word": "癇", "simplified": ["痫"], "source_code": "c", "definitions": [{"readings": ["gyin", "yin"], "readings_no_diacritics": ["gyin", "yin"], "meanings": ["Fits", "convulsions"]}]}
@@ -7233,6 +7237,7 @@
 {"word": "郤", "simplified": ["郤"], "source_code": "c", "definitions": [{"readings": ["hyih", "ky'áh"], "readings_no_diacritics": ["hyih", "kyhaah"], "meanings": ["Intimate relative", "a city"]}]}
 {"word": "郡", "simplified": ["郡"], "source_code": "c", "definitions": [{"readings": ["gyün"], "readings_no_diacritics": ["gyuin"], "meanings": ["A district"]}]}
 {"word": "郎", "simplified": ["郎"], "source_code": "c", "definitions": [{"readings": ["long"], "readings_no_diacritics": ["long"], "meanings": ["A district"]}]}
+{"word": "郢", "simplified": ["郢"], "source_code": "c", "definitions": [{"readings": ["*yung", "ying"], "readings_no_diacritics": ["*yung", "ying"], "meanings": ["City in Hupeh"]}]}
 {"word": "郭", "simplified": ["郭"], "source_code": "c", "definitions": [{"readings": ["kwoh"], "readings_no_diacritics": ["kwoh"], "meanings": ["Suburb", "second wall of a city"]}]}
 {"word": "部", "simplified": ["部"], "source_code": "c", "definitions": [{"readings": ["bú"], "readings_no_diacritics": ["boo"], "meanings": ["Official board", "class", "division"]}]}
 {"word": "郵", "simplified": ["邮"], "source_code": "c", "definitions": [{"readings": ["yeu"], "readings_no_diacritics": ["yeu"], "meanings": ["A lodge", "post offices"]}]}

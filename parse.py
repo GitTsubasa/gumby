@@ -123,7 +123,7 @@ with open('dict.txt') as f:
         if readings[0][0] == '(':
             if any('(' in r for r in readings[1:]):
                 # handle this later
-                print('SKIPPED', word, readings, file=sys.stderr)
+                print('SKIPPED', word, readings, meanings, file=sys.stderr)
                 continue
 
             if readings[0].lower() == '(two words)' or readings[0].lower() == '(two different words)':
@@ -137,7 +137,7 @@ with open('dict.txt') as f:
             elif 'both' in readings[0].lower():
                 expected_groups = 1
             else:
-                print('SKIPPED', word, readings, file=sys.stderr)
+                print('SKIPPED', word, readings, meanings, file=sys.stderr)
 
             # reading groups
             reading_groups = group_lines(readings[1:])
@@ -180,7 +180,7 @@ with open('dict.txt') as f:
             continue
 
         # Multiple readings, funny handling
-        print('SKIPPED', word, readings, file=sys.stderr)
+        print('SKIPPED', word, readings, meanings, file=sys.stderr)
 
 
 with open('dict.ndjson', 'a') as f:
