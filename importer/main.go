@@ -100,7 +100,7 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 			readingsNoDiacritics.Analyzer = "whitespace_tokenize"
 			definitionDocumentMapping.AddFieldMappingsAt("readings_no_diacritics", readingsNoDiacritics)
 		}
-		entryDocumentMapping.AddSubDocumentMapping("definition", definitionDocumentMapping)
+		entryDocumentMapping.AddSubDocumentMapping("definitions", definitionDocumentMapping)
 	}
 	indexMapping.AddDocumentMapping("entry", entryDocumentMapping)
 

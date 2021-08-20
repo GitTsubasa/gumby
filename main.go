@@ -186,7 +186,22 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 }
 
 func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]string, uint64, error) {
-	req := bleve.NewSearchRequest(bleve.NewQueryStringQuery(query))
+	meaningMatch := bleve.NewMatchPhraseQuery(query)
+	meaningMatch.SetField("definitions.meanings")
+
+	readingsMatch := bleve.NewMatchPhraseQuery(query)
+	readingsMatch.SetField("definitions.readings")
+
+	readingsNoDiacriticsMatch := bleve.NewMatchPhraseQuery(query)
+	readingsNoDiacriticsMatch.SetField("definitions.readings_no_diacritics")
+
+	wordMatch := bleve.NewMatchPhraseQuery(query)
+	wordMatch.SetField("word")
+
+	simplifiedMatch := bleve.NewMatchPhraseQuery(query)
+	simplifiedMatch.SetField("simplified")
+
+	req := bleve.NewSearchRequest(bleve.NewDisjunctionQuery(meaningMatch, readingsMatch, readingsNoDiacriticsMatch, wordMatch, simplifiedMatch))
 	req.Size = limit
 	req.From = offset
 
