@@ -5,7 +5,7 @@ Description=gumby
 User=gumby
 EnvironmentFile=/etc/default/gumby
 ExecStart=/opt/gumby/live/build/gumby
-WorkingDirectory=/opt/gumby/live
+WorkingDirectory=/var/lib/gumby
 Restart=always
 
 [Install]

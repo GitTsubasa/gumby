@@ -14,6 +14,13 @@ import (
 	index "github.com/blevesearch/bleve_index_api"
 	"github.com/bwmarrin/discordgo"
 	"github.com/kelseyhightower/envconfig"
+
+	_ "github.com/blevesearch/bleve/v2/analysis/analyzer/custom"
+	_ "github.com/blevesearch/bleve/v2/analysis/lang/en"
+	_ "github.com/blevesearch/bleve/v2/analysis/token/lowercase"
+	_ "github.com/blevesearch/bleve/v2/analysis/tokenizer/single"
+	_ "github.com/blevesearch/bleve/v2/analysis/tokenizer/unicode"
+	_ "github.com/blevesearch/bleve/v2/analysis/tokenizer/whitespace"
 )
 
 type config struct {
