@@ -186,7 +186,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 }
 
 func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]string, uint64, error) {
-	req := bleve.NewSearchRequest(bleve.NewMatchQuery(query))
+	req := bleve.NewSearchRequest(bleve.NewQueryStringQuery(query))
 	req.Size = limit
 	req.From = offset
 
@@ -355,6 +355,22 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 			},
 		})
 		log.Printf("Failed to lookup word: %s", err)
+		return
+	}
+
+	if count == 0 {
+		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Content: fmt.Sprintf("**0 results for “%s”**", query),
+				Embeds: []*discordgo.MessageEmbed{
+					{
+						Color:       0x4B5563,
+						Description: "No results found.",
+					},
+				},
+			},
+		})
 		return
 	}
 
