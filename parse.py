@@ -170,6 +170,7 @@ with open('dict.txt') as f:
                 continue
 
             meaning_groups = [[w for c in g for w in safe_split(c)] for g in meaning_groups]
+            meaning_groups = [mg if mg != ['-'] else [] for mg in meaning_groups]
 
             if len(reading_groups) != len(meaning_groups):
                 raise Exception

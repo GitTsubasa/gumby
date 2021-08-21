@@ -160,7 +160,7 @@
 虍	"<div><font color=""#ff0000"">hwú</font></div><div><br></div>h'ú <hr> A tiger  "
 虫	(three words)<br>hwe<div>dsúng</div>dsúng <hr> An insect<div><br></div><div>To eat into things</div><div><br></div><div>An insect</div>
 血	hyöh <hr> Blood
-行	yung (1st and 3rd)<div>hong</div><div><br><div>háng (1st)</div><div><br></div></div> <hr> Act, do<div><br></div><div>A row, class, a firm</div><div><br></div><div>To travel, actions, conduct</div>
+行	(three words)<br>yung<br>háng<div><br></div>hong<br>hong<div><br></div>háng <hr> Act, do<div><br></div><div>A row, class, a firm</div><div><br></div><div>To travel, actions, conduct</div>
 衣	i <hr> Clothes<div><br></div><div>To dress</div>
 衤	i <hr> Clothes
 覀	"y'á <hr> To cover  "
@@ -186,12 +186,12 @@
 辵	"<div>ts'eh</div><div><br></div>ts'iáh <hr> Walking  "
 廴	yung <hr> To move on, to journey
 邑	ih <hr> A region, a city, parlour
-阝	<div>(two different words with the same simplification)</div>邑 ih&nbsp;<div><br></div><div>阜 veu</div> <hr> A region, a city<div><br></div><div>A mound, plenty</div>
+阝	<div>(two words)</div>ih<div><br></div><div>veu</div> <hr> (simplification of 邑) A region, a city<div><br></div><div>(simplification of 阜) A mound, plenty</div>
 酉	yeu <hr> <div>Evening, 5-7pm</div>Must, new wine
 釆	"<div>(two words)</div>bin<div>ts'e</div> <hr> <div>To discriminate</div><div><br></div>To sort out  "
 里	li <hr> A mile, an alley
 金	kyung <hr> Gold, metal
-長	dsáng (1st)<div>tsáng (2nd)</div><div>&nbsp;</div><div>záng</div> <hr> Long<div><br></div><div>Elder, to grow up</div>
+長	(two words)<br>dsáng<br>záng<div><br></div>tsáng<br>záng <hr> Long<div><br></div><div>Elder, to grow up</div>
 镸	dsáng <hr> Long
 門	mung <hr> A door, gate
 阜	veu <hr> A mound, plenty, fertile
@@ -234,7 +234,7 @@
 鼓	kú <hr> A drum, to arouse
 鼠	"sû<br><div><br></div><div>ts'û</div><div>ts'z</div><div>sz</div> <hr> A rat  "
 鼻	bi<div><br><div>bih</div></div> <hr> The nose
-齊	"<div>(two words)</div>dsi (1st)<div>zi (1st)</div><div>tsz (2nd)</div><div><font color=""#ff0000"">tse</font></div><div><font color=""#ff0000"">gyi</font></div> <hr> Even, regular, together<div><br></div><div>The vent or slit at the side of a Chinese coat</div>  "
+齊	"<div>(two words)</div><div><font color=""#ff0000"">tse</font></div><div><font color=""#ff0000"">gyi</font></div>dsi<div>zi</div><div><br></div><div><font color=""#ff0000"">tse</font></div><div><font color=""#ff0000"">gyi</font></div><div>tsz</div> <hr> Even, regular, together<div><br></div><div>The vent or slit at the side of a Chinese coat</div>  "
 齒	"ts'z <hr> Front teeth, teeth, age  "
 龍	lúng <hr> A dragon
 龜	kwe<div><br><div>kyü</div></div> <hr> A tortoise, terrapin
@@ -256,7 +256,7 @@
 丏	min <hr> Screened, hid
 不	peh <hr> Not, no
 与	"y'ü <hr> By, with, and  "
-與	"<font color=""#ff0000"">sz (?)</font><div><br></div><div>(two words)</div><div>y'ü</div><div>yü</div> <hr> With, together, by, give<div><br></div><div>Have part in, connected with</div>  "
+與	"<div>(three words)</div><div>y'ü</div><div>yü</div><font color=""#ff0000"">sz</font><div><br></div> <hr> With, together, by, give<div><br></div><div>Have part in, connected with</div><br>-"
 丑	"ts'eu <hr> 1-3 o'clock a.m.  "
 丘	"<font color=""#ff0000"">meu</font><div><br></div><div>ky'eu<br></div> <hr> A mound  "
 丕	"p'e <hr> Distinguished, first  "
@@ -346,7 +346,7 @@
 亥	he <hr> 9-11pm
 亦	yuh<div><br></div><div>há</div> <hr> Also, and, moreover
 亨	"h'ung<div><br></div><div>h'áng</div> <hr> Successful, to influence  "
-享	hyáng <hr> To enjoy, recieve
+享	hyáng <hr> To enjoy, receive
 京	kyung <hr> Capital, exalted
 㐬	hwong <hr> To flow (primitive form)
 亭	ding <hr> Pavilion, a shed
@@ -368,7 +368,7 @@
 仃	ting <hr> Alone, without protection
 仄	tsuh<div><br></div><div>tsáh</div> <hr> Inclined, refracted
 从	<div>dsúng<br></div> <hr> From, to follow
-從	"ts'úng<div><br></div><div>dsúng (for two readings)</div> <hr> Easy, unembarrassed<div><br></div><div>Through, by, from, follow</div><div><br></div><div>Attendant, follower, clan</div>  "
+從	"(three words)<div><br></div>ts'úng<div><br></div><div>dsúng</div><div>dsúng</div> <hr> Easy, unembarrassed<div><br></div><div>Through, by, from, follow</div><div><br></div><div>Attendant, follower, clan</div>  "
 仔	tsz <hr> Careful, a little thing
 仗	dsáng<div><br></div><div>tsáng</div> <hr> Fight, weapon
 㐱	tsung <hr> Bushy, thick hair
@@ -746,7 +746,7 @@
 冠	kwen <hr> Crown, ceremonial hat<div>To wear a crown</div>
 冢	tsúng <hr> High, eminent, honourable
 冡	múng <hr> Immature
-蒙	"<div><font color=""#ff0000"">mú</font></div>múng <hr> Dull of perception, to cover, recieve<div><font color=""#ff0000"">Turbid water</font></div>  "
+蒙	"<div><font color=""#ff0000"">mú</font></div>múng <hr> Dull of perception, to cover, receive<div><font color=""#ff0000"">Turbid water</font></div>  "
 冥	ming <hr> Dark, obscure
 冣	dsü <hr> Collect
 聚	dsü <hr> To collect, congregate
@@ -958,8 +958,8 @@
 勉	min <hr> Persuade, encourage
 勃	beh <hr> Suddenly
 勇	"y'úng <hr> Brave  "
-勑	"le<div><br></div><div>ts'uh</div><div>(Another word)</div> <hr> Imperial decree  "
-𠡠	"le<div><br></div><div>ts'uh</div><div>(Another word)</div> <hr> Imperial decree  "
+勑	"(two words)<br>le<div><br></div><div>ts'uh</div> <hr> Imperial decree<br>Imperial decree"
+𠡠	"(two words)<br>le<div><br></div><div>ts'uh</div> <hr> Imperial decree<br>Imperial decree"
 勒	luh <hr> Coerce, bridle
 勘	"k'en <hr> To examine  "
 勍	gyung <hr> Strong, violent
@@ -1057,7 +1057,7 @@
 邛	gyúng <hr> Infirm, poor
 卯	mau <hr> From 5 to 7 a.m.
 卮	tsz <hr> Wine dish
-夘	<div>we</div><div><br></div><div>ngá</div><div><br></div><div>(two words)</div><div><br></div>mau <hr> <div>Outside</div><div><br></div>5 to 7 a.m.
+夘	two words<div>we</div><div><br></div><div>ngá</div><div><br></div><div><br></div>mau <hr> <div>Outside</div><div><br></div>5 to 7 a.m.
 印	"y'ung <hr> A seal, to print  "
 危	"<font color=""#ff0000"">ngöi</font><div><br></div><div>we</div> <hr> Danger  "
 却	"ky'áh <hr> But, really, to decline  "
@@ -1101,11 +1101,11 @@
 厲	li <hr> Grindstone, severe
 么	"y'au <hr> Small, tender  "
 去	"ky'ü<div><br></div><div>ky'i<br></div> <hr> Go depart<div>To dismiss, cast off</div>  "
-參	"ts'en<div><br></div><div>ts'an</div><div>tsung</div><div>(Other words)</div><div>sung</div><div>san</div> <hr> To blend, mixed, join<div><br></div><div>A star, second zodical constellation, ginseng</div><div><br></div><div>Three</div>  "
+參	"(three words)<div><br></br><div>ts'en<br>ts'an<br>tsung</div><div><br></div><div>sung</div><div><br></div><div>san</div> <hr> To blend, mixed, join<div><br></div><div>A star, second zodical constellation, ginseng</div><div><br></div><div>Three</div>  "
 参	"ts'en <hr> To blend  "
 葠	sung <hr> A star, second zodiacal constellation, ginseng, ginseng root
 㕘	"ts'en <hr> Blend  "
-叉	"ts'á<div><br></div><div>ts'ó</div> <hr> Interlace the fingers  "
+叉	"ts'á<div><br></div><div>ts'ó</div> <hr> Intferlace the fingers  "
 㕚	tsau <hr> Claws
 反	fan <hr> To turn, reverse
 及	gyih<div><br></div><div>gyi</div> <hr> To effect, to come to, and
@@ -1113,9 +1113,9 @@
 友	yeu <hr> Friend
 双	song <hr> A pair
 雙	song <hr> A pair, a couple
-収	seu <hr> To recieve, correct
-收	seu <hr> To recieve, correct
-受	zeu <hr> To recieve, to suffer, bear
+収	seu <hr> To receive, correct
+收	seu <hr> To receive, correct
+受	zeu <hr> To receive, to suffer, bear
 叔	sóh <hr> An uncle
 㕞	seh <hr> To brush, scrub
 取	"ts'ü <hr> To take  "
@@ -1124,7 +1124,7 @@
 變	pin <hr> To change
 叚	<div>(Three words)</div>yá<div>kyá</div><div>dön</div> <hr> A surname<div><br></div><div>To borrow</div><div><br></div><div>A piece</div>
 叛	ben <hr> To rebel
-叙<br>	dsü<div><div>zû</div></div><div><br></div><div>zü</div> <hr> To converse together
+叙	dsü<div><div>zû</div></div><div><br></div><div>zü</div> <hr> To converse together
 叟	seu <hr> An old man
 叠	deh <hr> To pile up
 疉	deh <hr> To pile up
@@ -1132,7 +1132,7 @@
 叡	söi <hr> Wise
 叢	dsúng <hr> Thick as a forest, bushy
 召	dsau <hr> To order, call
-只	tsz<div><br></div><div>tsuh</div><div>tseh</div><div><br></div><div>(two words)</div><div>tsáh</div> <hr> Only<div><br></div><div>A classifer</div>
+只	(two words)<br><div>tsz</div><div>tsuh</div><div>tseh</div><div><br></div><div><br></div><div>tsáh</div> <hr> Only<div><br></div><div>A classifer</div>
 隻	<div>tsuh</div><div><br></div>tsáh <hr> A classifer, a bird, one
 叱	"ts'eh <hr> To cry out, scold  "
 叶	yah <hr> Harmonious sound
@@ -1179,7 +1179,7 @@
 吨	dung <hr> Grumbling
 吩	fung <hr> Command, order
 吠	vi <hr> To bark as a dog
-否	"<div>feu<br></div><div><br></div><div>(three words)<br></div><div>vá</div><div>p'i</div><div>pi</div> <hr> Interrogative<div><br></div><div>Closed, obstructed</div><div><br></div><div>Bad wicked</div>  "
+否	"<div>(three words)</div><div>feu</div><div>vá</div><div><br></div><div>p'i</div><div><br></div><div>pi</div> <hr> Interrogative<div><br></div><div>Closed, obstructed</div><div><br></div><div>Bad wicked</div>  "
 含	hen <hr> Hold in the mouth
 吭	"hong <hr> Bird's throat  "
 吼	"h'eu <hr> Lowing (roaring) of cows  "
@@ -2082,7 +2082,7 @@
 娃	"wá<div><br></div><div>w'ó</div> <hr> A lady's beautiful hair  "
 姚	yau <hr> Name, handsome lady
 姻	"y'ung <hr> Female relatives, kindred, a bride  "
-姘	"(two words)<div>p'ung<div><br></div><div>p'ing (with above)</div></div><div><br></div><div>ping</div> <hr> <div>Illicit intercourse</div><div><br></div>Female accomplishments  "
+姘	"(two words)<div>p'ung<div>p'ing</div></div><div><br></div><div>ping</div> <hr> <div>Illicit intercourse</div><div><br></div>Female accomplishments  "
 嬪	"ping <hr> King's concubine, servant girl, female accomplishments  "
 娟	kyön <hr> Beautiful, comely (pleasant to look at)
 姢	kyön <hr> Handsome
@@ -2212,7 +2212,7 @@
 它	"t'á <hr> That, another, to change  "
 㝌	kyeu <hr> Poor, diseased
 安	ön <hr> Rest, quiet, to place, how?
-守	seu <hr> To recieve
+守	seu <hr> To receive
 宅	dsuh<div><br></div><div>dsáh</div> <hr> Dwelling, residence
 宇	"y'ü <hr> House, canopy of heaven  "
 宏	húng <hr> Great, large
@@ -2284,7 +2284,7 @@
 對	"<div>(two words)</div>te<div><div><br></div><div>teh</div><div>t'eh</div></div> <hr> Agreeing, a pair, opposite to<div><br></div><div>To</div>  "
 封	fúng <hr> Appoint to office, seal, canonize
 尅	"k'uh <hr> To deny one's self, to repress  "
-射	"<div>ze</div><br><div>(3 words)</div><div><br></div><div>zuh</div><div><br></div><div>zoh (for above)</div><div><br></div><div>yuh</div><div><br></div><div>(below readings uncertain where they belong)</div><div><font color=""#ff0000"">zá</font></div><div><font color=""#ff0000"">zó</font></div><div><font color=""#ff0000"">yá</font></div><div><font color=""#ff0000"">tú</font></div> <hr> Issue forth as light<div><br></div><div>To shoot at and hit</div><div><br></div><div>To dislike</div>  "
+射	"<div>(3 words)</div><div>ze<br>zoh</div><div><br></div><div>zuh</div><div><br></div><div>yuh</div><div><br></div> <hr> Issue forth as light<div><br></div><div>To shoot at and hit</div><div><br></div><div>To dislike</div>  "
 專	tsen <hr> One, specially, one purpose
 將	tsiáng <hr> About to be<div><br></div><div>An official, general</div>
 尉	"<div>(two words)</div>we<div><br></div><div>y'óh</div> <hr> To harmonise<div><br></div><div>Military official</div>  "
@@ -2424,7 +2424,7 @@
 巧	"ky'au <hr> Skilled, cunning, sharp  "
 巨	gyü <hr> Great, chief
 巫	vú <hr> Mountain name, a sorcerer
-差	"<div>(three words)</div>ts'á<div>ts'e (with above)<br></div><div>ts'ó<br></div><div>ts'z<br></div> <hr> Error<div><br></div><div>To send</div><div><br></div><div>Uneven</div>  "
+差	"<div>(three words)</div>ts'á<div>ts'e></div><div><br></div><div>ts'ó<br></div><div>ts'z<br></div> <hr> Error<div><br></div><div>To send</div><div><br></div><div>Uneven</div>  "
 已	i <hr> Already, completed action
 巳	zz <hr> 9-11am
 巴	pá<div><br></div><div>pó</div> <hr> Hope, diligent, about
@@ -2557,7 +2557,7 @@
 引	yung <hr> To lead, induce, preface of books
 弗	"feh<div><br></div><div><font color=""#ff0000"">veh</font></div> <hr> Not nor  "
 弘	húng <hr> Liberal, large
-弛	<div>(two words)</div>sz<div><br></div><div>zz (with above)</div><div>sá</div> <hr> To relax, cast off<div><br></div><div>Tired, fatigued</div>
+弛	<div>(two words)</div>sz<div>zz</div><div><br></div><div>sá</div> <hr> To relax, cast off<div><br></div><div>Tired, fatigued</div>
 弟	di <hr> <div>Younger brother</div><div><br></div><div>To act as a younger brother</div>
 弦	yin <hr> A string (as of a bow)
 弧	hú <hr> Pointed
@@ -2569,7 +2569,7 @@
 弭	mi <hr> Unbent, to stop, cease
 弱	záh <hr> Weary, tired
 張	tsáng <hr> To open, enlarge, a sheet
-強	"(two words)<div>gyáng (both)</div><div>ky'áng<br></div> <hr> Strong, violent<div><br></div><div>Fo force, compel</div>  "
+強	"(two words)<div>gyáng</div><br><div>ky'áng<br>gyáng</div> <hr> Strong, violent<div><br></div><div>Fo force, compel</div>  "
 强	"(two words)<div>gyáng</div><div>ky'áng</div> <hr> Strong, violent<div><br></div><div>To force, compel</div>  "
 弼	bih <hr> To assist
 彀	"<font color=""#ff0000"">k'oh</font><div>keu</div> <hr> Enough, able  "
@@ -2765,14 +2765,14 @@
 悴	dsöi <hr> Bitterly distressed
 惘	vong <hr> Perturbed mind, disconcerted (confused)
 惟	vi <hr> Only, meditate
-惡	<div>(Three words)</div>oh<div>ú</div> <hr> Evil, sin<div><br></div><div>To hate, to dislike</div><div>Why, how, an interjection of regret&nbsp;</div>
+惡	<div>(Three words)</div>oh<br><div>ú<br></div><div>ú<br></div> <hr> Evil, sin<div><br></div><div>To hate, to dislike</div><div>Why, how, an interjection of regret&nbsp;</div>
 惴	"ts'öi <hr> To fear, embarrassed  "
 惶	wong <hr> Fear, terror, hesitation
 惽	hwung <hr> Confused, stupid
 意	i <hr> Meaning, mind
 惹	zá <hr> To provoke, to induce
 感	"<font color=""#ff0000"">wóh</font><div>ken</div> <hr> To move, excite, grateful  "
-愒	"(Three words)<div>ky'i</div><div>ky'ih (with above)</div><div>k'e</div><div>h'öh</div> <hr> To cease, to rest a while, to take a breath<div><br></div><div>Urgent, to hurry</div><div><br></div><div>A mutual fear of one another</div>  "
+愒	"(Three words)<div>ky'i</div><div>ky'ih</div><br><div>k'e</div><br><div>h'öh</div> <hr> To cease, to rest a while, to take a breath<div><br></div><div>Urgent, to hurry</div><div><br></div><div>A mutual fear of one another</div>  "
 愜	"<font color=""#ff0000"">kw'ah</font><div>ky'ah</div><div>kyah</div> <hr> Satisfied  "
 愆	"ky'in <hr> Fault, mistake  "
 惸	gyúng <hr> Alone, without relatives
@@ -2924,14 +2924,14 @@
 扑	"p'óh <hr> To strike, to fall  "
 打	táng <hr> To strike
 扞	hön <hr> To ward off, defend
-㧃	seu <hr> Recieve
+㧃	seu <hr> Receive
 扛	kong <hr> To carry burdens
 扣	"k'eu <hr> To knock, discount, to look on  "
 托	"t'oh <hr> To trust, open up,<div>carry on the hand</div>  "
 扦	"ts'in <hr> To graft, put in  "
 𢳍	"ts'in <hr> To graft into, stick into  "
 扤	ngeh <hr> To move, shake
-扱	"ts'ah <hr> To recieve, raise up, help  "
+扱	"ts'ah <hr> To receive, raise up, help  "
 抓	tsau<div><br></div><div>tsá</div> <hr> To scratch
 找	tsau <hr> To make up, look for
 抄	"ts'au <hr> To copy, take out  "
@@ -2939,7 +2939,7 @@
 摺	"tseh<div><font color=""#ff0000"">zeh</font></div> <hr> To fold, wrinkled  "
 扯	"ts'á <hr> To rend, tear  "
 撦	"ts'á <hr> To rend, tear, force apart  "
-承	dsung <hr> To recieve, undertake, take a charge
+承	dsung <hr> To receive, undertake, take a charge
 扶	vú <hr> To assist, help
 抗	"k'ong <hr> To resist, rebel against  "
 抅	kyü <hr> To grasp, hinder
@@ -2975,7 +2975,7 @@
 抾	"ky'ü <hr> To grasp, lift up  "
 㧓	"w'ó<div>kwó</div> <hr> To lead, strike, grab  "
 拐	kwe<div><br></div><div>kwá</div> <hr> To seduce a swindler
-拉	"<div>(two words)</div>l'á (both)<div>lá (alt)</div><div><br></div><div>lah (only with first)</div> <hr> To pull<div><br></div><div>At, in, sign of past tense</div>  "
+拉	"<div>(two words)</div>l'á<div>lá</div><div>lah</div><div><br></div>l'á<br>lá <hr> To pull<div><br></div><div>At, in, sign of past tense</div>  "
 拎	"l'ing <hr> To take, to carry in the hand  "
 抹	meh <hr> To annoint
 拇	meu<div>mú</div> <hr> The thumb
@@ -3084,7 +3084,7 @@
 推	"(two words)<div>ts'öi</div><div><br></div><div>t'e</div> <hr> To infer from, to extend<div><br></div><div>To decline, refuse</div>  "
 採	"ts'e <hr> To pick, select  "
 采	"ts'e <hr> <div>To pluck, a colour</div><font color=""#ff0000"">To pick, select</font>  "
-接	tsih <hr> To accept, recieve
+接	tsih <hr> To accept, receive
 捷	dsih <hr> Swift, victorious
 措	"(two words)<div>ts'ú</div><div><br></div><div>djeh<br><font color=""#ff0000"">dsah</font></div> <hr> To arrange, employ<div><br></div><div>To pursue after and seize</div>  "
 捽	dseh<div>tsöh</div> <hr> To clinch, grasp
@@ -3241,7 +3241,7 @@
 擤	"h'ung <hr> To blow the nose  "
 擬	"ny'i <hr> To compare, intend, pronounce, decide  "
 擱	koh<div><br></div><div>goh</div> <hr> To put away on shelves
-擯	ping <hr> To expel, to recieve
+擯	ping <hr> To expel, to receive
 擠	tsi <hr> To crowd, push
 擲	dsuh<div><br></div><div>dsáh</div> <hr> To throw, push
 攄	"ky'ü <hr> To capture, take  "
@@ -3305,7 +3305,7 @@
 敷	fú <hr> To diffuse, spread out, sufficient
 敺	"<div>(two words)</div>ky'ü<div>eu</div> <hr> To expel, drive out<div><br></div><div><font color=""#ff0000"">To beat with fists</font></div>  "
 驅	"ky'ü <hr> To expel, urge  "
-數	(three words)<div>sú (for two of them)</div><div>soh</div> <hr> Number<div><br></div><div>To account</div><div><br></div><div>Worried, continuous care</div>
+數	(three words)<div>sú<br></div><div>sú<br></div><div>soh</div> <hr> Number<div><br></div><div>To account</div><div><br></div><div>Worried, continuous care</div>
 敵	dih <hr> Enemy, foe
 𢿫	tsung <hr> Adjust, repair
 斂	"lin<div><font color=""#ff0000"">sú</font></div> <hr> To collect, to place in a coffin  "
@@ -3336,7 +3336,7 @@
 斯	"sz<div><div><font color=""#ff0000"">zz</font></div></div> <hr> To split, this, that  "
 新	sing <hr> New, last
 斵	tsoh <hr> To cut, a knife
-斷	(three words)<div>dön (two words)</div><div>tön</div> <hr> To break, cut<div><br></div><div>Certainly</div><div><br></div><div>To shorten</div>
+斷	(three words)<div>dön<br></div><div>dön<br></div><div>tön</div> <hr> To break, cut<div><br></div><div>Certainly</div><div><br></div><div>To shorten</div>
 斸	tsoh <hr> To cut, a knife
 㫄	bong <hr> At the side
 旁	bong <hr> At the side<div><br></div><div>To lean, to depend on</div>
@@ -3474,13 +3474,13 @@
 曩	nong <hr> Formerly, previous
 曳	yi <hr> To drag, pull
 曲	"ky'óh <hr> Bent, a song  "
-更	(two words)<div>kung (both)</div><div><br></div><div>káng</div> <hr> To change, night watch<div><br></div><div>More</div>
+更	(two words)<div>kung</div><div><br></div><div>kung<br>káng</div> <hr> To change, night watch<div><br></div><div>More</div>
 曷	öh <hr> Why, what reason
 書	sû <hr> A book, to write
 曼	man <hr> Long, extended, fine
 曹	zau <hr> A judge, plural sign
 替	"t'i <hr> Abolish, substitute  "
-曾	(two words)<div>tsung</div><div>dsung</div><div>zung (with the 2nd)</div> <hr> To add, a name<div><br></div><div>Already</div>
+曾	(two words)<div>tsung<br></div><div>dsung</div><div>zung</div> <hr> To add, a name<div><br></div><div>Already</div>
 最	tsöi <hr> Very, collect
 有	yeu <hr> To have
 阴	"y'ung <hr> Shade, the female principle  "
@@ -3580,7 +3580,7 @@
 柩	gyeu <hr> A coffin
 柺	<div>kwe</div><div><br></div>kwá <hr> A cane, staff
 柜	kyü <hr> A table, counter
-櫃	<div>gwe</div><div>kyü (second word)<br></div><div><br></div>gyü (with first word) <hr> A closet, chest,<div><br></div><div>A table, counter</div>
+櫃	(two words)<div>gwe<br>gyü<br></div><div>kyü</div> <hr> A closet, chest<div><br></div><div>A table, counter</div>
 柳	lieu <hr> Willow tree
 某	meu <hr> A certain person, a fruit
 柰	ne<div><br><div>ni</div></div> <hr> A kind of plum, resource
@@ -3600,7 +3600,7 @@
 栻	suh <hr> A tree, pattern
 桌	tsoh <hr> Table
 株	tsû <hr> Classifier of trees, a post
-桁	<div>(two words)</div>yung<div><br></div><div>háng (with 1st)</div><div>hong</div> <hr> Purlines of roof (supporting horizontal beams)<div><br></div><div>A cangue (Peking)</div>
+桁	<div>(two words)</div>yung<div>háng<br></div><div>hong</div> <hr> Purlines of roof (supporting horizontal beams)<div><br></div><div>A cangue (Peking)</div>
 栩	hyü <hr> A sort of oak, soft
 核	"heh<div><br></div><div>weh</div><div><font color=""#ff0000"">ngeh</font></div> <hr> Kernel (seed), the fact, earnestly  "
 桓	wen <hr> Martial valour, tombstone
@@ -3609,7 +3609,7 @@
 栲	"k'au<div><br></div><div>k'eh</div> <hr> A willow basket or bucket  "
 栟	kyi <hr> A short piece of wood on the top of posts
 栔	"ky'i <hr> To carve  "
-校	<div>(two words)</div>kyau<div>kau (with the 1st)</div><div><br><div>yau</div></div> <hr> To compare, to collate<div><br></div><div>A highschool, gymnasium</div>
+校	<div>(two words)</div>kyau<div>kau</div><div><br><div>yau</div></div> <hr> To compare, to collate<div><br></div><div>A highschool, gymnasium</div>
 桔	kyih <hr> A water wheel, a fruit
 桀	gyih <hr> Hen roost, savage, harsh
 桕	gyeu <hr> The tallow tree
@@ -3912,7 +3912,7 @@
 殲	sin <hr> To kill, minute
 段	dön <hr> A piece
 殷	"y'ung <hr> Right, diligent  "
-殺	<div>(two words)</div><div>sah<br></div><div>se</div><div>sá (not sure with character)</div> <hr> To kill<div><br></div><div>to pare off (trim), reduce</div>
+殺	<div>(two words)</div><div>sah<br>sá<br></div><div>se</div><div>sá</div> <hr> To kill<div><br></div><div>to pare off (trim), reduce</div>
 殽	yau <hr> Mixed food, to confuse
 殼	"ky'áh<div><br></div><div>k'oh</div> <hr> Husk, skin of fruit  "
 毀	hwe <hr> Break down, demolish
@@ -4448,9 +4448,9 @@
 爬	bó <hr> To scratch
 爰	yön <hr> To lead, therefore
 管	kwen <hr> To rule, to govern<div><br></div><div>A tube, classifier<br></div>
-爲	"<div><font color=""#ff0000"">wöi</font> (none)</div>we <hr> To be, do<div><br></div><div>Because of, for</div>  "
-為	"<font color=""#ff0000"">wöi </font>(none)<div>we</div> <hr> To be, do<div><br></div><div>Because of, for</div>  "
-寪	"<font color=""#ff0000"">wöi</font>&nbsp;<div>we</div> <hr> To be, do<div><br></div><div>Because of, for</div>  "
+爲	"(two words)<div><font color=""#ff0000"">wöi</font></div>we<div><br></div><div><font color=""#ff0000"">wöi</font></div> <hr> To be, do<div><br></div><div>Because of, for</div>  "
+為	"(two words)<div><font color=""#ff0000"">wöi</font></div>we<div><br></div><div><font color=""#ff0000"">wöi</font></div> <hr> To be, do<div><br></div><div>Because of, for</div>  "
+寪	"(two words)<div><font color=""#ff0000"">wöi</font></div>we<div><br></div><div><font color=""#ff0000"">wöi</font></div> <hr> To be, do<div><br></div><div>Because of, for</div>  "
 爵	tsiáh <hr> Cup, rank of nobility
 爸	pá<div>pó</div><div><br></div><div>páh</div> <hr> A father
 爹	ti<div><br></div><div>tiá</div> <hr> A grandfather
@@ -4700,7 +4700,7 @@
 𤰞	pe <hr> Base, vulgar
 甾	"<font color=""#ff0000"">tsz</font> <hr> Uncultivated field  "
 画	"<div><font color=""#ff0000"">wah</font></div><div><font color=""#ff0000"">wá</font></div><div><br></div>wó <hr> A picture  "
-畫	"<font color=""#ff0000"">wah</font><div><font color=""#ff0000"">wá (with second)</font></div><div><br></div><div>wó</div> <hr> To draw a line, a stroke<div><br></div><div>A picture, to paint</div>  "
+畫	"<div>(two words)</div>wó<br><font color=""#ff0000"">wah</font><div><br></div>wó<br><font color=""#ff0000"">wah</font><br><font color=""#ff0000"">wá</font> <hr> To draw a line, a stroke<br>A picture, to paint "
 畐	fóh <hr> Full, a roll of cloth
 畊	kung<div><br></div><div>káng</div> <hr> To cultivate, till, plow
 耕	kung<div><br></div><div>káng</div> <hr> To cultivate, till, plow
@@ -4886,7 +4886,7 @@
 盔	"kw'e <hr> A helmet  "
 盜	dau <hr> To rob, a thief
 盗	dau <hr> To rob, a thief
-盛	"<div>(two words)</div>zung (for both)<div><font color=""#ff0000"">záng (?)</font></div> <hr> Abundant<div><br></div><div>To put in, deposit, cup</div>  "
+盛	"<div>(two words)</div>zung<div><div><br></div>zung<br><font color=""#ff0000"">záng</font></div> <hr> Abundant<div><br></div><div>To put in, deposit, cup</div>  "
 盞	tsan <hr> Lamp bowl, wine cup
 盟	mung<div><br></div><div>ming</div> <hr> An oath, a covenant
 𥂁	yin <hr> Salt
@@ -5002,7 +5002,7 @@
 矯	kyau <hr> Proud, haughty
 矰	tsung <hr> A dart, javelin
 矱	"w'óh <hr> A marking line (criteria, standard)  "
-矼	"<div>(two words)</div>ky'áng<div>k'úng</div><div>kong (2nd word)</div> <hr> Reliable<div><br></div><div>A bridge with steps</div>  "
+矼	"<div>(two words)</div>ky'áng<div>k'úng</div><div><br></div>ky'áng<div>k'úng</div><div>kong</div> <hr> Reliable<div><br></div><div>A bridge with steps</div>  "
 矻	"kw'eh <hr> Laborious, diligent  "
 𥐝	tih <hr> Pound to a paste
 砆	fú <hr> Inferior gem
@@ -5464,7 +5464,7 @@
 絢	hyön<div>yön</div> <hr> Adorned, variegated, coloured
 級	kyih<div><br></div><div>kyuh</div> <hr> Steps, series
 紟	kyung <hr> A tape, sash
-納	"<font color=""#ff0000"">náh</font><div><br></div><div>neh</div> <hr> To recieve, give  "
+納	"<font color=""#ff0000"">náh</font><div><br></div><div>neh</div> <hr> To receive, give  "
 紐	nyeu <hr> A button, knot
 紗	só <hr> A thread
 紓	sû <hr> Slowly, little by little
@@ -5600,7 +5600,7 @@
 縷	lü <hr> Silk thread
 縵	man <hr> Plain, simple
 縻	mi <hr> Bind
-繆	<div>(two words)</div>meu<div>mieu</div><div>móh (second word)</div> <hr> Error, mistake, surname<div><br>Beautiful</div>
+繆	<div>(two words)</div>meu<div>mieu</div><div><br></div><div>móh</div> <hr> Error, mistake, surname<div><br>Beautiful</div>
 縹	"p'iau <hr> Blue greenish silk  "
 繅	sau <hr> To wind silk
 縮	sóh<div><br></div><div>soh</div> <hr> To turn back
@@ -6227,7 +6227,7 @@
 薑	kyáng <hr> Ginger
 薟	lin<div><br></div><div>hyin</div> <hr> Medicinal plant
 薜	bi <hr> A herb, celery
-薄	lin(?)<div>(two words)</div><div>bóh</div><div>póh</div><div>bú(?)</div> <hr> Thin, stingy, a reed screen<div><br></div><div>Near at hand</div>
+薄	<div>(two words)</div><font color=""#ff0000"">lin</font><br><font color=""#ff0000"">bú</font><div>bóh</div><div><br></div><div>póh</div><font color=""#ff0000"">lin</font><br><font color=""#ff0000"">bú</font> <hr> Thin, stingy, a reed screen<div><br></div><div>Near at hand</div>
 薩	sah<div><br></div><div>soh</div> <hr> An idol, image
 薛	sih <hr> A name
 薔	ziáng <hr> A flower
@@ -6282,7 +6282,7 @@
 虐	nyáh <hr> Fierce
 虓	"hyau <hr> Tiger's growl  "
 虔	gyin <hr> To kill, act with reverence
-䖏	"ts'û (for both)<div><font color=""#ff0000"">hyü</font></div> <hr> A place<div><br></div><div>To dwell, to judge</div>  "
+䖏	"(two words)<br>ts'û<div><br></div>ts'û<div><font color=""#ff0000"">hyü</font></div> <hr> A place<div><br></div><div>To dwell, to judge</div>  "
 虖	"<div>h'ú<br></div> <hr> Scream of a tiger  "
 虛	hyü <hr> False, unreal
 䖑	mih <hr> A white tiger
@@ -6503,7 +6503,7 @@
 襪	meh<div>mah</div> <hr> Socks, stockings
 袤	meu <hr> A waist
 袍	bau <hr> A gown, robe
-被	"<font color=""#ff0000"">p'e</font><div>(two words)</div><div>be (both)</div><div><br></div><div>bi (1st)</div> <hr> A quilt, to suffer, sign of passive<div><br></div><div>To cover</div>  "
+被	"(two words)<br><font color=""#ff0000"">p'e</font><div>be<br>bi</div><div><br></div><font color=""#ff0000"">p'e</font><div>be</div> <hr> A quilt, to suffer, sign of passive<div><br></div><div>To cover</div>  "
 袖	zieu <hr> A sleeve
 袋	de <hr> A satchel, bag
 袒	"t'an <hr> To strip bare  "
@@ -6619,7 +6619,7 @@
 觚	kú <hr> A wine vase, a corner
 觝	ti <hr> To gore, butt
 觜	<div>(two words)</div>tsöi<div>tsz</div><div><br></div>tsöi <hr> 31st zodiacal constellation<div><br></div><div>To look incensed, a beak</div>
-解	<div>(three words)</div>kyá<br>ka<div><br></div><div>ká</div><div>ye</div> <hr> To open, extricate<div><br></div><div>To transmit</div><div><br></div><div>Proper name</div>
+解	<div>(three words)</div>kyá<br>ka<div><br></div><div>ká</div><div><br></div><div>ye</div> <hr> To open, extricate<div><br></div><div>To transmit</div><div><br></div><div>Proper name</div>
 觧	<div>(two words)</div>kyá<br>ká<div><br></div><div>ká</div> <hr> To open, extricate<div><br></div><div>To transmit</div>
 觥	kwung<div>kúng</div> <hr> A winejar
 觫	sóh <hr> To start, tremble
@@ -6850,7 +6850,7 @@
 貪	"t'en <hr> To covet  "
 責	tsuh<div><br></div><div>tsáh</div> <hr> To upbraid, a duty
 貯	dsü <hr> To store up
-費	"<font color=""#ff0000"">pi</font><div>(two words)</div><div>fi</div><div>vi</div> <hr> Vast extensive<div><br></div><div>A name</div>  "
+費	"(two words)<br><font color=""#ff0000"">pi</font><div>fi</div><div><br></div><font color=""#ff0000"">pi</font><div>vi</div> <hr> Vast extensive<div><br></div><div>A name</div>  "
 賀	hú <hr> To congratulate, to present
 貺	hwong <hr> To give, contribute
 貽	i <hr> Bequest (legacy)
@@ -7137,10 +7137,10 @@
 近	gyung <hr> Near, recent<div><br></div><div>To come near</div>
 迕	hú <hr> Obstinate, perverse
 迓	yá <hr> To go out to greet one
-迎	nyung <hr> To meet, to recieve<div><br></div><div>To invite</div>
+迎	nyung <hr> To meet, to receive<div><br></div><div>To invite</div>
 还	wan <hr> To return, repay
-還	"<div>(two words)</div><div><font color=""#ff0000"">han</font></div>h'ai (<font color=""#ff0000"">h'e</font>)<div>wan</div><div>zin (2nd)</div> <hr> To return, still, now<div><br></div><div>To revolve</div>  "
-迤	"i<div>h'ai (<font color=""#ff0000"">h'e</font>)</div> <hr> To walk awkardly  "
+還	"<div>(two words)</div><div><font color=""#ff0000"">han</font></div>h'ai<br><font color=""#ff0000"">h'e</font><div>wan</div><div><br></div><div>zin</div> <hr> To return, still, now<div><br></div><div>To revolve</div>  "
+迤	"i<div>h'ai<br><font color=""#ff0000"">h'e</font></div> <hr> To walk awkardly  "
 迦	gyá<div>kyá</div><div><br></div><div>gá</div><div>ká</div> <hr> Used in names
 迥	kyúng <hr> Remote, waste, void
 述	dseh <hr> To narrate, tell
@@ -7211,7 +7211,7 @@
 遮	tsó <hr> To cover, secret
 遲	dsz <hr> To delay, late, slow
 遨	ngau <hr> To ramble, saunter, to go to
-適	"<font color=""#ff0000"">kwah&nbsp;</font><div>(two words)</div><div>suh</div><div>tih</div> <hr> To satisfy, accord, just now<div><br></div><div>To clarify, direct</div>  "
+適	"<div>(two words)</div><font color=""#ff0000"">kwah</font><div>suh</div><div><br></div><font color=""#ff0000"">kwah</font><div>tih</div> <hr> To satisfy, accord, just now<div><br></div><div>To clarify, direct</div>  "
 遯	dung <hr> To hide, obscure
 遭	tsau <hr> To meet, happen, occur
 遴	ling <hr> Covetous<div><br></div><div>To select</div>
@@ -7262,7 +7262,7 @@
 蹱	"<font color=""#ff0000"">tsúng</font> <hr> <font color=""#ff0000"">To stagger, fall</font>  "
 邙	mong <hr> An uninhabited place
 邢	yung <hr> An ancient principality
-那	"<font color=""#ff0000"">nan</font><div><font color=""#ff0000"">náng</font></div><div>(three words)</div><div>nú (1st)</div><div>ná (2nd and 3rd)</div><div><br></div><div>há (2nd)</div><div>á (2nd)</div> <hr> An ancient state<div><br></div><div>That, then, what, which</div><div><br></div><div>A vocative (to call), ah</div>  "
+那	"(three words)<br><div>nú</div><div><br></div><font color=""#ff0000"">nan</font><div><font color=""#ff0000"">náng</font><div>ná</div><div>há</div><div>á</div><div><br></div><font color=""#ff0000"">nan</font><div><font color=""#ff0000"">náng</font><br>ná <hr> An ancient state<div><br></div><div>That, then, what, which</div><div><br></div><div>A vocative (to call), ah</div>  "
 邦	pong <hr> State, country
 邠	ping <hr> A place in Shensi
 邪	<div>(two words)</div>zie<br>ziá<div><br></div><div>yá</div> <hr> Heterodox, vicious, evil<div><br></div><div>Final particle</div>
@@ -7509,7 +7509,7 @@
 閆	nyin <hr> A hamlet, hamlet gate
 閻	nyin <hr> <div>The gate of a village</div>A hamlet, hamlet gate
 閑	yan<div><br></div><div>han</div> <hr> To restrain, leisure
-閒	"<div><font color=""#ff0000"">yin</font></div><div><font color=""#ff0000"">yen</font></div>(three words)<div>yan (1st)</div><div>kyin (2nd and 3rd)</div><div><br></div><div>han (1st)</div><div>kan (2nd)</div> <hr> Leisure, idleness<div><br></div><div>Space, a limit, room</div><div><br></div><div>To cause to separate</div>  "
+閒	"(three words)<div>yan<br>han</div><div><br></div><div>kyin<br>kan</div><div><br></div>kyin <hr> Leisure, idleness<div><br></div><div>Space, a limit, room</div><div><br></div><div>To cause to separate</div>  "
 間	<div>(two words)</div>kan<br>kyin<div><br></div><div>kan</div> <hr> Space, a limit, room<div><br></div><div>To sunder, to alternate</div>
 閏	zung<div><br></div><div>nyung</div> <hr> Intercalary (insertion of leap day/year), extra
 開	"k'e <hr> To open, explain  "
@@ -7565,7 +7565,7 @@
 陀	dú <hr> Rugged paths
 阽	nyin <hr> Dangerous, ready to fall
 限	yin<div><br></div><div>yan</div><div>han</div> <hr> A boundary, limit
-降	kyáng<div>hong (2nd)<br></div><div><br></div><div>kong (1st)</div> <hr> To descend, come down<div><br></div><div>To submit, return to loyalty</div>
+降	kyáng<div>kong<br></div><div><br></div><div>kyáng<br>hong</div> <hr> To descend, come down<div><br></div><div>To submit, return to loyalty</div>
 陋	leu <hr> Ugly, low, base
 陌	muh<div><br></div><div>máh</div><div>páh</div> <hr> East and West road, a stranger
 陣	dsung <hr> To array, an army
@@ -7800,7 +7800,7 @@
 飥	"t'oh <hr> A bun, a cake  "
 飭	"ts'uh <hr> To direct  "
 䬩	tsá<div><br></div><div>tse</div> <hr> Fasting
-飯	"<font color=""#ff0000"">fan</font><div><br></div><div>van (both)</div> <hr> Boiled rice<div><br></div><div>To eat</div>  "
+飯	"<font color=""#ff0000"">fan</font><br>van<div><br></div><div>van</div> <hr> Boiled rice<br><div>To eat</div>  "
 飪	zung <hr> Fully seasoned and cooked
 飱	sung <hr> An evening meal, supper
 飩	dung <hr> A meat cake or ball
