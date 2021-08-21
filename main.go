@@ -331,7 +331,11 @@ func makeSearchOutput(query string, sources []string, count uint64, ids []string
 func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 	prettyDefs := make([]string, len(e.definitions))
 	for i, def := range e.definitions {
-		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), strings.Join(def.meanings, "\n"))
+		prettyMeaning := "_Meaning unknown_"
+		if len(def.meanings) > 0 {
+			prettyMeaning = strings.Join(def.meanings, "\n")
+		}
+		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), prettyMeaning)
 	}
 
 	return &discordgo.MessageEmbed{
