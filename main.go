@@ -269,7 +269,7 @@ func makeSearchOutput(query string, sources []string, count uint64, ids []string
 
 		selectMenuOptions = append(selectMenuOptions, discordgo.SelectMenuOption{
 			Label:       fmt.Sprintf("%s (%s)", entry.word, strings.Join(readings, ", ")),
-			Description: truncate(strings.Join(meanings, ", "), 100, "..."),
+			Description: truncate(strings.Join(meanings, "; "), 100, "..."),
 			Value:       id,
 		})
 	}
@@ -331,7 +331,7 @@ func makeSearchOutput(query string, sources []string, count uint64, ids []string
 func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 	prettyDefs := make([]string, len(e.definitions))
 	for i, def := range e.definitions {
-		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), strings.Join(def.meanings, ", "))
+		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), strings.Join(def.meanings, "\n"))
 	}
 
 	return &discordgo.MessageEmbed{
