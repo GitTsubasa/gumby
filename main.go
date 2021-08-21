@@ -134,13 +134,18 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			hasNext = true
 		}
 
-		entries, err := b.findEntries(ctx, results)
+		resultIDs := make([]string, len(results))
+		for i, r := range results {
+			resultIDs[i] = r.id
+		}
+
+		entries, err := b.findEntries(ctx, resultIDs)
 		if err != nil {
 			log.Printf("Failed to find entries: %s", err)
 			return
 		}
 
-		searchOutput, err := makeSearchOutput(payload.Query, payload.Sources, count, results, entries, payload.Page, hasNext)
+		searchOutput, err := makeSearchOutput(payload.Query, payload.Sources, count, resultIDs, entries, payload.Page, hasNext)
 		if err != nil {
 			log.Printf("Failed to make search output: %s", err)
 			return
@@ -185,7 +190,13 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 	}
 }
 
-func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]string, uint64, error) {
+type result struct {
+	id         string
+	word       string
+	sourceCode string
+}
+
+func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]result, uint64, error) {
 	meaningMatch := bleve.NewMatchPhraseQuery(query)
 	meaningMatch.SetField("definitions.meanings")
 
@@ -204,18 +215,23 @@ func (b *bot) lookup(ctx context.Context, query string, sources []string, limit 
 	req := bleve.NewSearchRequest(bleve.NewDisjunctionQuery(meaningMatch, readingsMatch, readingsNoDiacriticsMatch, wordMatch, simplifiedMatch))
 	req.Size = limit
 	req.From = offset
+	req.Fields = []string{"word", "source_code"}
 
 	r, err := b.index.Search(req)
 	if err != nil {
 		return nil, 0, err
 	}
 
-	ids := make([]string, len(r.Hits))
+	results := make([]result, len(r.Hits))
 	for i, hit := range r.Hits {
-		ids[i] = hit.ID
+		results[i] = result{
+			id:         hit.ID,
+			word:       hit.Fields["word"].(string),
+			sourceCode: hit.Fields["source_code"].(string),
+		}
 	}
 
-	return ids, r.Total, nil
+	return results, r.Total, nil
 }
 
 func truncate(s string, length int, ellipsis string) string {
@@ -395,27 +411,32 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
 		hasNext = true
 	}
 
-	entries, err := b.findEntries(ctx, results)
+	resultIDs := make([]string, len(results))
+	for i, r := range results {
+		resultIDs[i] = r.id
+	}
+
+	entries, err := b.findEntries(ctx, resultIDs)
 	if err != nil {
 		log.Printf("Failed to find meanings: %s", err)
 		return
 	}
 
-	searchOutput, err := makeSearchOutput(query, sources, count, results, entries, 0, hasNext)
+	searchOutput, err := makeSearchOutput(query, sources, count, resultIDs, entries, 0, hasNext)
 	if err != nil {
 		log.Printf("Failed to make search output: %s", err)
 		return
 	}
 
 	var embeds []*discordgo.MessageEmbed
-	if len(results) == 1 {
-		entries, err := b.findEntries(ctx, results)
+	if len(results) == 1 || len(results) > 0 && results[0].word == query {
+		entries, err := b.findEntries(ctx, resultIDs)
 		if err != nil {
 			log.Printf("Failed to get entries: %s", err)
 			return
 		}
 
-		entry, ok := entries[results[0]]
+		entry, ok := entries[resultIDs[0]]
 		if !ok {
 			log.Printf("Failed to get definitions")
 			return
