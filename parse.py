@@ -115,7 +115,7 @@ with open('dict.txt') as f:
         if not any('(' in r for r in readings):
             # this case is easy!
             readings = sorted([r for r in readings if r])
-            entry = Entry(word, [simplified], 'c', [Definition(readings, [replace_diacritics(reading) for reading in readings], [c for r in meanings if r for c in safe_split(r)])])
+            entry = Entry(word, [simplified], 'c', [Definition(readings, [replace_diacritics(reading) for reading in readings], [m.strip() for m in meanings if m.strip()])])
             out.append(entry)
             continue
 
@@ -169,7 +169,7 @@ with open('dict.txt') as f:
                 print('UNKNOWN', word, meaning_groups, f'{expected_groups} expected meaning groups', file=sys.stderr)
                 continue
 
-            meaning_groups = [[w for c in g for w in safe_split(c)] for g in meaning_groups]
+            meaning_groups = [[w.strip() for w in g if w.strip()] for g in meaning_groups]
             meaning_groups = [mg if mg != ['-'] else [] for mg in meaning_groups]
 
             if len(reading_groups) != len(meaning_groups):
