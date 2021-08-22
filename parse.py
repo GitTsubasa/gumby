@@ -98,7 +98,7 @@ occ = opencc.OpenCC('t2s')
 
 with open('dict.txt') as f:
     rd = csv.reader(f, delimiter="\t", quotechar='"')
-    for row in rd:
+    for i, row in enumerate(rd):
         word, rest = row
 
         raw_readings, raw_meanings = rest.split('<hr>')
@@ -106,7 +106,7 @@ with open('dict.txt') as f:
         simplified = occ.convert(word)
 
         if len(word) > 1:
-            print('WEIRD', word, file=sys.stderr)
+            print(i + 1, 'WEIRD', word, file=sys.stderr)
 
         readings =  [r.strip() for r in text_maker.handle(raw_readings.replace('<font', '*<font')).replace('\n\n', '\n').strip().split('\n')]
         meanings = [r.strip() for r in text_maker.handle(raw_meanings).replace('\n\n', '\n').strip().split('\n')]
@@ -123,7 +123,7 @@ with open('dict.txt') as f:
         if readings[0][0] == '(':
             if any('(' in r for r in readings[1:]):
                 # handle this later
-                print('SKIPPED', word, readings, meanings, file=sys.stderr)
+                print(i + 1, 'SKIPPED', word, readings, meanings, file=sys.stderr)
                 continue
 
             if readings[0].lower() == '(two words)' or readings[0].lower() == '(two different words)':
@@ -137,7 +137,7 @@ with open('dict.txt') as f:
             elif 'both' in readings[0].lower():
                 expected_groups = 1
             else:
-                print('SKIPPED', word, readings, meanings, file=sys.stderr)
+                print(i + 1, 'SKIPPED', word, readings, meanings, file=sys.stderr)
 
             # reading groups
             reading_groups = group_lines(readings[1:])
@@ -151,7 +151,7 @@ with open('dict.txt') as f:
                 reading_groups = [[reading_groups[0][0]] for _ in range(expected_groups)]
 
             if len(reading_groups) != expected_groups:
-                print('UNKNOWN', word, reading_groups, f'{expected_groups} expected reading groups', file=sys.stderr)
+                print(i + 1, 'UNKNOWN', word, reading_groups, f'{expected_groups} expected reading groups', file=sys.stderr)
                 continue
 
             # meaning groups
@@ -166,7 +166,7 @@ with open('dict.txt') as f:
                 meaning_groups = [[meaning_groups[0][0]] for _ in range(expected_groups)]
 
             if len(meaning_groups) != expected_groups:
-                print('UNKNOWN', word, meaning_groups, f'{expected_groups} expected meaning groups', file=sys.stderr)
+                print(i + 1, 'UNKNOWN', word, meaning_groups, f'{expected_groups} expected meaning groups', file=sys.stderr)
                 continue
 
             meaning_groups = [[w.strip() for w in g if w.strip()] for g in meaning_groups]
@@ -181,7 +181,7 @@ with open('dict.txt') as f:
             continue
 
         # Multiple readings, funny handling
-        print('SKIPPED', word, readings, meanings, file=sys.stderr)
+        print(i + 1, 'SKIPPED', word, readings, meanings, file=sys.stderr)
 
 
 with open('dict.ndjson', 'a') as f:

@@ -4962,7 +4962,7 @@
 {"word": "瞑", "simplified": ["瞑"], "source_code": "c", "definitions": [{"readings": ["ming"], "readings_no_diacritics": ["ming"], "meanings": ["To close the eye"]}]}
 {"word": "瞍", "simplified": ["瞍"], "source_code": "c", "definitions": [{"readings": ["seu"], "readings_no_diacritics": ["seu"], "meanings": ["Blind from having no pupil"]}]}
 {"word": "𥊃", "simplified": ["𥊃"], "source_code": "c", "definitions": [{"readings": ["múng"], "readings_no_diacritics": ["moong"], "meanings": ["Obscure, dim"]}]}
-{"word": "𥉕?", "simplified": ["𥉕?"], "source_code": "c", "definitions": [{"readings": ["kwan"], "readings_no_diacritics": ["kwan"], "meanings": ["To see, sight"]}]}
+{"word": "𥉕", "simplified": ["𥉕"], "source_code": "c", "definitions": [{"readings": ["kwan"], "readings_no_diacritics": ["kwan"], "meanings": ["To see, sight"]}]}
 {"word": "瞠", "simplified": ["瞠"], "source_code": "c", "definitions": [{"readings": ["dong", "ts'ung"], "readings_no_diacritics": ["dong", "tshung"], "meanings": ["To fix the eyes on"]}]}
 {"word": "瞖", "simplified": ["瞖"], "source_code": "c", "definitions": [{"readings": ["i"], "readings_no_diacritics": ["i"], "meanings": ["A film on the eye"]}]}
 {"word": "瞞", "simplified": ["瞒"], "source_code": "c", "definitions": [{"readings": ["men"], "readings_no_diacritics": ["men"], "meanings": ["To cover up"]}]}
@@ -5061,7 +5061,7 @@
 {"word": "磐", "simplified": ["磐"], "source_code": "c", "definitions": [{"readings": ["ben"], "readings_no_diacritics": ["ben"], "meanings": ["A rock"]}]}
 {"word": "磅", "simplified": ["磅"], "source_code": "c", "definitions": [{"readings": ["bong", "pong"], "readings_no_diacritics": ["bong", "pong"], "meanings": ["Small stones, gravel"]}]}
 {"word": "磉", "simplified": ["磉"], "source_code": "c", "definitions": [{"readings": ["song"], "readings_no_diacritics": ["song"], "meanings": ["Stone base for a post"]}]}
-{"word": "磖?", "simplified": ["磖?"], "source_code": "c", "definitions": [{"readings": ["t'ah"], "readings_no_diacritics": ["thah"], "meanings": ["To beat (as rice)"]}]}
+{"word": "磖", "simplified": ["磖"], "source_code": "c", "definitions": [{"readings": ["t'ah"], "readings_no_diacritics": ["thah"], "meanings": ["To beat (as rice)"]}]}
 {"word": "磋", "simplified": ["磋"], "source_code": "c", "definitions": [{"readings": ["ts'ú"], "readings_no_diacritics": ["tshoo"], "meanings": ["To grind"]}]}
 {"word": "磁", "simplified": ["磁"], "source_code": "c", "definitions": [{"readings": ["dsz"], "readings_no_diacritics": ["dsz"], "meanings": ["China ware, a magnet"]}]}
 {"word": "𥔵", "simplified": ["𥔵"], "source_code": "c", "definitions": [{"readings": ["dsz"], "readings_no_diacritics": ["dsz"], "meanings": ["China ware, a magnet"]}]}

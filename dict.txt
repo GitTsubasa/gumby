@@ -4962,7 +4962,7 @@
 瞑	ming <hr> To close the eye
 瞍	seu <hr> Blind from having no pupil
 𥊃	múng <hr> Obscure, dim
-𥉕?	kwan <hr> To see, sight
+𥉕	kwan <hr> To see, sight
 瞠	"ts'ung<div><br></div><div>dong</div> <hr> To fix the eyes on  "
 瞖	i <hr> A film on the eye
 瞞	men <hr> To cover up
@@ -5061,7 +5061,7 @@
 磐	ben <hr> A rock
 磅	<div>bong</div><div><br></div>pong <hr> Small stones, gravel
 磉	song <hr> Stone base for a post
-磖?	"t'ah <hr> To beat (as rice)  "
+磖	"t'ah <hr> To beat (as rice)  "
 磋	"ts'ú <hr> To grind  "
 磁	dsz <hr> China ware, a magnet
 𥔵	dsz <hr> China ware, a magnet
