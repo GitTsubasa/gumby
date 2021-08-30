@@ -6123,7 +6123,7 @@
 {"word": "葭", "simplified": ["葭"], "source_code": "c", "definitions": [{"readings": ["kyá"], "readings_no_diacritics": ["kyaa"], "meanings": ["A bulrush (wetland shrub)"]}]}
 {"word": "葛", "simplified": ["葛"], "source_code": "c", "definitions": [{"readings": ["köh"], "readings_no_diacritics": ["koeh"], "meanings": ["A creeper, a relative"]}]}
 {"word": "葵", "simplified": ["葵"], "source_code": "c", "definitions": [{"readings": ["gwe"], "readings_no_diacritics": ["gwe"], "meanings": ["Sunflower"]}]}
-{"word": "落", "simplified": ["落"], "source_code": "c", "definitions": [{"readings": [], "readings_no_diacritics": [], "meanings": ["To fall, drop, a place"]}]}
+{"word": "落", "simplified": ["落"], "source_code": "c", "definitions": [{"readings": ["loh"], "readings_no_diacritics": ["loh"], "meanings": ["To fall, drop, a place"]}]}
 {"word": "萼", "simplified": ["萼"], "source_code": "c", "definitions": [{"readings": ["ngoh"], "readings_no_diacritics": ["ngoh"], "meanings": ["Receptacle of a flower"]}]}
 {"word": "葩", "simplified": ["葩"], "source_code": "c", "definitions": [{"readings": ["p'ó"], "readings_no_diacritics": ["pho"], "meanings": ["A flower"]}]}
 {"word": "葆", "simplified": ["葆"], "source_code": "c", "definitions": [{"readings": ["pau"], "readings_no_diacritics": ["pau"], "meanings": ["Luxuriant"]}]}
