@@ -211,7 +211,15 @@ func fieldToStringList(v interface{}) []string {
 	if ok {
 		return []string{single}
 	}
-	return v.([]string)
+
+	fields := v.([]interface{})
+	out := make([]string, len(fields))
+
+	for i, f := range fields {
+		out[i] = f.(string)
+	}
+
+	return out
 }
 
 func (b *bot) lookup(ctx context.Context, q string, source string, limit int, offset int) ([]result, uint64, error) {
