@@ -32,7 +32,7 @@ const (
 
 type entry struct {
 	word        string
-	sourceName  string
+	source      string
 	definitions []definition
 }
 
@@ -70,7 +70,7 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 
 				e.definitions[int(arrayPositions[0])].readings = append(e.definitions[int(arrayPositions[0])].readings, string(f.Value()))
 			case "source":
-				e.sourceName = sources[string(f.Value())]
+				e.source = string(f.Value())
 			}
 		})
 
@@ -314,7 +314,7 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 	return &discordgo.MessageEmbed{
 		Title:       e.word,
 		Color:       0x005BAC,
-		Description: fmt.Sprintf("%s\n\n_%s_", strings.Join(prettyDefs, "\n\n"), e.sourceName),
+		Description: fmt.Sprintf("%s\n\n_%s_", strings.Join(prettyDefs, "\n\n"), sources[e.source]),
 		Footer: &discordgo.MessageEmbedFooter{
 			Text: "www.shanghaivernacular.com",
 		},
