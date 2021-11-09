@@ -390,7 +390,7 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 				sb.WriteRune(sr)
 				simplifiedDiffers = true
 			} else {
-				sb.WriteRune('-')
+				sb.WriteRune('〃')
 			}
 		}
 
