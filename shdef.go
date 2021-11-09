@@ -70,7 +70,7 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 
 				e.definitions[int(arrayPositions[0])].readings = append(e.definitions[int(arrayPositions[0])].readings, string(f.Value()))
 			case "source":
-				e.sourceName = b.sourceNames[string(f.Value())]
+				e.sourceName = sources[string(f.Value())]
 			}
 		})
 

@@ -24,9 +24,8 @@ type config struct {
 }
 
 type bot struct {
-	index       bleve.Index
-	discord     *discordgo.Session
-	sourceNames map[string]string
+	index   bleve.Index
+	discord *discordgo.Session
 }
 
 func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
@@ -45,12 +44,9 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 	}
 }
 
-var sources = []struct {
-	name        string
-	description string
-}{
-	{"characters", "Chinese characters used between 1870–1910"},
-	{"republican", "Formal Republican terms"},
+var sources = map[string]string{
+	"char":  "Chinese characters used between 1870–1910",
+	"repub": "Formal Republican terms",
 }
 
 func main() {
@@ -100,10 +96,10 @@ func main() {
 			},
 		},
 	}
-	for _, s := range sources {
+	for k, v := range sources {
 		commands = append(commands, &discordgo.ApplicationCommand{
-			Name:        s.name,
-			Description: "Look up in dictionary: " + s.description,
+			Name:        k,
+			Description: "Look up in dictionary: " + v,
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
