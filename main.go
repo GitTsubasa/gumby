@@ -34,9 +34,9 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 		name := i.ApplicationCommandData().Name
 		switch name {
 		case "def":
-			b.handleShdef(ctx, i, nil)
+			b.handleShdef(ctx, i, "")
 		default:
-			b.handleShdef(ctx, i, []string{name})
+			b.handleShdef(ctx, i, name)
 		}
 
 	case discordgo.InteractionMessageComponent:

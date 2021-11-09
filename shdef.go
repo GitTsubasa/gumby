@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/blevesearch/bleve/v2"
+	"github.com/blevesearch/bleve/v2/search/query"
 	index "github.com/blevesearch/bleve_index_api"
 	"github.com/bwmarrin/discordgo"
 
@@ -20,9 +21,9 @@ import (
 )
 
 type shdefActionGoToPage struct {
-	Query   string   `json:"query"`
-	Sources []string `json:"sources"`
-	Page    int      `json:"page"`
+	Query  string `json:"query"`
+	Source string `json:"source"`
+	Page   int    `json:"page"`
 }
 
 const (
@@ -95,7 +96,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		results, count, err := b.lookup(ctx, payload.Query, payload.Sources, queryLimit+1, payload.Page*queryLimit)
+		results, count, err := b.lookup(ctx, payload.Query, payload.Source, queryLimit+1, payload.Page*queryLimit)
 		if err != nil {
 			log.Printf("Failed to find words: %s", err)
 			return
@@ -118,7 +119,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		searchOutput, err := makeSearchOutput(payload.Query, payload.Sources, count, resultIDs, entries, payload.Page, hasNext)
+		searchOutput, err := makeSearchOutput(payload.Query, payload.Source, count, resultIDs, entries, payload.Page, hasNext)
 		if err != nil {
 			log.Printf("Failed to make search output: %s", err)
 			return
@@ -169,23 +170,30 @@ type result struct {
 	source string
 }
 
-func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]result, uint64, error) {
-	meaningMatch := bleve.NewMatchPhraseQuery(query)
+func (b *bot) lookup(ctx context.Context, q string, source string, limit int, offset int) ([]result, uint64, error) {
+	meaningMatch := bleve.NewMatchPhraseQuery(q)
 	meaningMatch.SetField("definitions.meanings")
 
-	readingsMatch := bleve.NewMatchPhraseQuery(query)
+	readingsMatch := bleve.NewMatchPhraseQuery(q)
 	readingsMatch.SetField("definitions.readings")
 
-	readingsNoDiacriticsMatch := bleve.NewMatchPhraseQuery(query)
+	readingsNoDiacriticsMatch := bleve.NewMatchPhraseQuery(q)
 	readingsNoDiacriticsMatch.SetField("definitions.readings_no_diacritics")
 
-	wordMatch := bleve.NewMatchPhraseQuery(query)
+	wordMatch := bleve.NewMatchPhraseQuery(q)
 	wordMatch.SetField("word")
 
-	simplifiedMatch := bleve.NewMatchPhraseQuery(query)
+	simplifiedMatch := bleve.NewMatchPhraseQuery(q)
 	simplifiedMatch.SetField("simplified")
 
-	req := bleve.NewSearchRequest(bleve.NewDisjunctionQuery(meaningMatch, readingsMatch, readingsNoDiacriticsMatch, wordMatch, simplifiedMatch))
+	var sourceMatch query.Query = bleve.NewMatchAllQuery()
+	if source != "" {
+		realSourceMatch := bleve.NewMatchPhraseQuery(source)
+		realSourceMatch.SetField("source")
+		sourceMatch = realSourceMatch
+	}
+
+	req := bleve.NewSearchRequest(bleve.NewConjunctionQuery(bleve.NewDisjunctionQuery(meaningMatch, readingsMatch, readingsNoDiacriticsMatch, wordMatch, simplifiedMatch), sourceMatch))
 	req.Size = limit
 	req.From = offset
 	req.Fields = []string{"word", "source"}
@@ -225,7 +233,7 @@ func truncate(s string, length int, ellipsis string) string {
 	return buf.String() + ellipsis
 }
 
-func makeSearchOutput(query string, sources []string, count uint64, ids []string, entries map[string]entry, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
+func makeSearchOutput(query string, source string, count uint64, ids []string, entries map[string]entry, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
 	for _, id := range ids {
 		entry := entries[id]
@@ -254,12 +262,12 @@ func makeSearchOutput(query string, sources []string, count uint64, ids []string
 	} else {
 		title = fmt.Sprintf("%d results for “%s”", count, query)
 
-		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Sources: sources, Page: page - 1})
+		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Source: source, Page: page - 1})
 		if err != nil {
 			return nil, err
 		}
 
-		nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Sources: sources, Page: page + 1})
+		nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Source: source, Page: page + 1})
 		if err != nil {
 			return nil, err
 		}
@@ -323,7 +331,7 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 
 const queryLimit = 25
 
-func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, sources []string) {
+func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, source string) {
 	options := i.ApplicationCommandData().Options
 
 	query := strings.TrimSpace(options[0].StringValue())
@@ -343,7 +351,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 		return
 	}
 
-	results, count, err := b.lookup(ctx, query, sources, queryLimit+1, 0)
+	results, count, err := b.lookup(ctx, query, source, queryLimit+1, 0)
 	if err != nil {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -393,7 +401,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 		return
 	}
 
-	searchOutput, err := makeSearchOutput(query, sources, count, resultIDs, entries, 0, hasNext)
+	searchOutput, err := makeSearchOutput(query, source, count, resultIDs, entries, 0, hasNext)
 	if err != nil {
 		log.Printf("Failed to make search output: %s", err)
 		return
