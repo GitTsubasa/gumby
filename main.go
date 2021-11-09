@@ -45,8 +45,9 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 }
 
 var sources = map[string]string{
-	"char":  "Chinese characters used between 1870–1910",
-	"repub": "Formal Republican terms",
+	"char":     "Chinese characters used between 1870–1910",
+	"repub":    "Formal Republican terms",
+	"qianplus": "Qian Nairong's Shanghainese Dialect Dictionary, 2nd edition, plus extra definitions",
 }
 
 func main() {
