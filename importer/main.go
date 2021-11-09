@@ -80,10 +80,10 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 		simplifiedMapping.IncludeInAll = false
 		entryDocumentMapping.AddFieldMappingsAt("simplified", simplifiedMapping)
 
-		sourceCodeMapping := bleve.NewTextFieldMapping()
-		sourceCodeMapping.Analyzer = "single_tokenize"
-		sourceCodeMapping.IncludeInAll = false
-		entryDocumentMapping.AddFieldMappingsAt("source_code", sourceCodeMapping)
+		source := bleve.NewTextFieldMapping()
+		source.Analyzer = "single_tokenize"
+		source.IncludeInAll = false
+		entryDocumentMapping.AddFieldMappingsAt("source", source)
 
 		definitionDocumentMapping := bleve.NewDocumentMapping()
 		{
@@ -146,7 +146,7 @@ func main() {
 
 		doc["_type"] = "entry"
 
-		if err := batch.Index(doc["source_code"].(string)+":"+doc["word"].(string), doc); err != nil {
+		if err := batch.Index(doc["source"].(string)+":"+doc["word"].(string), doc); err != nil {
 			log.Fatalf("Failed to index index entry %d: %s", i, err)
 		}
 	}

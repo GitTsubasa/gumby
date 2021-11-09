@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"sort"
 
 	"github.com/blevesearch/bleve/v2"
 	"github.com/bwmarrin/discordgo"
@@ -33,11 +32,12 @@ type bot struct {
 func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
 	switch i.Type {
 	case discordgo.InteractionApplicationCommand:
-		switch i.ApplicationCommandData().Name {
-		case "shdef":
-			b.handleShdef(ctx, i)
-		case "crawford":
-			b.handleCrawford(ctx, i)
+		name := i.ApplicationCommandData().Name
+		switch name {
+		case "def":
+			b.handleShdef(ctx, i, nil)
+		default:
+			b.handleShdef(ctx, i, []string{name})
 		}
 
 	case discordgo.InteractionMessageComponent:
@@ -45,9 +45,12 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 	}
 }
 
-type source struct {
-	code string
-	name string
+var sources = []struct {
+	name        string
+	description string
+}{
+	{"characters", "Chinese characters used between 1870–1910"},
+	{"republican", "Formal Republican terms"},
 }
 
 func main() {
@@ -75,40 +78,18 @@ func main() {
 		log.Fatalf("Unable to connect to Discord: %v\n", err)
 	}
 
-	discord.UpdateGameStatus(0, "/shdef")
+	discord.UpdateGameStatus(0, "/def")
 
 	log.Printf("Connected to Discord.")
 
 	defer discord.Close()
 
-	bot := bot{index: index, discord: discord, sourceNames: map[string]string{
-		"c": "Chinese characters used between 1870–1910",
-		"r": "Formal Republican terms",
-	}}
-
-	type source struct {
-		code string
-		name string
-	}
-	sortedSources := make([]source, 0, len(bot.sourceNames))
-
-	for code, name := range bot.sourceNames {
-		sortedSources = append(sortedSources, source{code: code, name: name})
-	}
-
-	sort.Slice(sortedSources, func(i int, j int) bool {
-		return sortedSources[i].code < sortedSources[j].code
-	})
-
-	sources := make([]*discordgo.ApplicationCommandOptionChoice, len(sortedSources))
-	for i, s := range sortedSources {
-		sources[i] = &discordgo.ApplicationCommandOptionChoice{Name: s.name, Value: s.code}
-	}
+	bot := bot{index: index, discord: discord}
 
 	commands := []*discordgo.ApplicationCommand{
 		{
-			Name:        "shdef",
-			Description: "Look up in dictionary.",
+			Name:        "def",
+			Description: "Look up in all dictionaries",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
@@ -116,28 +97,22 @@ func main() {
 					Description: "What to look up (by word, meaning, or reading)",
 					Required:    true,
 				},
-				{
-					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "dict",
-					Description: "Which dictionary to look up from",
-					Required:    false,
-					Choices:     sources,
-				},
 			},
 		},
-
-		{
-			Name:        "crawford",
-			Description: "Look up a character in Crawford (kaudip'e) script.",
+	}
+	for _, s := range sources {
+		commands = append(commands, &discordgo.ApplicationCommand{
+			Name:        s.name,
+			Description: "Look up in dictionary: " + s.description,
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "reading",
-					Description: "What reading to look up",
+					Name:        "query",
+					Description: "What to look up (by word, meaning, or reading)",
 					Required:    true,
 				},
 			},
-		},
+		})
 	}
 
 	discord.AddHandler(func(d *discordgo.Session, g *discordgo.GuildCreate) {

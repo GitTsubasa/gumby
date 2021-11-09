@@ -69,7 +69,7 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 				}
 
 				e.definitions[int(arrayPositions[0])].readings = append(e.definitions[int(arrayPositions[0])].readings, string(f.Value()))
-			case "source_code":
+			case "source":
 				e.sourceName = b.sourceNames[string(f.Value())]
 			}
 		})
@@ -164,9 +164,9 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 }
 
 type result struct {
-	id         string
-	word       string
-	sourceCode string
+	id     string
+	word   string
+	source string
 }
 
 func (b *bot) lookup(ctx context.Context, query string, sources []string, limit int, offset int) ([]result, uint64, error) {
@@ -188,7 +188,7 @@ func (b *bot) lookup(ctx context.Context, query string, sources []string, limit 
 	req := bleve.NewSearchRequest(bleve.NewDisjunctionQuery(meaningMatch, readingsMatch, readingsNoDiacriticsMatch, wordMatch, simplifiedMatch))
 	req.Size = limit
 	req.From = offset
-	req.Fields = []string{"word", "source_code"}
+	req.Fields = []string{"word", "source"}
 
 	r, err := b.index.Search(req)
 	if err != nil {
@@ -198,9 +198,9 @@ func (b *bot) lookup(ctx context.Context, query string, sources []string, limit 
 	results := make([]result, len(r.Hits))
 	for i, hit := range r.Hits {
 		results[i] = result{
-			id:         hit.ID,
-			word:       hit.Fields["word"].(string),
-			sourceCode: hit.Fields["source_code"].(string),
+			id:     hit.ID,
+			word:   hit.Fields["word"].(string),
+			source: hit.Fields["source"].(string),
 		}
 	}
 
@@ -323,16 +323,10 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 
 const queryLimit = 25
 
-func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate) {
+func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, sources []string) {
 	options := i.ApplicationCommandData().Options
 
 	query := strings.TrimSpace(options[0].StringValue())
-
-	var sources []string
-	if len(options) > 1 {
-		sourceCode := options[1].StringValue()
-		sources = []string{sourceCode}
-	}
 
 	if query == "" {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
