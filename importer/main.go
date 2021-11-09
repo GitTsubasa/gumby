@@ -107,6 +107,8 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 	return indexMapping, nil
 }
 
+const batchSize = 10000
+
 func main() {
 	flag.Parse()
 
@@ -148,6 +150,16 @@ func main() {
 
 		if err := batch.Index(doc["source"].(string)+":"+doc["word"].(string), doc); err != nil {
 			log.Fatalf("Failed to index index entry %d: %s", i, err)
+		}
+
+		if i%batchSize == 0 {
+			if err := idx.Batch(batch); err != nil {
+				log.Fatalf("Failed to run batch: %s", err)
+			}
+
+			log.Printf("Indexed %d entries.", i)
+
+			batch = idx.NewBatch()
 		}
 	}
 
