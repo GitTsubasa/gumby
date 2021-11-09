@@ -34,6 +34,7 @@ const (
 type entry struct {
 	word        string
 	source      string
+	simplified  []string
 	definitions []definition
 }
 
@@ -58,6 +59,8 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 			switch f.Name() {
 			case "word":
 				e.word = string(f.Value())
+			case "simplified":
+				e.simplified = append(e.simplified, string(f.Value()))
 			case "definitions.meanings":
 				for len(e.definitions) <= int(arrayPositions[0]) {
 					e.definitions = append(e.definitions, definition{})
@@ -365,8 +368,36 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 		prettyDefs[i] = fmt.Sprintf("**%s**\n%s", strings.Join(def.readings, ", "), prettyMeaning)
 	}
 
+	var prettySimplifieds []string
+
+	wordRunes := []rune(e.word)
+
+	for _, s := range e.simplified {
+		var sb strings.Builder
+		simplifiedDiffers := false
+		for i, sr := range []rune(s) {
+			wr := wordRunes[i]
+
+			if sr != wr {
+				sb.WriteRune(sr)
+				simplifiedDiffers = true
+			} else {
+				sb.WriteRune('-')
+			}
+		}
+
+		if simplifiedDiffers {
+			prettySimplifieds = append(prettySimplifieds, sb.String())
+		}
+	}
+
+	title := e.word
+	if len(prettySimplifieds) > 0 {
+		title = title + " (" + strings.Join(prettySimplifieds, ", ") + ")"
+	}
+
 	return &discordgo.MessageEmbed{
-		Title:       e.word,
+		Title:       title,
 		Color:       0x005BAC,
 		Description: fmt.Sprintf("%s\n\n_%s_", strings.Join(prettyDefs, "\n\n"), sources[e.source]),
 		Footer: &discordgo.MessageEmbedFooter{
