@@ -70,6 +70,10 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 				}
 
 				e.definitions[int(arrayPositions[0])].readings = append(e.definitions[int(arrayPositions[0])].readings, string(f.Value()))
+			case "definitions.readings_no_diacritics":
+				for len(e.definitions) <= int(arrayPositions[0]) {
+					e.definitions = append(e.definitions, definition{})
+				}
 			case "source":
 				e.source = string(f.Value())
 			}
@@ -165,12 +169,51 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 }
 
 type result struct {
-	id     string
-	word   string
-	source string
+	id                   string
+	word                 string
+	simplified           []string
+	readings             []string
+	readingsNoDiacritics []string
+	source               string
+}
+
+func isExactMatch(r result, q string) bool {
+	if q == r.word {
+		return true
+	}
+
+	for _, s := range r.simplified {
+		if q == s {
+			return true
+		}
+	}
+
+	for _, rd := range r.readings {
+		if q == rd {
+			return true
+		}
+	}
+
+	for _, rd := range r.readingsNoDiacritics {
+		if q == rd {
+			return true
+		}
+	}
+
+	return false
+}
+
+func fieldToStringList(v interface{}) []string {
+	single, ok := v.(string)
+	if ok {
+		return []string{single}
+	}
+	return v.([]string)
 }
 
 func (b *bot) lookup(ctx context.Context, q string, source string, limit int, offset int) ([]result, uint64, error) {
+	q = strings.TrimSpace(q)
+
 	meaningMatch := bleve.NewMatchPhraseQuery(q)
 	meaningMatch.SetField("definitions.meanings")
 
@@ -196,7 +239,7 @@ func (b *bot) lookup(ctx context.Context, q string, source string, limit int, of
 	req := bleve.NewSearchRequest(bleve.NewConjunctionQuery(bleve.NewDisjunctionQuery(meaningMatch, readingsMatch, readingsNoDiacriticsMatch, wordMatch, simplifiedMatch), sourceMatch))
 	req.Size = limit
 	req.From = offset
-	req.Fields = []string{"word", "source"}
+	req.Fields = []string{"word", "simplified", "definitions.readings", "definitions.readings_no_diacritics", "source"}
 
 	r, err := b.index.Search(req)
 	if err != nil {
@@ -206,9 +249,12 @@ func (b *bot) lookup(ctx context.Context, q string, source string, limit int, of
 	results := make([]result, len(r.Hits))
 	for i, hit := range r.Hits {
 		results[i] = result{
-			id:     hit.ID,
-			word:   hit.Fields["word"].(string),
-			source: hit.Fields["source"].(string),
+			id:                   hit.ID,
+			word:                 hit.Fields["word"].(string),
+			simplified:           fieldToStringList(hit.Fields["simplified"]),
+			readings:             fieldToStringList(hit.Fields["definitions.readings"]),
+			readingsNoDiacritics: fieldToStringList(hit.Fields["definitions.readings_no_diacritics"]),
+			source:               hit.Fields["source"].(string),
 		}
 	}
 
@@ -408,7 +454,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 	}
 
 	var embeds []*discordgo.MessageEmbed
-	if len(results) == 1 || len(results) > 0 && results[0].word == query {
+	if len(results) == 1 || (len(results) > 0 && isExactMatch(results[0], query) && !isExactMatch(results[1], query)) {
 		entries, err := b.findEntries(ctx, resultIDs)
 		if err != nil {
 			log.Printf("Failed to get entries: %s", err)
