@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"sort"
 
 	"github.com/blevesearch/bleve/v2"
 	"github.com/bwmarrin/discordgo"
@@ -33,6 +34,8 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 	case discordgo.InteractionApplicationCommand:
 		name := i.ApplicationCommandData().Name
 		switch name {
+		case "gumby":
+			b.handleHelp(ctx, i)
 		case "def":
 			b.handleShdef(ctx, i, "")
 		default:
@@ -42,6 +45,34 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 	case discordgo.InteractionMessageComponent:
 		b.handleComponentInteraction(ctx, i)
 	}
+}
+
+func (b *bot) handleHelp(ctx context.Context, i *discordgo.InteractionCreate) {
+	var fields []*discordgo.MessageEmbedField
+	for k, v := range sources {
+		fields = append(fields, &discordgo.MessageEmbedField{
+			Name:  "`/" + k + "`",
+			Value: v,
+		})
+	}
+
+	sort.Slice(fields, func(i int, j int) bool {
+		return fields[i].Name < fields[j].Name
+	})
+
+	b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+		Type: discordgo.InteractionResponseChannelMessageWithSource,
+		Data: &discordgo.InteractionResponseData{
+			Embeds: []*discordgo.MessageEmbed{
+				{
+					Color:       0x005BAC,
+					Title:       "Hi! I'm Gumby!",
+					Description: "I'm a bot that looks up words in Shanghainese dictionaries! Here's a list of dictionaries you can use below, or you can use **`/def`** to search all dictionaries!",
+					Fields:      fields,
+				},
+			},
+		},
+	})
 }
 
 var sources = map[string]string{
@@ -75,7 +106,7 @@ func main() {
 		log.Fatalf("Unable to connect to Discord: %v\n", err)
 	}
 
-	discord.UpdateGameStatus(0, "/def")
+	discord.UpdateGameStatus(0, "/gumby for help!")
 
 	log.Printf("Connected to Discord.")
 
@@ -84,6 +115,10 @@ func main() {
 	bot := bot{index: index, discord: discord}
 
 	commands := []*discordgo.ApplicationCommand{
+		{
+			Name:        "gumby",
+			Description: "Let me tell you who I am and what I do!",
+		},
 		{
 			Name:        "def",
 			Description: "Look up in all dictionaries",
