@@ -5584,8 +5584,8 @@
 {"word": "玄關", "definitions": [{"readings": ["y'ön kwan"], "meanings": ["Layout of house with a decorated wall at entrance"]}]}
 {"word": "壁櫥", "definitions": [{"readings": ["pih dsû"], "meanings": ["Built in wardrobe"]}]}
 {"word": "水斗", "definitions": [{"readings": ["sz teu"], "meanings": ["Water basin or sink"]}]}
-{"word": "t", "definitions": [{"readings": ["ting báng"], "meanings": ["1", "\\", ".", " ", "S", "h", "e", "d", " ", "b", "u", "i", "l", "t", " ", "o", "n", " ", "f", "l", "a", "t", " ", "r", "o", "o", "f", " ", "t", "o", "p"]}]}
-{"word": "i", "definitions": [{"readings": ["ting báng"], "meanings": ["2", "\\", ".", " ", "L", "o", "w", "e", "s", "t", " ", "c", "l", "a", "s", "s", " ", "p", "r", "o", "s", "t", "i", "t", "u", "t", "e", " ", "o", "r", " ", "e", "s", "c", "o", "r", "t"]}]}
+{"word": "頂棚", "definitions": [{"readings": ["ting báng"], "meanings": ["Shed built on a flat rooftop"]}]}
+{"word": "釘棚", "definitions": [{"readings": ["ting báng"], "meanings": ["Lowest class prostitute or escort"]}]}
 {"word": "雨棚", "definitions": [{"readings": ["yü báng"], "meanings": ["Patio roof"]}]}
 {"word": "涼棚", "definitions": [{"readings": ["liáng báng"], "meanings": ["Sun shelter"]}]}
 {"word": "搭棚", "definitions": [{"readings": ["tah báng"], "meanings": ["To build a shed"]}]}
@@ -11590,7 +11590,7 @@
 {"word": "爿", "definitions": [{"readings": ["ban"], "meanings": ["Classifier for shops", "Classifier for fields"]}]}
 {"word": "𨂝𨂞", "definitions": [{"readings": ["ban t'an"], "meanings": ["To be paralysed"]}]}
 {"word": "𨂝𨂞勿動", "definitions": [{"readings": ["ban t'an veh dúng"], "meanings": ["To be paralysed"]}]}
-{"word": "躥", "definitions": [{"readings": ["ts'ön"], "meanings": ["1. To rise rapidly", "To pass or move through quickly"]}]}
+{"word": "躥", "definitions": [{"readings": ["ts'ön"], "meanings": ["To rise rapidly", "To pass or move through quickly"]}]}
 {"word": "歇歇踋", "definitions": [{"readings": ["hyih hyih kyáh"], "meanings": ["To take a short break for legs by sitting"]}]}
 {"word": "豁踋", "definitions": [{"readings": ["hwah kyáh"], "meanings": ["To quickly start walking and running"]}]}
 {"word": "滑踋", "definitions": [{"readings": ["wah kyáh"], "meanings": ["To run or slip away"]}]}
@@ -16106,7 +16106,7 @@
 {"word": "摸油甏", "definitions": [{"readings": ["móh yeu báng"], "meanings": ["To touch things while walking"]}]}
 {"word": "搨便宜", "definitions": [{"readings": ["t'ah bin nyi"], "meanings": ["To take advantage of discounts", "To touch a woman inappropriately without paying", "To call oneself someone's superior and senior"]}]}
 {"word": "擺表情", "definitions": [{"readings": ["pá piau dsing"], "meanings": ["To make an emotional face", "To suck up to someone"]}]}
-{"word": "擺pose", "definitions": [{"readings": ["pá p'ó se"], "meanings": ["1. To strike a pose", "To pretend one's emotions", "To look or act stupid"]}]}
+{"word": "擺pose", "definitions": [{"readings": ["pá p'ó se"], "meanings": ["To strike a pose", "To pretend one's emotions", "To look or act stupid"]}]}
 {"word": "擺標勁", "definitions": [{"readings": ["pá piau kyung"], "meanings": ["To exaggerate one's ability but not help others"]}]}
 {"word": "擺花斑", "definitions": [{"readings": ["pá hwó pan"], "meanings": ["To scam others"]}]}
 {"word": "擺洋盤", "definitions": [{"readings": ["pá yáng ben"], "meanings": ["(To pretend to be an ignorant Westerner)", "To pretend to be ignorant"]}]}
