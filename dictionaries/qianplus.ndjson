@@ -544,7 +544,7 @@
 {"word": "夾界", "definitions": [{"readings": ["kah ká"], "meanings": ["Border"]}]}
 {"word": "上海灘", "definitions": [{"readings": ["zong h'e t'an"], "meanings": ["Shanghai bund"]}]}
 {"word": "黃浦江", "definitions": [{"readings": ["wong p'ú kong"], "meanings": ["Whampoa river (Huangpu river)"]}]}
-{"word": "蘇州河", "definitions": [{"readings": ["sú tseu"], "meanings": ["Soochow river (Suzhou river)"]}]}
+{"word": "蘇州河", "definitions": [{"readings": ["sú tseu hú"], "meanings": ["Soochow river (Suzhou river)"]}]}
 {"word": "吳淞江", "definitions": [{"readings": ["wú súng kong"], "meanings": ["Soochow river (Suzhou river)"]}]}
 {"word": "外灘", "definitions": [{"readings": ["ngá t'an"], "meanings": ["The Bund"]}]}
 {"word": "十里洋塲", "definitions": [{"readings": ["zeh li yáng dsong"], "meanings": ["Foreign concessions"]}]}
@@ -1849,7 +1849,7 @@
 {"word": "客戶", "definitions": [{"readings": ["k'áh hú"], "meanings": ["Customer"]}]}
 {"word": "迴頭客", "definitions": [{"readings": ["we deu k'áh"], "meanings": ["Return customer"]}]}
 {"word": "戶頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Customer", "Financial acount", "Any specific person", "Temper"]}]}
-{"word": "木片頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Rectangular wood board"]}]}
+{"word": "[木片]頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Rectangular wood board"]}]}
 {"word": "𭷉頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Rectangular wood board"]}]}
 {"word": "老戶頭", "definitions": [{"readings": ["lau hú deu"], "meanings": ["Regular customer or partner"]}]}
 {"word": "糯米戶頭", "definitions": [{"readings": ["nú mi hú deu"], "meanings": ["Customers who are easily tricked (pigeons)"]}]}
@@ -2829,13 +2829,13 @@
 {"word": "烏龜壳", "definitions": [{"readings": ["ú kyü k'oh"], "meanings": ["Turtle shell"]}]}
 {"word": "十三塊六角", "definitions": [{"readings": ["zeh san kw'e lóh koh"], "meanings": ["Thirteen dollars and sixty cents", "Turtle (made from 13 sections and 6 parts)", "(Insult)"]}]}
 {"word": "甲魚", "definitions": [{"readings": ["kyáh ng"], "meanings": ["Soft shell turtle"]}]}
-{"word": "魚脚魚", "definitions": [{"readings": ["kyáh ng"], "meanings": ["Soft shell turtle"]}]}
+{"word": "[魚脚]魚", "definitions": [{"readings": ["kyáh ng"], "meanings": ["Soft shell turtle"]}]}
 {"word": "菜花甲魚", "definitions": [{"readings": ["ts'e hwó kyáh ng"], "meanings": ["Soft shell turtle during spring"]}]}
-{"word": "菜花魚脚魚", "definitions": [{"readings": ["ts'e hwó kyáh ng"], "meanings": ["Soft shell turtle during spring"]}]}
+{"word": "菜花[魚脚]魚", "definitions": [{"readings": ["ts'e hwó kyáh ng"], "meanings": ["Soft shell turtle during spring"]}]}
 {"word": "蚊子甲魚", "definitions": [{"readings": ["mung tsz kyáh ng"], "meanings": ["Soft shell turtle in summer"]}]}
-{"word": "蚊子魚脚魚", "definitions": [{"readings": ["mung tsz kyáh ng"], "meanings": ["Soft shell turtle in summer"]}]}
+{"word": "蚊子[魚脚]魚", "definitions": [{"readings": ["mung tsz kyáh ng"], "meanings": ["Soft shell turtle in summer"]}]}
 {"word": "桂花甲魚", "definitions": [{"readings": ["kwe hwó kyáh ng"], "meanings": ["Soft shell turtle in Autumn"]}]}
-{"word": "桂花魚脚魚", "definitions": [{"readings": ["kwe hwó kyáh ng"], "meanings": ["Soft shell turtle in Autumn"]}]}
+{"word": "桂花[魚脚]魚", "definitions": [{"readings": ["kwe hwó kyáh ng"], "meanings": ["Soft shell turtle in Autumn"]}]}
 {"word": "癩頭黿", "definitions": [{"readings": ["lá deu nyön"], "meanings": ["Large variety of soft shell turtle"]}]}
 {"word": "昆蟲類", "definitions": [{"readings": ["kw'ung dsúng le"], "meanings": ["Insects"]}]}
 {"word": "蝴蝶", "definitions": [{"readings": ["hú dih"], "meanings": ["Butterfly"]}]}
@@ -5792,7 +5792,7 @@
 {"word": "靠手椅子", "definitions": [{"readings": ["k'au seu i tsz"], "meanings": ["Chair with arm rest"]}]}
 {"word": "轉椅", "definitions": [{"readings": ["tsen i"], "meanings": ["Office chairs with wheel"]}]}
 {"word": "轉椅", "definitions": [{"readings": ["tsen y'ü"], "meanings": ["Office chairs with wheel"]}]}
-{"word": "竹椅子", "definitions": [{"readings": ["tsóh i"], "meanings": ["Bamboo chair"]}]}
+{"word": "竹椅子", "definitions": [{"readings": ["tsóh i tsz"], "meanings": ["Bamboo chair"]}]}
 {"word": "竹椅子", "definitions": [{"readings": ["tsóh y'ú tsz"], "meanings": ["Bamboo chair"]}]}
 {"word": "藤椅子", "definitions": [{"readings": ["dung i tsz"], "meanings": ["Bamboo chair"]}]}
 {"word": "藤椅子", "definitions": [{"readings": ["dung y'ü tsz"], "meanings": ["Bamboo chair"]}]}
@@ -5840,7 +5840,7 @@
 {"word": "夜壺箱", "definitions": [{"readings": ["yá hú siáng"], "meanings": ["Bed side table", "Chamber pot"]}]}
 {"word": "週轉箱", "definitions": [{"readings": ["tseu tsen siáng"], "meanings": ["Storage box for turnover"]}]}
 {"word": "拎箱", "definitions": [{"readings": ["l'ing siáng"], "meanings": ["Chest with handles for carrying"]}]}
-{"word": "手提箱子", "definitions": [{"readings": ["seu di siáng"], "meanings": ["Chest with handles for carrying"]}]}
+{"word": "手提箱子", "definitions": [{"readings": ["seu di siáng tsz"], "meanings": ["Chest with handles for carrying"]}]}
 {"word": "紙板箱", "definitions": [{"readings": ["tsz pan siáng"], "meanings": ["Card board box"]}]}
 {"word": "抽頭", "definitions": [{"readings": ["ts'eu teu"], "meanings": ["Drawers"]}]}
 {"word": "抽屜", "definitions": [{"readings": ["ts'eu t'i"], "meanings": ["Drawers"]}]}
@@ -10042,7 +10042,7 @@
 {"word": "木偶戲", "definitions": [{"readings": ["móh ngeu hyi"], "meanings": ["Puppet show"]}]}
 {"word": "木人頭戲", "definitions": [{"readings": ["móh nyung deu hyi"], "meanings": ["Puppet show"]}]}
 {"word": "木人頭", "definitions": [{"readings": ["móh nyung deu"], "meanings": ["Puppet"]}]}
-{"word": "變戲法牽線木人頭", "definitions": [{"readings": ["ky'in sin móh nyung deu"], "meanings": ["Puppet"]}]}
+{"word": "變戲法牽線木人頭", "definitions": [{"readings": ["pin hyin fah ky'in sin móh nyung deu"], "meanings": ["Puppet"]}]}
 {"word": "路頭戲", "definitions": [{"readings": ["lú deu hyi"], "meanings": ["Performance or show on the side of road"]}]}
 {"word": "活猻出把戲", "definitions": [{"readings": ["weh sung ts'eh pá hyi"], "meanings": ["Performance or show with a monkey", "(Insult)"]}]}
 {"word": "出把戲", "definitions": [{"readings": ["ts'eh pá hyi"], "meanings": ["Acrobat performance or show", "To scam others"]}]}
@@ -14167,7 +14167,7 @@
 {"word": "血淋溚渧", "definitions": [{"readings": ["hyöh ling tah ti"], "meanings": ["Bloody"]}]}
 {"word": "直孛弄通", "definitions": [{"readings": ["dsuh beh lúng t'úng"], "meanings": ["Straight", "Direct (general)"]}]}
 {"word": "烏𬹙白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
-{"word": "烏[黑真]𬹙白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
+{"word": "烏[黑真]白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
 {"word": "四角方方", "definitions": [{"readings": ["sz koh fong fong"], "meanings": ["Square shaped"]}]}
 {"word": "四四角角", "definitions": [{"readings": ["sz sz koh koh"], "meanings": ["Square shaped"]}]}
 {"word": "黏支得支", "definitions": [{"readings": ["ny'in tsz tuh tsz"], "meanings": ["Very sticky"]}]}
@@ -17792,7 +17792,7 @@
 {"word": "上梁勿正下梁歪", "definitions": [{"readings": ["zong liáng veh tsung hau liáng hwá"], "meanings": ["Superiors must set a good example otherwise subordinates will learn bad traits"]}]}
 {"word": "萬寳全書缺隻角", "definitions": [{"readings": ["van pau dsin sû ky'öh tsáh koh"], "meanings": ["(Encyclopedia missing a corner)", "Even smart people make mistakes"]}]}
 {"word": "萬寳全書缺隻角", "definitions": [{"readings": ["van pau dsen sû ky'öh tsáh koh"], "meanings": ["(Encyclopedia missing a corner)", "Even smart people make mistakes"]}]}
-{"word": "小人口裏出真言", "definitions": [{"readings": ["siau nyung k'eu li tsung yin"], "meanings": ["Children speak the truth"]}]}
+{"word": "小人口裏出真言", "definitions": [{"readings": ["siau nyung k'eu li ts'eh tsung yin"], "meanings": ["Children speak the truth"]}]}
 {"word": "小吃小做小樂惠", "definitions": [{"readings": ["siau ky'uh siau tsú siau loh we"], "meanings": ["To have small joys, enjoyments or pleasures in life"]}]}
 {"word": "門開精到九十六", "definitions": [{"readings": ["mung k'e tsing tau kyeu zeh lóh"], "meanings": ["Extremely cunning and calculating"]}]}
 {"word": "千朵桃花一樹生", "definitions": [{"readings": ["ts'in tú dau hwó ih zû sáng"], "meanings": ["(Thousands of peach blossoms from one tree)", "(Siblings) brothers and sisters should love each other"]}]}
@@ -18025,7 +18025,7 @@
 {"word": "配角", "definitions": [{"readings": ["p'e koh"], "meanings": ["Secondary actor (in a film)"]}]}
 {"word": "鞋子勿着落啥樣", "definitions": [{"readings": ["há tsz veh dsáh loh sá yáng"], "meanings": ["(A mark left by an unworn shop)", "To be blamed be the action is even completed"]}]}
 {"word": "霉頭觸到哈爾滨", "definitions": [{"readings": ["me deu ts'óh tau h'á rh ping"], "meanings": ["(Unlucky in Harbin)", "Unlucky", "To scold or scoff"]}]}
-{"word": "瞎講有啥講頭拉", "definitions": [{"readings": ["h'ah kong yeu sá kong deu"], "meanings": ["Don't speak or talk nonsense"]}]}
+{"word": "瞎講有啥講頭拉", "definitions": [{"readings": ["h'ah kong yeu sá kong deu lá"], "meanings": ["Don't speak or talk nonsense"]}]}
 {"word": "瞎貓碰着死老蟲", "definitions": [{"readings": ["h'ah mau báng dsáh si lau dsúng"], "meanings": ["(Black cat and dead mouse)", "Lucky"]}]}
 {"word": "瞎貓撞着死老蟲", "definitions": [{"readings": ["h'ah mau dsong dsáh si lau dsúng"], "meanings": ["(Black cat and dead mouse)", "Lucky"]}]}
 {"word": "踏碎皮球一包氣", "definitions": [{"readings": ["dah se bi gyeu ih pau ky'i"], "meanings": ["(To step on ball and release air)", "To be disappointed"]}]}
@@ -18076,7 +18076,7 @@
 {"word": "千錯萬錯馬屁勿錯", "definitions": [{"readings": ["ts'in ts'ú van ts'ú mó p'i veh ts'ú"], "meanings": ["People enjoy or like being praised and sucked up to"]}]}
 {"word": "千算萬算像隻剚錐", "definitions": [{"readings": ["ts'in sön van sön ziáng tsáh tsz tsöi"], "meanings": ["Too calculating (as in a person)"]}]}
 {"word": "飛蛾撲燈自燒其身", "definitions": [{"readings": ["fi ngú p'óh tung zz sau gyi sung"], "meanings": ["(Moth flies towards fire)", "To sacrafice one's life"]}]}
-{"word": "馬馬虎虎香煙屁股", "definitions": [{"readings": ["má má h'ú h'ú hyáng in"], "meanings": ["No need to be perfect and exact"]}]}
+{"word": "馬馬虎虎香煙屁股", "definitions": [{"readings": ["má má h'ú h'ú hyáng in p'i kú"], "meanings": ["No need to be perfect and exact"]}]}
 {"word": "馬屁拍足苦頭吃足", "definitions": [{"readings": ["mó p'i p'áh tsóh k'ú deu ky'uh tsóh"], "meanings": ["People who suck up to others can also cause harm"]}]}
 {"word": "天高地高人心最高", "definitions": [{"readings": ["t'in kau di kau nyung sing tsöi kau"], "meanings": ["One's greed is higher than the heavens and knows no bounds"]}]}
 {"word": "日有所思夜有所夢", "definitions": [{"readings": ["nyih yeu sú sz yá yeu sú mong"], "meanings": ["One's thoughts during the day will be one's dreams at night"]}]}
@@ -18222,7 +18222,7 @@
 {"word": "大舞臺對過-天曉得", "definitions": [{"readings": ["dá vú de te kú - t'in hyau tuh"], "meanings": ["God or heaven knows"]}]}
 {"word": "開銷再大也是毛毛雨", "definitions": [{"readings": ["k'e siau tse dú há zz mau mau yü"], "meanings": ["Does not matter how much money one spends, it is insignificant or small amount"]}]}
 {"word": "月亮裏提燈-有名無實", "definitions": [{"readings": ["yöh liáng li di tung - yeu ming vú zeh"], "meanings": ["Pointless and to not live up to one's name"]}]}
-{"word": "世事讓三分天空地闊", "definitions": [{"readings": ["sz zz nyáng fung t'in k'úng di kw'eh"], "meanings": ["To be more forgiving and merciful will make one feel better"]}]}
+{"word": "世事讓三分天空地闊", "definitions": [{"readings": ["sz zz nyáng san fung t'in k'úng di kw'eh"], "meanings": ["To be more forgiving and merciful will make one feel better"]}]}
 {"word": "東搭黃浦西搭海-講張", "definitions": [{"readings": ["túng tah wong p'ú si tah h'e - kong tsáng"], "meanings": ["(East to sea and west to Whampoo)", "To talk and cover many topics of conversation"]}]}
 {"word": "叫花子吃死蟹-隻隻好", "definitions": [{"readings": ["kau hwó tsz ky'uh si h'á - tsáh tsáh h'au"], "meanings": ["Everything tastes good"]}]}
 {"word": "只賣陽春麪勿加澆頭", "definitions": [{"readings": ["tsuh má yáng ts'ung min veh ká kyau deu"], "meanings": ["(To only sell plain noodles)", "To only speak of honest truth without any embellishment"]}]}
