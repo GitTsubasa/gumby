@@ -100,7 +100,8 @@
 {"word": "早霞", "definitions": [{"readings": ["tsau yá"], "meanings": ["Sunrise"]}]}
 {"word": "晚霞", "definitions": [{"readings": ["wan yá"], "meanings": ["Sunset"]}]}
 {"word": "火燒雲", "definitions": [{"readings": ["h'ú sau yün"], "meanings": ["Red sunset with clouds"]}]}
-{"word": "忽閃（忽顯）", "definitions": [{"readings": ["hweh hyin"], "meanings": ["Lightning"]}]}
+{"word": "忽閃", "definitions": [{"readings": ["hweh hyin"], "meanings": ["Lightning"]}]}
+{"word": "忽顯", "definitions": [{"readings": ["hweh hyin"], "meanings": ["Lightning"]}]}
 {"word": "藿險", "definitions": [{"readings": ["h'óh hyin"], "meanings": ["Lightning"]}]}
 {"word": "閃電", "definitions": [{"readings": ["sen din"], "meanings": ["Lightning"]}]}
 {"word": "雷", "definitions": [{"readings": ["le"], "meanings": ["Thunder"]}]}
@@ -562,10 +563,12 @@
 {"word": "上頭", "definitions": [{"readings": ["zong deu"], "meanings": ["On top"]}]}
 {"word": "上面", "definitions": [{"readings": ["zong min"], "meanings": ["On top"]}]}
 {"word": "高頭", "definitions": [{"readings": ["kau deu"], "meanings": ["On top"]}]}
-{"word": "浪 （上）", "definitions": [{"readings": ["long"], "meanings": ["On top"]}]}
+{"word": "浪", "definitions": [{"readings": ["long"], "meanings": ["On top"]}]}
+{"word": "上", "definitions": [{"readings": ["long"], "meanings": ["On top"]}]}
 {"word": "狼", "definitions": [{"readings": ["long"], "meanings": ["Wolf"]}]}
 {"word": "㫰", "definitions": [{"readings": ["long"], "meanings": ["To air or hang clothes outside"]}]}
-{"word": "上向 （浪向）", "definitions": [{"readings": ["long hyáng"], "meanings": ["On top"]}]}
+{"word": "上向", "definitions": [{"readings": ["long hyáng"], "meanings": ["On top"]}]}
+{"word": "浪向", "definitions": [{"readings": ["long hyáng"], "meanings": ["On top"]}]}
 {"word": "下頭", "definitions": [{"readings": ["hau deu"], "meanings": ["Underneath or below"]}]}
 {"word": "號頭", "definitions": [{"readings": ["hau deu"], "meanings": ["Month", "Number"]}]}
 {"word": "位置", "definitions": [{"readings": ["we tsz"], "meanings": ["Position"]}]}
@@ -3916,8 +3919,8 @@
 {"word": "肉糜", "definitions": [{"readings": ["nyóh mi"], "meanings": ["Minced meat"]}]}
 {"word": "肉松", "definitions": [{"readings": ["nyóh súng"], "meanings": ["Pork floss"]}]}
 {"word": "紅燒肉", "definitions": [{"readings": ["húng sau nyóh"], "meanings": ["Braised pork belly with soy sauce"]}]}
-{"word": "�", "definitions": [{"readings": ["si nyi só"], "meanings": ["Schnitzel"]}]}
-{"word": "�", "definitions": [{"readings": ["ky'ih p'uh sz"], "meanings": ["Chips"]}]}
+{"word": "���", "definitions": [{"readings": ["si nyi só"], "meanings": ["Schnitzel"]}]}
+{"word": "���", "definitions": [{"readings": ["ky'ih p'uh sz"], "meanings": ["Chips"]}]}
 {"word": "白篤肉", "definitions": [{"readings": ["báh tóh nyóh"], "meanings": ["Cooked meat with no seasoning"]}]}
 {"word": "醬豬肉", "definitions": [{"readings": ["tsiáng tsû nyóh"], "meanings": ["Cooked marinated fatty pork"]}]}
 {"word": "粉蒸肉", "definitions": [{"readings": ["fung tsung nyóh"], "meanings": ["Steamed pork covered with rice flour"]}]}
@@ -7608,7 +7611,8 @@
 {"word": "風癱", "definitions": [{"readings": ["fúng t'an"], "meanings": ["Paralysed"]}]}
 {"word": "癱瘓", "definitions": [{"readings": ["t'an hwen"], "meanings": ["Paralysed"]}]}
 {"word": "呀", "definitions": [{"readings": ["y'á"], "meanings": ["To hide oneself", "To hide", "(Particle) imperative marker", "(Particle) emphasis", "(Particle) exclamation"]}]}
-{"word": "䢝or迓", "definitions": [{"readings": ["y'á"], "meanings": ["To hide oneself", "To hide", "(Particle) imperative marker", "(Particle) emphasis", "(Particle) exclamation"]}]}
+{"word": "䢝", "definitions": [{"readings": ["y'á"], "meanings": ["To hide oneself", "To hide", "(Particle) imperative marker", "(Particle) emphasis", "(Particle) exclamation"]}]}
+{"word": "迓", "definitions": [{"readings": ["y'á"], "meanings": ["To hide oneself", "To hide", "(Particle) imperative marker", "(Particle) emphasis", "(Particle) exclamation"]}]}
 {"word": "𨒃", "definitions": [{"readings": ["ben"], "meanings": ["To hide oneself"]}]}
 {"word": "掊", "definitions": [{"readings": ["ben"], "meanings": ["To gather up dust", "To push aside dust"]}]}
 {"word": "拌", "definitions": [{"readings": ["ben"], "meanings": ["To stir or mix"]}]}
@@ -8082,8 +8086,8 @@
 {"word": "彌陀菩薩", "definitions": [{"readings": ["mi dú bú sah"], "meanings": ["Amitabha Buddha"]}]}
 {"word": "觀音菩薩", "definitions": [{"readings": ["kwen y'ung bú sah"], "meanings": ["Avaloitesvara Buddha (Guanyin of mercy)"]}]}
 {"word": "觀音娘娘", "definitions": [{"readings": ["kwen y'ung nyáng nyáng"], "meanings": ["Avalokitesvara Buddha (Guanyin of mercy)"]}]}
-{"word": "�", "definitions": [{"readings": ["bi fi yeu duh"], "meanings": ["Magnetic field"]}]}
-{"word": "�", "definitions": [{"readings": ["y'i fi yeu duh"], "meanings": ["Electric field"]}]}
+{"word": "����", "definitions": [{"readings": ["bi fi yeu duh"], "meanings": ["Magnetic field"]}]}
+{"word": "����", "definitions": [{"readings": ["y'i fi yeu duh"], "meanings": ["Electric field"]}]}
 {"word": "財神菩薩", "definitions": [{"readings": ["dse zung bú sah"], "meanings": ["God of wealth"]}]}
 {"word": "關帝", "definitions": [{"readings": ["kwan ti"], "meanings": ["Guan Yu (god of war)"]}]}
 {"word": "文昌", "definitions": [{"readings": ["vung ts'áng"], "meanings": ["God of culture and literature"]}]}
@@ -8314,7 +8318,7 @@
 {"word": "馬大嫂", "definitions": [{"readings": ["má dá sau"], "meanings": ["The person who does the housework"]}]}
 {"word": "家庭婦女", "definitions": [{"readings": ["kyá ding vú nyü"], "meanings": ["House wife"]}]}
 {"word": "暴發戶", "definitions": [{"readings": ["pau fah hú"], "meanings": ["Suddenly rich person (overnight millionare)"]}]}
-{"word": "�", "definitions": [{"readings": ["só hyi"], "meanings": ["What"]}]}
+{"word": "��", "definitions": [{"readings": ["só hyi"], "meanings": ["What"]}]}
 {"word": "啥西", "definitions": [{"readings": ["só hyi"], "meanings": ["What"]}]}
 {"word": "少爺", "definitions": [{"readings": ["sau yá"], "meanings": ["(young man) master of the family", "A spoilt man"]}]}
 {"word": "老爺", "definitions": [{"readings": ["lau yá"], "meanings": ["The head of the family", "Any male deity", "Master", "Antiquated", "Poor quality"]}]}
@@ -8799,7 +8803,7 @@
 {"word": "航空母艦", "definitions": [{"readings": ["hong k'úng mú k'an"], "meanings": ["Aircraft carrier", "Fat person"]}]}
 {"word": "南极人", "definitions": [{"readings": ["nen gyih nyung"], "meanings": ["Person who is dressed for south pole (a lot of clothes)"]}]}
 {"word": "長踋鷺鷥", "definitions": [{"readings": ["dsáng kyáh lú sz"], "meanings": ["Person thats skinny and tall"]}]}
-{"word": "�", "definitions": [{"readings": ["á li pá pá"], "meanings": ["Arabic person (derogatory)"]}]}
+{"word": "����", "definitions": [{"readings": ["á li pá pá"], "meanings": ["Arabic person (derogatory)"]}]}
 {"word": "電線木頭", "definitions": [{"readings": ["din sin móh deu"], "meanings": ["Person thats tall and skinny", "Electricity pole", "Person with slow reactions"]}]}
 {"word": "崇明蘆粟", "definitions": [{"readings": ["dsúng ming lú sóh"], "meanings": ["Person thats tall and skinny"]}]}
 {"word": "矮冬瓜", "definitions": [{"readings": ["á túng kwó"], "meanings": ["Short and fat person"]}]}
@@ -9011,9 +9015,9 @@
 {"word": "老油條", "definitions": [{"readings": ["lau yeu diau"], "meanings": ["Experienced person but lazy and indifferent"]}]}
 {"word": "兵油子", "definitions": [{"readings": ["ping yeu tsz"], "meanings": ["Experienced soldier but lazy and indifferent"]}]}
 {"word": "�人頭", "definitions": [{"readings": ["gyá nyung deu"], "meanings": ["(Derogatory) A capable person"]}]}
-{"word": "“身建”人頭", "definitions": [{"readings": ["gyá nyung deu"], "meanings": ["(Derogatory) A capable person"]}]}
+{"word": "[身建]人頭", "definitions": [{"readings": ["gyá nyung deu"], "meanings": ["(Derogatory) A capable person"]}]}
 {"word": "�頭", "definitions": [{"readings": ["gyá deu"], "meanings": ["Shrew (rude woman)"]}]}
-{"word": "“身建”頭", "definitions": [{"readings": ["gyá deu"], "meanings": ["Shrew (rude woman)"]}]}
+{"word": "[身建]頭", "definitions": [{"readings": ["gyá deu"], "meanings": ["Shrew (rude woman)"]}]}
 {"word": "怪人頭", "definitions": [{"readings": ["kwá nyung deu"], "meanings": ["Strange person (weirdo)"]}]}
 {"word": "多頭", "definitions": [{"readings": ["tú deu"], "meanings": ["Unloved extra person"]}]}
 {"word": "楊樹頭", "definitions": [{"readings": ["yáng zû deu"], "meanings": ["Ambivalent person who waivers"]}]}
@@ -9424,7 +9428,7 @@
 {"word": "寶貝囡", "definitions": [{"readings": ["pau pe nön"], "meanings": ["Darling child"]}]}
 {"word": "寶貝心肝", "definitions": [{"readings": ["pau pe sing kön"], "meanings": ["Darling child"]}]}
 {"word": "心肝", "definitions": [{"readings": ["sing kön"], "meanings": ["Darling child", "Heart and liver"]}]}
-{"word": "寶寶子 肉肉子", "definitions": [{"readings": ["pau pau tsz nyóh nyóh tsz"], "meanings": ["Darling child"]}]}
+{"word": "寶寶子肉肉子", "definitions": [{"readings": ["pau pau tsz nyóh nyóh tsz"], "meanings": ["Darling child"]}]}
 {"word": "阿囡", "definitions": [{"readings": ["ah nön"], "meanings": ["Darling child"]}]}
 {"word": "兒子", "definitions": [{"readings": ["nyi tsz"], "meanings": ["Son"]}]}
 {"word": "義子", "definitions": [{"readings": ["nyi tsz"], "meanings": ["God son"]}]}
@@ -9932,8 +9936,8 @@
 {"word": "歌", "definitions": [{"readings": ["kú"], "meanings": ["Song"]}]}
 {"word": "咕", "definitions": [{"readings": ["kú"], "meanings": ["To mutter"]}]}
 {"word": "過", "definitions": [{"readings": ["kú"], "meanings": ["To move or pass", "To exceed", "To rinse", "To stir", "To infect (as in disease)", "(Particle) past tense"]}]}
-{"word": "", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
-{"word": "𠂎己", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
+{"word": "�", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
+{"word": "[𠂎己]", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
 {"word": "鼓", "definitions": [{"readings": ["kú"], "meanings": ["Bloated"]}]}
 {"word": "股", "definitions": [{"readings": ["kú"], "meanings": ["Classifier for smells"]}]}
 {"word": "唱歌", "definitions": [{"readings": ["ts'ong kú"], "meanings": ["To sing a song", "To pee"]}]}
@@ -11654,7 +11658,7 @@
 {"word": "打滑澾", "definitions": [{"readings": ["táng wah t'ah"], "meanings": ["To slip", "When a screw is worn"]}]}
 {"word": "打滑遢", "definitions": [{"readings": ["táng wah dah"], "meanings": ["To slip and slide"]}]}
 {"word": "�走", "definitions": [{"readings": ["gyá tseu"], "meanings": ["Learning to walk as a child"]}]}
-{"word": "\"身建\"走", "definitions": [{"readings": ["gyá tseu"], "meanings": ["Learning to walk as a child"]}]}
+{"word": "[身建]走", "definitions": [{"readings": ["gyá tseu"], "meanings": ["Learning to walk as a child"]}]}
 {"word": "𨂝", "definitions": [{"readings": ["ban"], "meanings": ["To crawl"]}]}
 {"word": "爿", "definitions": [{"readings": ["ban"], "meanings": ["Classifier for shops", "Classifier for fields"]}]}
 {"word": "𨂝𨂞", "definitions": [{"readings": ["ban t'an"], "meanings": ["To be paralysed"]}]}
@@ -11707,7 +11711,7 @@
 {"word": "黃", "definitions": [{"readings": ["wong"], "meanings": ["Yellow"]}]}
 {"word": "看看看", "definitions": [{"readings": ["k'ön k'ön k'ön"], "meanings": ["To wait and see"]}]}
 {"word": "看看呌", "definitions": [{"readings": ["k'ön k'ön kyau"], "meanings": ["To wait and see"]}]}
-{"word": "�", "definitions": [{"readings": ["siá siá"], "meanings": ["To discreetly look"]}]}
+{"word": "��", "definitions": [{"readings": ["siá siá"], "meanings": ["To discreetly look"]}]}
 {"word": "相", "definitions": [{"readings": ["siáng"], "meanings": ["To look carefully or inspect", "(Suffix) appearance"]}]}
 {"word": "想", "definitions": [{"readings": ["siáng"], "meanings": ["Think", "Want"]}]}
 {"word": "盯牢", "definitions": [{"readings": ["ting lau"], "meanings": ["To focus one's attention and gaze (stare)"]}]}
@@ -12560,7 +12564,7 @@
 {"word": "落脫", "definitions": [{"readings": ["loh t'eh"], "meanings": ["To lose", "To drop"]}]}
 {"word": "撥", "definitions": [{"readings": ["peh"], "meanings": ["To give", "By (preposition)", "To recieve", "To endure"]}]}
 {"word": "撥拉", "definitions": [{"readings": ["peh lá"], "meanings": ["To give", "By (preposition)", "To recieve", "To endure"]}]}
-{"word": "撥***拉", "definitions": [{"readings": ["peh***lá"], "meanings": ["To give", "By (preposition)"]}]}
+{"word": "撥_拉", "definitions": [{"readings": ["peh _ lá"], "meanings": ["To give", "By (preposition)"]}]}
 {"word": "走紅", "definitions": [{"readings": ["tseu húng"], "meanings": ["To be popular", "To be lucky"]}]}
 {"word": "踵撞", "definitions": [{"readings": ["ts'úng dsong"], "meanings": ["To argue", "To insult a superior"]}]}
 {"word": "有卵用", "definitions": [{"readings": ["yeu lön yúng"], "meanings": ["Useless"]}]}
@@ -12751,7 +12755,7 @@
 {"word": "走位", "definitions": [{"readings": ["tseu we"], "meanings": ["To move from original position"]}]}
 {"word": "到把", "definitions": [{"readings": ["tau pó"], "meanings": ["To reach a certain level", "Approximately or almost (suffix to amount)"]}]}
 {"word": "走風", "definitions": [{"readings": ["tseu fúng"], "meanings": ["To leak secret"]}]}
-{"word": "吃***飯", "definitions": [{"readings": ["ky'uh *** van"], "meanings": ["To work in *** industry or area"]}]}
+{"word": "吃_飯", "definitions": [{"readings": ["ky'uh _ van"], "meanings": ["To work in _ industry or area"]}]}
 {"word": "搞勿靈清", "definitions": [{"readings": ["gau veh ling ts'ing"], "meanings": ["To be stupid", "Unable to understand"]}]}
 {"word": "搞勿清爽", "definitions": [{"readings": ["gau veh ts'ing song"], "meanings": ["To be stupid", "Unable to understand"]}]}
 {"word": "枉費", "definitions": [{"readings": ["w'ong fi"], "meanings": ["To waste effort", "To waste"]}]}
@@ -12919,8 +12923,8 @@
 {"word": "垃海", "definitions": [{"readings": ["leh h'e"], "meanings": ["Is here", "Is inside", "To be there", "Present tense (particle used pre predicate)", "Present continous tense (particle used post predicate)", "Emphasize present tense (particle at end of sentence)", "Emphasize present continous tense (particle used at end of sentence)", "Emphasize very severe (particle used at end of sentence)"]}]}
 {"word": "辣浪", "definitions": [{"readings": ["leh long"], "meanings": ["To be at", "At", "To be there (post)", "Present tense (particle used post predicate)", "Present continous tense (particle used post predicate)", "Present continuous (particle at end of sentence)", "Emphasize particle at end of sentence", "Present perfect tense (particle post predicate)"]}]}
 {"word": "垃上", "definitions": [{"readings": ["leh long"], "meanings": ["To be at", "At", "To be there (post)", "Present tense (particle used post predicate)", "Present continous tense (particle used post predicate)", "Present continuous (particle at end of sentence)", "Emphasize particle at end of sentence", "Present perfect tense (particle post predicate)"]}]}
-{"word": "辣***浪", "definitions": [{"readings": ["leh *** long"], "meanings": ["To be on top"]}]}
-{"word": "垃***上", "definitions": [{"readings": ["leh *** long"], "meanings": ["To be on top"]}]}
+{"word": "辣_浪", "definitions": [{"readings": ["leh _ long"], "meanings": ["To be on top"]}]}
+{"word": "垃_上", "definitions": [{"readings": ["leh _ long"], "meanings": ["To be on top"]}]}
 {"word": "辣蓋", "definitions": [{"readings": ["leh ke"], "meanings": ["To be at", "At", "To be there (post)", "Present tense (particle used post predicate)", "Present continous tense (particle used post predicate)", "Present continuous (particle at end of sentence)", "Emphasize particle at end of sentence", "Present perfect tense (particle post predicate)"]}]}
 {"word": "垃該", "definitions": [{"readings": ["leh ke"], "meanings": ["To be at", "At", "To be there (post)", "Present tense (particle used post predicate)", "Present continous tense (particle used post predicate)", "Present continuous (particle at end of sentence)", "Emphasize particle at end of sentence", "Present perfect tense (particle post predicate)"]}]}
 {"word": "有介事", "definitions": [{"readings": ["yeu ká zz"], "meanings": ["Real object", "True matters", "The matter is true!!"]}]}
@@ -12950,7 +12954,7 @@
 {"word": "勿算", "definitions": [{"readings": ["veh sön"], "meanings": ["Not counted", "Not keeping promise"]}]}
 {"word": "勿算數", "definitions": [{"readings": ["veh sön sú"], "meanings": ["Not counted", "Not keeping promise"]}]}
 {"word": "勿作數", "definitions": [{"readings": ["veh tsoh sú"], "meanings": ["Not counted", "Not keeping promise (unreliable)"]}]}
-{"word": "***勿着***", "definitions": [{"readings": ["*** veh dsáh ***"], "meanings": ["Suffix meaning not"]}]}
+{"word": "_勿着_", "definitions": [{"readings": ["_ veh dsáh _"], "meanings": ["Suffix meaning not"]}]}
 {"word": "勿得勿然", "definitions": [{"readings": ["veh tuh veh zen"], "meanings": ["Must do this (have no choice to do this)"]}]}
 {"word": "用勿着", "definitions": [{"readings": ["yúng veh dsáh"], "meanings": ["No need", "Not required"]}]}
 {"word": "使得", "definitions": [{"readings": ["sz tuh"], "meanings": ["Caused this"]}]}
@@ -13095,7 +13099,7 @@
 {"word": "勿勿少", "definitions": [{"readings": ["veh veh sau"], "meanings": ["Many"]}]}
 {"word": "莫老老", "definitions": [{"readings": ["móh lau lau"], "meanings": ["Many"]}]}
 {"word": "獨多", "definitions": [{"readings": ["tóh tú"], "meanings": ["Many", "The most"]}]}
-{"word": "?", "definitions": [{"readings": ["tóh tú"], "meanings": ["Many", "The most"]}]}
+{"word": "��", "definitions": [{"readings": ["tóh tú"], "meanings": ["Many", "The most"]}]}
 {"word": "短縮", "definitions": [{"readings": ["tön sóh"], "meanings": ["Summary", "Concise"]}]}
 {"word": "精光", "definitions": [{"readings": ["tsing kwong"], "meanings": ["Completely empty", "Completely finish or consume"]}]}
 {"word": "冷淡", "definitions": [{"readings": ["láng dan"], "meanings": ["Cold (attitude)"]}]}
@@ -13320,8 +13324,8 @@
 {"word": "危險", "definitions": [{"readings": ["we hyin"], "meanings": ["Dangerous"]}]}
 {"word": "着力", "definitions": [{"readings": ["dsáh lih"], "meanings": ["Great", "Powerful", "Awesome"]}]}
 {"word": "境況", "definitions": [{"readings": ["kyung kw'ong"], "meanings": ["Situation and circumstances"]}]}
-{"word": "", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
-{"word": "身建", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
+{"word": "�", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
+{"word": "[身建]", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
 {"word": "𧻙", "definitions": [{"readings": ["máh"], "meanings": ["Slow (as in walking)"]}]}
 {"word": "喥", "definitions": [{"readings": ["doh"], "meanings": ["Retarded"]}]}
 {"word": "癡癡哈哈", "definitions": [{"readings": ["ts'z ts'z h'á h'á"], "meanings": ["Crazy, erratic, obssessed girl (spastic)"]}]}
@@ -13533,7 +13537,7 @@
 {"word": "伶俐", "definitions": [{"readings": ["ling li"], "meanings": ["Smart and good at talking"]}]}
 {"word": "聰明", "definitions": [{"readings": ["ts'úng ming"], "meanings": ["Smart"]}]}
 {"word": "精明", "definitions": [{"readings": ["tsing ming"], "meanings": ["Astute and smart"]}]}
-{"word": "�", "definitions": [{"readings": ["hyá tsá"], "meanings": ["Smart (as a kid)"]}]}
+{"word": "��", "definitions": [{"readings": ["hyá tsá"], "meanings": ["Smart (as a kid)"]}]}
 {"word": "靈巧", "definitions": [{"readings": ["ling ky'au"], "meanings": ["Nimble"]}]}
 {"word": "乖門開", "definitions": [{"readings": ["kwá mung k'e"], "meanings": ["Astute, smart and well behaved"]}]}
 {"word": "鬼老來", "definitions": [{"readings": ["kyü lau le"], "meanings": ["Experienced, smart and astute"]}]}
@@ -14162,7 +14166,7 @@
 {"word": "血淋溚渧", "definitions": [{"readings": ["hyöh ling tah ti"], "meanings": ["Bloody"]}]}
 {"word": "直孛弄通", "definitions": [{"readings": ["dsuh beh lúng t'úng"], "meanings": ["Straight", "Direct (general)"]}]}
 {"word": "烏𬹙白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
-{"word": "烏\"黑真\"𬹙白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
+{"word": "烏[黑真]𬹙白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
 {"word": "四角方方", "definitions": [{"readings": ["sz koh fong fong"], "meanings": ["Square shaped"]}]}
 {"word": "四四角角", "definitions": [{"readings": ["sz sz koh koh"], "meanings": ["Square shaped"]}]}
 {"word": "黏支得支", "definitions": [{"readings": ["ny'in tsz tuh tsz"], "meanings": ["Very sticky"]}]}
@@ -14431,7 +14435,7 @@
 {"word": "眼", "definitions": [{"readings": ["ngan"], "meanings": ["Classifier = bits of"]}]}
 {"word": "茄勾", "definitions": [{"readings": ["gyá keu"], "meanings": ["Jack in cards"]}]}
 {"word": "老K", "definitions": [{"readings": ["lau k'e"], "meanings": ["King of cards"]}]}
-{"word": "�", "definitions": [{"readings": ["e sz"], "meanings": ["Ace of cards"]}]}
+{"word": "��", "definitions": [{"readings": ["e sz"], "meanings": ["Ace of cards"]}]}
 {"word": "別苗頭", "definitions": [{"readings": ["bih miau deu"], "meanings": ["To fight for praise", "To compete", "To start a fight or quarrel"]}]}
 {"word": "一踋去", "definitions": [{"readings": ["ih kyáh ky'i"], "meanings": ["(One kick)", "All is done, GG (negative)", "All left and gone away", "All taken", "All dead"]}]}
 {"word": "樣樣", "definitions": [{"readings": ["yáng yáng"], "meanings": ["All types (everything)"]}]}
@@ -15022,7 +15026,7 @@
 {"word": "一而再", "definitions": [{"readings": ["ih rh tse"], "meanings": ["Time and again (again and again)"]}]}
 {"word": "屢次", "definitions": [{"readings": ["l'ü ts'z"], "meanings": ["Time and again (again and again)"]}]}
 {"word": "重新", "definitions": [{"readings": ["dsúng sing"], "meanings": ["Again from the beginning"]}]}
-{"word": "橫_豎", "definitions": [{"readings": ["wáng _ zû _"], "meanings": ["Doing repeatedly"]}]}
+{"word": "橫_豎_", "definitions": [{"readings": ["wáng _ zû _"], "meanings": ["Doing repeatedly"]}]}
 {"word": "真正一歇", "definitions": [{"readings": ["tsung tsung ih hyih"], "meanings": ["Only a short moment"]}]}
 {"word": "有晨光", "definitions": [{"readings": ["yeu zung kwong"], "meanings": ["Sometimes", "To have time"]}]}
 {"word": "隨時", "definitions": [{"readings": ["dsöi zz"], "meanings": ["Any time"]}]}
@@ -15066,7 +15070,7 @@
 {"word": "最多", "definitions": [{"readings": ["tsöi tú"], "meanings": ["At most"]}]}
 {"word": "陌見脫", "definitions": [{"readings": ["máh kyin t'eh"], "meanings": ["To be lost (not knowing one's whereabouts)"]}]}
 {"word": "沒見脫", "definitions": [{"readings": ["máh kyin t'eh"], "meanings": ["To be lost (not knowing one's whereabouts)"]}]}
-{"word": "�", "definitions": [{"readings": ["máh kyin t'eh"], "meanings": ["To be lost (not knowing one's whereabouts)"]}]}
+{"word": "���", "definitions": [{"readings": ["máh kyin t'eh"], "meanings": ["To be lost (not knowing one's whereabouts)"]}]}
 {"word": "關聯", "definitions": [{"readings": ["kwan lin"], "meanings": ["To be related or relation"]}]}
 {"word": "判斷", "definitions": [{"readings": ["p'en dön"], "meanings": ["To judge or decide"]}]}
 {"word": "也", "definitions": [{"readings": ["há"], "meanings": ["Also"]}]}
@@ -15247,7 +15251,7 @@
 {"word": "像_恁介", "definitions": [{"readings": ["ziáng _ nung ká"], "meanings": ["Similar to that manner, style or pattern"]}]}
 {"word": "一頭_一頭_", "definitions": [{"readings": ["ih deu _ ih deu _"], "meanings": ["Doing this versus that", "This side versus that side"]}]}
 {"word": "一面_一面_", "definitions": [{"readings": ["ih min _ ih min _"], "meanings": ["Doing this versus that", "This side versus that side"]}]}
-{"word": "一方面_一方面", "definitions": [{"readings": ["ih fong min _ ih fong min _"], "meanings": ["On one hand versus on the other hand"]}]}
+{"word": "一方面_一方面_", "definitions": [{"readings": ["ih fong min _ ih fong min _"], "meanings": ["On one hand versus on the other hand"]}]}
 {"word": "一則來_二則來_", "definitions": [{"readings": ["ih tsuh le _ nyi tsuh le _"], "meanings": ["Firstly versus secondly"]}]}
 {"word": "開頭_後首來_", "definitions": [{"readings": ["k'e deu _ heu seu le _"], "meanings": ["In the beginning versus later on"]}]}
 {"word": "一路_一路_", "definitions": [{"readings": ["ih lú _ ih lú _"], "meanings": ["Doing this versus that"]}]}
@@ -15277,7 +15281,7 @@
 {"word": "要末_要末_", "definitions": [{"readings": ["y'au meh _ y'au meh _"], "meanings": ["How about this, how about that"]}]}
 {"word": "或者", "definitions": [{"readings": ["hóh tse"], "meanings": ["Alternatively"]}]}
 {"word": "_也好_也好", "definitions": [{"readings": ["_ há h'au _ há h'au"], "meanings": ["Considering this, considering that"]}]}
-{"word": "與其_寧可_", "definitions": [{"readings": ["y'ü gyi _ nyung k'ú"], "meanings": ["Compared to this, rather do that"]}]}
+{"word": "與其_寧可_", "definitions": [{"readings": ["y'ü gyi _ nyung k'ú _"], "meanings": ["Compared to this, rather do that"]}]}
 {"word": "與其_勿如_", "definitions": [{"readings": ["y'ü gyi _ veh zû _"], "meanings": ["Compared to this, rather do that"]}]}
 {"word": "有得_勿如_", "definitions": [{"readings": ["yeu tuh _ veh zû _"], "meanings": ["Compared to this, rather do that"]}]}
 {"word": "情願_也勿要", "definitions": [{"readings": ["dsing nyön _ há veh y'au"], "meanings": ["Rather this, than that"]}]}
@@ -15332,7 +15336,7 @@
 {"word": "既然_葛末", "definitions": [{"readings": ["kyi zen _ keh meh"], "meanings": ["Since this, then that"]}]}
 {"word": "既然_蓋末", "definitions": [{"readings": ["kyi zen _ keh meh"], "meanings": ["Since this, then that"]}]}
 {"word": "一樣_就", "definitions": [{"readings": ["ih yáng _ zieu"], "meanings": ["Since this, then that"]}]}
-{"word": "_ 拉末_就", "definitions": [{"readings": ["_ lá meh _ zieu"], "meanings": ["Since this, then that"]}]}
+{"word": "_拉末_就", "definitions": [{"readings": ["_ lá meh _ zieu"], "meanings": ["Since this, then that"]}]}
 {"word": "_之末_就", "definitions": [{"readings": ["_ tsz meh _ zieu"], "meanings": ["Since this, then that"]}]}
 {"word": "即使_也", "definitions": [{"readings": ["tsih sz _ há"], "meanings": ["Even if this, still that"]}]}
 {"word": "就算", "definitions": [{"readings": ["zieu sön"], "meanings": ["Even if"]}]}
@@ -15435,7 +15439,7 @@
 {"word": "好𠲎", "definitions": [{"readings": ["h'au vá"], "meanings": ["(Particle)", "Emphasis", "Good - bad interrogative"]}]}
 {"word": "好𠳝", "definitions": [{"readings": ["h'au vá"], "meanings": ["(Particle)", "Emphasis", "Good - bad interrogative"]}]}
 {"word": "伊講", "definitions": [{"readings": ["yi kong"], "meanings": ["(Particle)", "He said", "(You know)"]}]}
-{"word": "_ 勿住 _", "definitions": [{"readings": ["_ veh dsû _"], "meanings": ["(Particle) negation, cannot (suffix)"]}]}
+{"word": "_勿住_", "definitions": [{"readings": ["_ veh dsû _"], "meanings": ["(Particle) negation, cannot (suffix)"]}]}
 {"word": "八臘", "definitions": [{"readings": ["pah lah"], "meanings": ["(Suffix particle) strange (derogative)"]}]}
 {"word": "勿煞", "definitions": [{"readings": ["veh sah"], "meanings": ["(Suffix particle) very (derogative)"]}]}
 {"word": "式氣", "definitions": [{"readings": ["suh ky'i"], "meanings": ["(Suffix particle) mannered (derogative)"]}]}
@@ -15519,7 +15523,7 @@
 {"word": "翁嗡嗡", "definitions": [{"readings": ["úng úng úng"], "meanings": ["Mosquito, insect flying sound"]}]}
 {"word": "𣌮𣌮𣌮", "definitions": [{"readings": ["tsoh tsoh tsoh"], "meanings": ["Chicken clucking sound"]}]}
 {"word": "玆玆玆", "definitions": [{"readings": ["tsz tsz tsz"], "meanings": ["Rat squeaking sound"]}]}
-{"word": "口玆口玆口玆", "definitions": [{"readings": ["tsz tsz tsz"], "meanings": ["Rat squeaking sound"]}]}
+{"word": "[口玆][口玆][口玆]", "definitions": [{"readings": ["tsz tsz tsz"], "meanings": ["Rat squeaking sound"]}]}
 {"word": "索落落", "definitions": [{"readings": ["soh loh loh"], "meanings": ["Animal scurrying sound", "Scattering of objects sound", "Sound of tears from crying"]}]}
 {"word": "撲龍同", "definitions": [{"readings": ["bóh lúng dúng"], "meanings": ["Dropping of large object sound", "Falling over sound"]}]}
 {"word": "壳龍通", "definitions": [{"readings": ["k'oh lúng t'úng"], "meanings": ["Sound of objects falling into water"]}]}
@@ -15587,7 +15591,7 @@
 {"word": "的嘟的嘟", "definitions": [{"readings": ["tih tú tih tú"], "meanings": ["Child eating sound"]}]}
 {"word": "�拉�拉", "definitions": [{"readings": ["gwah lah gwah lah"], "meanings": ["Hitting buttocks sounds"]}]}
 {"word": "切力觸落", "definitions": [{"readings": ["ts'ih lih ts'óh loh"], "meanings": ["Whispering sound"]}]}
-{"word": "�", "definitions": [{"readings": ["gyá gyá gyá"], "meanings": ["Hitting buttocks sound"]}]}
+{"word": "���", "definitions": [{"readings": ["gyá gyá gyá"], "meanings": ["Hitting buttocks sound"]}]}
 {"word": "窸窸索索", "definitions": [{"readings": ["sih sih soh soh"], "meanings": ["Scurrying small animal sound"]}]}
 {"word": "壳落壳落", "definitions": [{"readings": ["k'oh loh k'oh loh"], "meanings": ["Rattling sound", "Tapping sound", "Walking sound"]}]}
 {"word": "阿潽阿潽", "definitions": [{"readings": ["á p'ú á p'ú"], "meanings": ["Puffing angry sound"]}]}
@@ -17781,8 +17785,8 @@
 {"word": "大樹底下好遮蔭", "definitions": [{"readings": ["dú zû ti hau h'au tsó y'ung"], "meanings": ["(To take shade under a big tree)", "To have someone to lean or rely on"]}]}
 {"word": "大船翻到陰溝裏", "definitions": [{"readings": ["dú zen fan tau y'ung keu li"], "meanings": ["(Flipped ship in the sewers)", "To miscalculate", "An unexpected mistake"]}]}
 {"word": "上山容易下山難", "definitions": [{"readings": ["zong san yúng yi hau san nan"], "meanings": ["(Easier to climb up than down a mountain)", "Easy to start but hard to finish", "Easy to join group or gang but hard to leave"]}]}
-{"word": "�", "definitions": [{"readings": ["ná p'ú lú"], "meanings": ["Nipples, breasts"]}]}
-{"word": "吃泡飯開�", "definitions": [{"readings": ["ky'uh p'au van k'e bung zz"], "meanings": ["(To eat congee and drive a luxury car)", "To be financially stingy secretly but show off one's wealth", "To care about fashion more than one's health"]}]}
+{"word": "���", "definitions": [{"readings": ["ná p'ú lú"], "meanings": ["Nipples, breasts"]}]}
+{"word": "吃泡飯開��", "definitions": [{"readings": ["ky'uh p'au van k'e bung zz"], "meanings": ["(To eat congee and drive a luxury car)", "To be financially stingy secretly but show off one's wealth", "To care about fashion more than one's health"]}]}
 {"word": "上肩容易下肩難", "definitions": [{"readings": ["zong kyin yúng yi hau kyin nan"], "meanings": ["(Easy to lift bamboo sticck on than off the shoulder)", "Easy to start but hard to finish", "Easy to join group or gang but hard to leave"]}]}
 {"word": "上梁勿正下梁歪", "definitions": [{"readings": ["zong liáng veh tsung hau liáng hwá"], "meanings": ["Superiors must set a good example otherwise subordinates will learn bad traits"]}]}
 {"word": "萬寳全書缺隻角", "definitions": [{"readings": ["van pau dsin sû ky'öh tsáh koh"], "meanings": ["(Encyclopedia missing a corner)", "Even smart people make mistakes"]}]}
@@ -17901,7 +17905,7 @@
 {"word": "飯店門口擺粥攤", "definitions": [{"readings": ["van tin mung k'eu pá tsóh t'an"], "meanings": ["(Congee store in front of restaurant)", "To do something pointless and unnecessary"]}]}
 {"word": "閒話裏向帶骨頭", "definitions": [{"readings": ["han wó li hyáng tá kweh deu"], "meanings": ["To speak with a sharp tongue and antagonising tone"]}]}
 {"word": "悶聲勿响大發財", "definitions": [{"readings": ["m'ung sung veh hyáng dá fah dse"], "meanings": ["To quietly get rich"]}]}
-{"word": "𧟰吃拉到�", "definitions": [{"readings": ["viau ky'uh lá tau mi só lá só"], "meanings": ["(Child's nursery) do not want to eat"]}]}
+{"word": "𧟰吃拉到����", "definitions": [{"readings": ["viau ky'uh lá tau mi só lá só"], "meanings": ["(Child's nursery) do not want to eat"]}]}
 {"word": "良心撥拉狗吃脫", "definitions": [{"readings": ["liáng sing peh lá keu ky'uh t'eh"], "meanings": ["To be without a conscience"]}]}
 {"word": "雞蛋裏向尋骨頭", "definitions": [{"readings": ["kyi dan li hyáng zing kweh deu"], "meanings": ["(To look for bones in egg)", "To nitpick"]}]}
 {"word": "屁股一翹人走拉", "definitions": [{"readings": ["p'i kú ih ky'au nyung tseu lá"], "meanings": ["To stand up and leave"]}]}
@@ -18104,7 +18108,7 @@
 {"word": "當局者迷旁觀者清", "definitions": [{"readings": ["tong gyóh tse mi bong kwen tse ts'ing"], "meanings": ["Its is hard to see things clearly from within (outsiders have better perspective)"]}]}
 {"word": "當斷勿斷反受其亂", "definitions": [{"readings": ["tong dön veh dön fan zeu gyi lön"], "meanings": ["One must be determined and resolute to avoid disaster"]}]}
 {"word": "爺孃勿正帶壞子孫", "definitions": [{"readings": ["yá nyáng veh tsung tá wá tsz sung"], "meanings": ["Parents bad behaviour sets a bad example for the children"]}]}
-{"word": "�", "definitions": [{"readings": ["sáng wi gyuh"], "meanings": ["Sandwich"]}]}
+{"word": "���", "definitions": [{"readings": ["sáng wi gyuh"], "meanings": ["Sandwich"]}]}
 {"word": "爺有孃有勿如自有", "definitions": [{"readings": ["yá yeu nyáng yeu veh zû zz yeu"], "meanings": ["One needs to be financially independent of one's parents"]}]}
 {"word": "燈籠殼子早晏燒光", "definitions": [{"readings": ["tung lúng k'oh tsz tsau an sau kwong"], "meanings": ["(Light covering burns out)", "Wealth of a family without capable members will decline and depleted"]}]}
 {"word": "吃人一口報人一斗", "definitions": [{"readings": ["ky'uh nyung ih k'eu pau nyung ih teu"], "meanings": ["One must be grateful for a favour and return more than one recieves"]}]}
@@ -18131,8 +18135,8 @@
 {"word": "呆呆調碰着呆呆調", "definitions": [{"readings": ["nge nge diau báng dsáh nge nge diau"], "meanings": ["Coincidentally"]}]}
 {"word": "無沒功勞也有苦勞", "definitions": [{"readings": ["m meh kúng lau há yeu k'ú lau"], "meanings": ["One's hardwork is still valued even though one did not directly contribute to the result or success"]}]}
 {"word": "聽得好聽見得平常", "definitions": [{"readings": ["t'ing tuh h'au t'ing kyin tuh bing dsáng"], "meanings": ["When something sounds very good but is actually quite ordinary"]}]}
-{"word": "叫花子拉胡琴 - 苦扯", "definitions": [{"readings": ["kau hwó tsz lá hú gyung - k'ú ts'á"], "meanings": ["(Beggar playing the accordian)", "Any difficult job"]}]}
-{"word": "叫花子拉胡琴 - 苦差", "definitions": [{"readings": ["kau hwó tsz lá hú gyung - k'ú ts'á"], "meanings": ["(Beggar playing the accordian)", "Any difficult job"]}]}
+{"word": "叫花子拉胡琴-苦扯", "definitions": [{"readings": ["kau hwó tsz lá hú gyung - k'ú ts'á"], "meanings": ["(Beggar playing the accordian)", "Any difficult job"]}]}
+{"word": "叫花子拉胡琴-苦差", "definitions": [{"readings": ["kau hwó tsz lá hú gyung - k'ú ts'á"], "meanings": ["(Beggar playing the accordian)", "Any difficult job"]}]}
 {"word": "秀才談書屠夫談豬", "definitions": [{"readings": ["sieu dse dan sû dú fú dan tsû"], "meanings": ["Everyone has their specialised and unique expertise"]}]}
 {"word": "我拉火裏儂拉水裏", "definitions": [{"readings": ["ngú lá h'ú li núng lá sz li"], "meanings": ["I am worried but you are not worried"]}]}
 {"word": "作天作地作拉屋裏", "definitions": [{"readings": ["tsoh t'in tsoh di tsoh lá óh li"], "meanings": ["To throw a tantrum at home"]}]}
@@ -18192,7 +18196,7 @@
 {"word": "棉花店打烊-勿談拉", "definitions": [{"readings": ["min hwó tin táng yáng - veh dan lá"], "meanings": ["No point talking any further", "So good one is speechless"]}]}
 {"word": "碎玻璃冒充金剛鑽", "definitions": [{"readings": ["se pú li mau ts'úng kyung kong tsön"], "meanings": ["(To replace glass for diamond)", "To substitute inferior materials for higher quality products"]}]}
 {"word": "碗爿䃙磚有翻身日", "definitions": [{"readings": ["w'en ban lóh tsen yeu fan sung nyih"], "meanings": ["(Tile flip over)", "One's luck will turn around one day"]}]}
-{"word": "靴裏無襪-自家曉得", "definitions": [{"readings": ["hyú li m mah- zz ká hyau tuh"], "meanings": ["(Boot without socks)", "Only one understands one's own situation"]}]}
+{"word": "靴裏無襪-自家曉得", "definitions": [{"readings": ["hyú li m mah - zz ká hyau tuh"], "meanings": ["(Boot without socks)", "Only one understands one's own situation"]}]}
 {"word": "滿飯好吃滿話難講", "definitions": [{"readings": ["men van h'au ky'uh men wó nan kong"], "meanings": ["One must not speak with too much certainty in case one cannot back up one's claim"]}]}
 {"word": "牆頭草風吹兩邊倒", "definitions": [{"readings": ["ziáng deu ts'au fúng ts'z liáng pin tau"], "meanings": ["(Wind blows on a wall)", "To change one's position and be easily influenced by others"]}]}
 {"word": "蜻蜓吃尾巴-自吃自", "definitions": [{"readings": ["ts'ing ding ky'uh mi pó - zz ky'uh zz"], "meanings": ["To be self reliant", "Autofellatio (self blowjob)"]}]}
