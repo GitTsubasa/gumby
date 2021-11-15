@@ -1944,7 +1944,7 @@
 {"word": "日圓", "definitions": [{"readings": ["zeh yön"], "meanings": ["Japanese yen"]}]}
 {"word": "大拉斯", "definitions": [{"readings": ["dá lá sz"], "meanings": ["Dollars"]}]}
 {"word": "大𬱭廝", "definitions": [{"readings": ["dá lá sz"], "meanings": ["Silly, useless person (a clown of a person)"]}]}
-{"word": "大[革頁]廝", "definitions": [{"readings": ["dá lá sz"], "meanings": ["Silly, useless person (a clown of a person)"]}]}
+{"word": "大⿰革頁廝", "definitions": [{"readings": ["dá lá sz"], "meanings": ["Silly, useless person (a clown of a person)"]}]}
 {"word": "金條", "definitions": [{"readings": ["kyung diau"], "meanings": ["Gold Bullion"]}]}
 {"word": "條子", "definitions": [{"readings": ["diau tsz"], "meanings": ["Gold Bullion", "Shape and height of person", "Any message or note", "A secret message", "Stripes"]}]}
 {"word": "小條子", "definitions": [{"readings": ["siau diau tsz"], "meanings": ["One tael of gold"]}]}
@@ -2829,13 +2829,13 @@
 {"word": "烏龜壳", "definitions": [{"readings": ["ú kyü k'oh"], "meanings": ["Turtle shell"]}]}
 {"word": "十三塊六角", "definitions": [{"readings": ["zeh san kw'e lóh koh"], "meanings": ["Thirteen dollars and sixty cents", "Turtle (made from 13 sections and 6 parts)", "(Insult)"]}]}
 {"word": "甲魚", "definitions": [{"readings": ["kyáh ng"], "meanings": ["Soft shell turtle"]}]}
-{"word": "[魚脚]魚", "definitions": [{"readings": ["kyáh ng"], "meanings": ["Soft shell turtle"]}]}
+{"word": "⿰魚脚魚", "definitions": [{"readings": ["kyáh ng"], "meanings": ["Soft shell turtle"]}]}
 {"word": "菜花甲魚", "definitions": [{"readings": ["ts'e hwó kyáh ng"], "meanings": ["Soft shell turtle during spring"]}]}
-{"word": "菜花[魚脚]魚", "definitions": [{"readings": ["ts'e hwó kyáh ng"], "meanings": ["Soft shell turtle during spring"]}]}
+{"word": "菜花⿰魚脚魚", "definitions": [{"readings": ["ts'e hwó kyáh ng"], "meanings": ["Soft shell turtle during spring"]}]}
 {"word": "蚊子甲魚", "definitions": [{"readings": ["mung tsz kyáh ng"], "meanings": ["Soft shell turtle in summer"]}]}
-{"word": "蚊子[魚脚]魚", "definitions": [{"readings": ["mung tsz kyáh ng"], "meanings": ["Soft shell turtle in summer"]}]}
+{"word": "蚊子⿰魚脚魚", "definitions": [{"readings": ["mung tsz kyáh ng"], "meanings": ["Soft shell turtle in summer"]}]}
 {"word": "桂花甲魚", "definitions": [{"readings": ["kwe hwó kyáh ng"], "meanings": ["Soft shell turtle in Autumn"]}]}
-{"word": "桂花[魚脚]魚", "definitions": [{"readings": ["kwe hwó kyáh ng"], "meanings": ["Soft shell turtle in Autumn"]}]}
+{"word": "桂花⿰魚脚魚", "definitions": [{"readings": ["kwe hwó kyáh ng"], "meanings": ["Soft shell turtle in Autumn"]}]}
 {"word": "癩頭黿", "definitions": [{"readings": ["lá deu nyön"], "meanings": ["Large variety of soft shell turtle"]}]}
 {"word": "昆蟲類", "definitions": [{"readings": ["kw'ung dsúng le"], "meanings": ["Insects"]}]}
 {"word": "蝴蝶", "definitions": [{"readings": ["hú dih"], "meanings": ["Butterfly"]}]}
@@ -9015,9 +9015,9 @@
 {"word": "老油條", "definitions": [{"readings": ["lau yeu diau"], "meanings": ["Experienced person but lazy and indifferent"]}]}
 {"word": "兵油子", "definitions": [{"readings": ["ping yeu tsz"], "meanings": ["Experienced soldier but lazy and indifferent"]}]}
 {"word": "?人頭", "definitions": [{"readings": ["gyá nyung deu"], "meanings": ["(Derogatory) A capable person"]}]}
-{"word": "[身建]人頭", "definitions": [{"readings": ["gyá nyung deu"], "meanings": ["(Derogatory) A capable person"]}]}
+{"word": "⿰身建人頭", "definitions": [{"readings": ["gyá nyung deu"], "meanings": ["(Derogatory) A capable person"]}]}
 {"word": "?頭", "definitions": [{"readings": ["gyá deu"], "meanings": ["Shrew (rude woman)"]}]}
-{"word": "[身建]頭", "definitions": [{"readings": ["gyá deu"], "meanings": ["Shrew (rude woman)"]}]}
+{"word": "⿰身建頭", "definitions": [{"readings": ["gyá deu"], "meanings": ["Shrew (rude woman)"]}]}
 {"word": "怪人頭", "definitions": [{"readings": ["kwá nyung deu"], "meanings": ["Strange person (weirdo)"]}]}
 {"word": "多頭", "definitions": [{"readings": ["tú deu"], "meanings": ["Unloved extra person"]}]}
 {"word": "楊樹頭", "definitions": [{"readings": ["yáng zû deu"], "meanings": ["Ambivalent person who waivers"]}]}
@@ -10459,9 +10459,9 @@
 {"word": "翻跟斗", "definitions": [{"readings": ["fan kung teu"], "meanings": ["To sommersault or flip", "To double prize of object"]}]}
 {"word": "躥跟斗", "definitions": [{"readings": ["ts'ön kung teu"], "meanings": ["To sommersault or flip", "To double prize of object"]}]}
 {"word": "豎?蜓", "definitions": [{"readings": ["zû ts'ing ding"], "meanings": ["To reverse sommersault or flip handstand"]}]}
-{"word": "豎[虫青]蜓", "definitions": [{"readings": ["zû ts'ing ding"], "meanings": ["To reverse sommersault or flip handstand"]}]}
+{"word": "豎⿰虫青蜓", "definitions": [{"readings": ["zû ts'ing ding"], "meanings": ["To reverse sommersault or flip handstand"]}]}
 {"word": "豎?蜓", "definitions": [{"readings": ["zû dsing ding"], "meanings": ["To reverse sommersault or flip handstand"]}]}
-{"word": "豎[虫青]蜓", "definitions": [{"readings": ["zû dsing ding"], "meanings": ["To reverse sommersault or flip handstand"]}]}
+{"word": "豎⿰虫青蜓", "definitions": [{"readings": ["zû dsing ding"], "meanings": ["To reverse sommersault or flip handstand"]}]}
 {"word": "豎煙囪", "definitions": [{"readings": ["zû in ts'úng"], "meanings": ["To erect a chimney", "To reverse sommersault or flip handstand"]}]}
 {"word": "丁倒爬", "definitions": [{"readings": ["ting tau bó"], "meanings": ["Walking handstand"]}]}
 {"word": "刀冰", "definitions": [{"readings": ["tau ping"], "meanings": ["Ice skating"]}]}
@@ -14167,7 +14167,7 @@
 {"word": "血淋溚渧", "definitions": [{"readings": ["hyöh ling tah ti"], "meanings": ["Bloody"]}]}
 {"word": "直孛弄通", "definitions": [{"readings": ["dsuh beh lúng t'úng"], "meanings": ["Straight", "Direct (general)"]}]}
 {"word": "烏𬹙白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
-{"word": "烏[黑真]白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
+{"word": "烏⿰黑真白花", "definitions": [{"readings": ["ú tsung báh hwó"], "meanings": ["Mouldy"]}]}
 {"word": "四角方方", "definitions": [{"readings": ["sz koh fong fong"], "meanings": ["Square shaped"]}]}
 {"word": "四四角角", "definitions": [{"readings": ["sz sz koh koh"], "meanings": ["Square shaped"]}]}
 {"word": "黏支得支", "definitions": [{"readings": ["ny'in tsz tuh tsz"], "meanings": ["Very sticky"]}]}

@@ -643,8 +643,8 @@
 {"word": "儋", "definitions": [{"readings": ["tan"], "meanings": ["Burden, weight"]}]}
 {"word": "億", "definitions": [{"readings": ["y'uh"], "meanings": ["Repose (state of rest, sleep or tranquility)"]}]}
 {"word": "儕", "definitions": [{"readings": ["dse"], "meanings": ["A class, sign of plural"]}]}
-{"word": "[亻山丁]", "definitions": [{"readings": ["ts'ú"], "meanings": ["To wait"]}]}
-{"word": "[丿亅丶]", "definitions": [{"readings": ["dsin"], "meanings": ["Copper money"]}]}
+{"word": "⿰亻⿱山丁", "definitions": [{"readings": ["ts'ú"], "meanings": ["To wait"]}]}
+{"word": "⿲丿亅丶]", "definitions": [{"readings": ["dsin"], "meanings": ["Copper money"]}]}
 {"word": "儔", "definitions": [{"readings": ["dseu"], "meanings": ["Companion"]}]}
 {"word": "儗", "definitions": [{"readings": ["ny'i"], "meanings": ["To compare, decide"]}]}
 {"word": "儒", "definitions": [{"readings": ["*lú", "zû"], "meanings": ["Scholar, literati"]}]}
@@ -698,7 +698,7 @@
 {"word": "兜", "definitions": [{"readings": ["teu"], "meanings": ["A surround, a cap"]}]}
 {"word": "兠", "definitions": [{"readings": ["teu"], "meanings": ["To surround, a cap"]}]}
 {"word": "兢", "definitions": [{"readings": ["kyung"], "meanings": ["To fear, caution, brambles (thorns)"]}]}
-{"word": "[丶曲几]", "definitions": [{"readings": ["teu"], "meanings": ["To surround"]}]}
+{"word": "⿳丶⿴口卄几", "definitions": [{"readings": ["teu"], "meanings": ["To surround"]}]}
 {"word": "亾", "definitions": [{"readings": ["wáng"], "meanings": ["Lost"]}]}
 {"word": "內", "definitions": [{"readings": ["ne"], "meanings": ["Within"]}]}
 {"word": "内", "definitions": [{"readings": ["ne"], "meanings": ["Within"]}]}
@@ -970,7 +970,7 @@
 {"word": "勳", "definitions": [{"readings": ["hyün"], "meanings": ["Merit"]}]}
 {"word": "勝", "definitions": [{"readings": ["sung"], "meanings": ["To overcome, surpass", "Adequate to, to bear"]}]}
 {"word": "募", "definitions": [{"readings": ["mú"], "meanings": ["To enlist, a call for aid"]}]}
-{"word": "[旅力]", "definitions": [{"readings": ["lú"], "meanings": ["To be strong"]}]}
+{"word": "⿰旅力", "definitions": [{"readings": ["lú"], "meanings": ["To be strong"]}]}
 {"word": "勢", "definitions": [{"readings": ["sz"], "meanings": ["Strength, form, configuration"]}]}
 {"word": "勠", "definitions": [{"readings": ["lóh"], "meanings": ["United strength"]}]}
 {"word": "勡", "definitions": [{"readings": ["p'iau"], "meanings": ["To stab, pierce"]}]}
@@ -8047,7 +8047,7 @@
 {"word": "鰢", "definitions": [{"readings": ["mó"], "meanings": ["Prawns"]}]}
 {"word": "鰣", "definitions": [{"readings": ["zz"], "meanings": ["The shad (fish)"]}]}
 {"word": "鰹", "definitions": [{"readings": ["kyin"], "meanings": ["A mullet, fish"]}]}
-{"word": "[魚脚]", "definitions": [{"readings": ["kyáh"], "meanings": ["A turtle"]}]}
+{"word": "⿰魚脚", "definitions": [{"readings": ["kyáh"], "meanings": ["A turtle"]}]}
 {"word": "鰱", "definitions": [{"readings": ["lin"], "meanings": ["The bream"]}]}
 {"word": "鰻", "definitions": [{"readings": ["men"], "meanings": ["Salt water eel"]}]}
 {"word": "鰵", "definitions": [{"readings": ["min"], "meanings": ["Fish resembling the perch"]}]}
@@ -8059,7 +8059,7 @@
 {"word": "鰳", "definitions": [{"readings": ["luh"], "meanings": ["A kind of fish"]}]}
 {"word": "𩺰", "definitions": [{"readings": ["ng", "yü"], "meanings": ["Pair of fish"]}]}
 {"word": "䲆", "definitions": [{"readings": ["sin"], "meanings": ["Fresh fish"]}]}
-{"word": "[蛇魚]", "definitions": [{"readings": ["zen"], "meanings": ["Small fresh water eel"]}]}
+{"word": "⿰蛇魚", "definitions": [{"readings": ["zen"], "meanings": ["Small fresh water eel"]}]}
 {"word": "鱖", "definitions": [{"readings": ["kwe"], "meanings": ["A striped perch"]}]}
 {"word": "鱗", "definitions": [{"readings": ["ling"], "meanings": ["The scales of a fish"]}]}
 {"word": "鱉", "definitions": [{"readings": ["pih"], "meanings": ["A turtle"]}]}
@@ -8196,7 +8196,7 @@
 {"word": "黜", "definitions": [{"readings": ["ts'eh"], "meanings": ["Degrade, dismiss from office"]}]}
 {"word": "黛", "definitions": [{"readings": ["de"], "meanings": ["Painted eyebrows"]}]}
 {"word": "黚", "definitions": [{"readings": ["gyin"], "meanings": ["Name of a place"]}]}
-{"word": "[黑白]", "definitions": [{"readings": ["hwe"], "meanings": ["Ashes colour"]}]}
+{"word": "⿰黑白", "definitions": [{"readings": ["hwe"], "meanings": ["Ashes colour"]}]}
 {"word": "黝", "definitions": [{"readings": ["y'eu"], "meanings": ["A colour almost black, ashy"]}]}
 {"word": "黠", "definitions": [{"readings": ["kyah", "kyih"], "meanings": ["Deep black, crafty, artful"]}]}
 {"word": "䵧", "definitions": [{"readings": ["tse"], "meanings": ["To dye black"]}]}
@@ -8225,7 +8225,7 @@
 {"word": "鼛", "definitions": [{"readings": ["kau"], "meanings": ["A large, drum twelve feet long"]}]}
 {"word": "鼫", "definitions": [{"readings": ["záh"], "meanings": ["Grayish yellow long tailed marmot"]}]}
 {"word": "鼯", "definitions": [{"readings": ["ngú"], "meanings": ["The flying squirrel"]}]}
-{"word": "[鼠飛]", "definitions": [{"readings": ["ts'z"], "meanings": ["A bat"]}]}
+{"word": "⿰鼠飛", "definitions": [{"readings": ["ts'z"], "meanings": ["A bat"]}]}
 {"word": "𪖐", "definitions": [{"readings": ["ky'au"], "meanings": ["A turned up nose"]}]}
 {"word": "𪖑", "definitions": [{"readings": ["ky'au"], "meanings": ["A turned up nose"]}]}
 {"word": "鼾", "definitions": [{"readings": ["hön"], "meanings": ["To snore"]}]}
