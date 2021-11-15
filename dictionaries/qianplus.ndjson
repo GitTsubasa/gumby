@@ -10849,7 +10849,7 @@
 {"word": "交往手段", "definitions": [{"readings": ["kyau w'ong seu dön"], "meanings": ["Social tactics"]}]}
 {"word": "因頭", "definitions": [{"readings": ["y'ung deu"], "meanings": ["A reason", "An excuse"]}]}
 {"word": "借口", "definitions": [{"readings": ["tsiá k'eu"], "meanings": ["An excuse"]}]}
-{"word": "講究", "definitions": [{"readings": ["kong kyü"], "meanings": ["A reason", "Fancy", "To investigate"]}]}
+{"word": "講究", "definitions": [{"readings": ["kong kyeu"], "meanings": ["A reason", "Fancy", "To investigate"]}]}
 {"word": "原因", "definitions": [{"readings": ["nyön y'ung"], "meanings": ["Reason"]}]}
 {"word": "道理", "definitions": [{"readings": ["dau li"], "meanings": ["Regular patterns", "Rules or manners", "Reason"]}]}
 {"word": "理由", "definitions": [{"readings": ["li yeu"], "meanings": ["Reason"]}]}
@@ -14506,8 +14506,8 @@
 {"word": "啥個晨光", "definitions": [{"readings": ["sá kuh zung kwong"], "meanings": ["When"]}]}
 {"word": "阿裏搭 (那裏𡍲)", "definitions": [{"readings": ["há li tah"], "meanings": ["Where"]}]}
 {"word": "阿裏一個 (那裏一個)", "definitions": [{"readings": ["há li ih kuh"], "meanings": ["Which"]}]}
-{"word": "啥講究", "definitions": [{"readings": ["sá kong kyü"], "meanings": ["Why", "What reason"]}]}
-{"word": "啥個講究", "definitions": [{"readings": ["sá kuh kong kyü"], "meanings": ["Why", "What reason"]}]}
+{"word": "啥講究", "definitions": [{"readings": ["sá kong kyeu"], "meanings": ["Why", "What reason"]}]}
+{"word": "啥個講究", "definitions": [{"readings": ["sá kuh kong kyeu"], "meanings": ["Why", "What reason"]}]}
 {"word": "啥個路道", "definitions": [{"readings": ["sá kuh lú dau"], "meanings": ["Why", "What reason"]}]}
 {"word": "啥個緣故", "definitions": [{"readings": ["sá kuh yön kú"], "meanings": ["Why", "What reason"]}]}
 {"word": "啥咾", "definitions": [{"readings": ["sá lau"], "meanings": ["Why", "What reason"]}]}
@@ -16480,7 +16480,7 @@
 {"word": "汗毛凜凜 (寒毛凜凜)", "definitions": [{"readings": ["hön mau ling ling"], "meanings": ["To get goosebumps (from fear or disgust)"]}]}
 {"word": "過橋落篷", "definitions": [{"readings": ["kú gyau loh búng"], "meanings": ["(To remove sail after passing a bridge)", "To do something stupid and unnecessary"]}]}
 {"word": "有心有想", "definitions": [{"readings": ["yeu sing yeu siáng"], "meanings": ["To have patience"]}]}
-{"word": "有句講句", "definitions": [{"readings": ["yeu kyü kong kyü"], "meanings": ["To speak honestly"]}]}
+{"word": "有句講句", "definitions": [{"readings": ["yeu kyü kong kyeu"], "meanings": ["To speak honestly"]}]}
 {"word": "有花露水", "definitions": [{"readings": ["yeu hwó lú sz"], "meanings": ["To have social tricks"]}]}
 {"word": "有規有矩", "definitions": [{"readings": ["yeu kwe yeu kyü"], "meanings": ["To be well mannered and polite"]}]}
 {"word": "有借有還", "definitions": [{"readings": ["yeu tsiá yeu wan"], "meanings": ["To return what one owes (favour)", "To return what one borrows"]}]}
@@ -16496,8 +16496,8 @@
 {"word": "鹹淡", "definitions": [{"readings": ["han dan"], "meanings": ["Saltiness"]}]}
 {"word": "配合", "definitions": [{"readings": ["p'e heh"], "meanings": ["To cooperate"]}]}
 {"word": "瞇花眼笑", "definitions": [{"readings": ["mi hwó ngan siau"], "meanings": ["To smile with squinty eyes (^__^)"]}]}
-{"word": "兒子要窮養囡兒要副養", "definitions": [{"readings": ["nyi tsz y'au gyúng yáng, nön ng y'au fú yáng"], "meanings": ["Sons must be raised poor, daughters must be raised rich"]}]}
-{"word": "兒子要窮養囡兒要副養", "definitions": [{"readings": ["ng tsz y'au gyúng yáng, nön ng y'au fú yáng"], "meanings": ["Sons must be raised poor, daughters must be raised raised rich"]}]}
+{"word": "兒子要窮養囡兒要副養", "definitions": [{"readings": ["nyi tsz y'au gyúng yáng nön ng y'au fú yáng"], "meanings": ["Sons must be raised poor, daughters must be raised rich"]}]}
+{"word": "兒子要窮養囡兒要副養", "definitions": [{"readings": ["ng tsz y'au gyúng yáng nön ng y'au fú yáng"], "meanings": ["Sons must be raised poor, daughters must be raised raised rich"]}]}
 {"word": "有數有脉", "definitions": [{"readings": ["yeu sú yeu máh"], "meanings": ["To know or understand clearly", "To be socially connected"]}]}
 {"word": "壓末收梢", "definitions": [{"readings": ["ah meh seu sau"], "meanings": ["The end"]}]}
 {"word": "百式百樣", "definitions": [{"readings": ["páh suh páh yáng"], "meanings": ["(Hundred) many styles and types"]}]}
