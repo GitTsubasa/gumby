@@ -7,9 +7,9 @@ type Entry = {
     // The word itself.
     //
     // Special characters:
-    // - ?: This character cannot be represented in Unicode.
+    // - 〓: This character cannot be represented in Unicode.
+    // - ⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻: https://en.wikipedia.org/wiki/Ideographic_Description_Characters_(Unicode_block)
     // - _: This can be substituted for any word, in phrases.
-    // - [...]: This character is composed of the radicals in between the square brackets.
     word: string;
 
     // All definitions of the word.
