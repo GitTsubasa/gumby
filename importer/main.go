@@ -3,10 +3,15 @@ package main
 import (
 	"encoding/json"
 	"flag"
+	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
+	"strings"
 
+	"github.com/bigfarts/gumby/opencc"
 	"github.com/blevesearch/bleve/v2"
 	"github.com/blevesearch/bleve/v2/analysis/analyzer/custom"
 	"github.com/blevesearch/bleve/v2/analysis/lang/en"
@@ -18,8 +23,20 @@ import (
 )
 
 var (
-	indexPath = flag.String("index_path", "dict.bleve", "Path to index.")
-	inputPath = flag.String("input_path", "dict.ndjson", "Path to input.")
+	indexPath     = flag.String("index_path", "dict.bleve", "Path to index.")
+	inputPath     = flag.String("input_path", "dictionaries", "Path to input.")
+	t2sPath       = flag.String("t2s_path", "/usr/share/opencc/t2s.json", "Path to t2s.json")
+	writeToStdout = flag.Bool("write_to_stdout", false, "Write augmented entries to stdout?")
+)
+
+var diacriticsReplacer = strings.NewReplacer(
+	"á", "aa",
+	"ó", "o",
+	"ú", "oo",
+	"ü", "ui",
+	"û", "u",
+	"ö", "oe",
+	"'", "h",
 )
 
 func buildIndexMapping() (mapping.IndexMapping, error) {
@@ -109,23 +126,39 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 
 const batchSize = 10000
 
-func main() {
-	flag.Parse()
+var t2s *opencc.Converter
 
-	mapping, err := buildIndexMapping()
+func augmentEntry(doc map[string]interface{}) error {
+	word := doc["word"].(string)
+	simplified, err := t2s.Convert(word)
 	if err != nil {
-		log.Fatalf("Failed to build index mapping: %s", err)
+		return err
 	}
 
-	os.RemoveAll(*indexPath)
-	idx, err := bleve.New(*indexPath, mapping)
-	if err != nil {
-		log.Fatalf("Failed to open index: %s", err)
+	doc["simplified"] = []string{simplified}
+
+	definitions := doc["definitions"].([]interface{})
+	for _, def := range definitions {
+		def := def.(map[string]interface{})
+		readings := def["readings"].([]interface{})
+
+		readingsNoDiacritics := make([]string, len(readings))
+		for i, reading := range readings {
+			readingsNoDiacritics[i] = diacriticsReplacer.Replace(reading.(string))
+		}
+		def["readings_no_diacritics"] = readingsNoDiacritics
 	}
 
-	input, err := os.Open(*inputPath)
+	return nil
+}
+
+func importFile(idx bleve.Index, path string) (int, error) {
+	stdoutEncoder := json.NewEncoder(os.Stdout)
+	source := strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))
+
+	input, err := os.Open(path)
 	if err != nil {
-		log.Fatalf("Failed to open input: %s", err)
+		return 0, err
 	}
 	defer input.Close()
 
@@ -143,29 +176,80 @@ func main() {
 		}
 
 		if err != nil {
-			log.Fatalf("Failed to process entry %d: %s", i, err)
+			return i, fmt.Errorf("failed to process entry %d: %w", i, err)
+		}
+
+		if err := augmentEntry(doc); err != nil {
+			return i, fmt.Errorf("failed to augment entry %d: %w", i, err)
+		}
+
+		doc["source"] = source
+
+		if *writeToStdout {
+			stdoutEncoder.Encode(doc)
 		}
 
 		doc["_type"] = "entry"
 
 		if err := batch.Index(doc["source"].(string)+":"+doc["word"].(string), doc); err != nil {
-			log.Fatalf("Failed to index index entry %d: %s", i, err)
+			return i, fmt.Errorf("failed to index entry %d: %w", i, err)
 		}
 
 		if i%batchSize == 0 {
 			if err := idx.Batch(batch); err != nil {
-				log.Fatalf("Failed to run batch: %s", err)
+				return i, err
 			}
 
-			log.Printf("Indexed %d entries.", i)
+			log.Printf("Indexed %d entries from %s.", i, path)
 
 			batch = idx.NewBatch()
 		}
 	}
 
 	if err := idx.Batch(batch); err != nil {
-		log.Fatalf("Failed to run batch: %s", err)
+		return i, err
 	}
 
-	log.Printf("Indexed %d entries.", i)
+	return i, nil
+}
+
+func main() {
+	flag.Parse()
+
+	var err error
+	t2s, err = opencc.New(*t2sPath)
+	if err != nil {
+		log.Fatalf("Failed to initialize opencc: %s", err)
+	}
+
+	mapping, err := buildIndexMapping()
+	if err != nil {
+		log.Fatalf("Failed to build index mapping: %s", err)
+	}
+
+	os.RemoveAll(*indexPath)
+	idx, err := bleve.New(*indexPath, mapping)
+	if err != nil {
+		log.Fatalf("Failed to open index: %s", err)
+	}
+
+	inputs, err := ioutil.ReadDir(*inputPath)
+	if err != nil {
+		log.Fatalf("Failed to list inputs: %s", err)
+	}
+
+	for _, fi := range inputs {
+		path := filepath.Join(*inputPath, fi.Name())
+
+		if filepath.Ext(path) != ".ndjson" {
+			continue
+		}
+
+		log.Printf("Indexing file %s", path)
+		n, err := importFile(idx, path)
+		if err != nil {
+			log.Fatalf("Failed to process file %s: %s", path, err)
+		}
+		log.Printf("Indexed %d entries from %s", n, fi.Name())
+	}
 }
