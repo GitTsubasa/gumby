@@ -1849,7 +1849,7 @@
 {"word": "客戶", "definitions": [{"readings": ["k'áh hú"], "meanings": ["Customer"]}]}
 {"word": "迴頭客", "definitions": [{"readings": ["we deu k'áh"], "meanings": ["Return customer"]}]}
 {"word": "戶頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Customer", "Financial acount", "Any specific person", "Temper"]}]}
-{"word": "[木片]頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Rectangular wood board"]}]}
+{"word": "⿰木片頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Rectangular wood board"]}]}
 {"word": "𭷉頭", "definitions": [{"readings": ["hú deu"], "meanings": ["Rectangular wood board"]}]}
 {"word": "老戶頭", "definitions": [{"readings": ["lau hú deu"], "meanings": ["Regular customer or partner"]}]}
 {"word": "糯米戶頭", "definitions": [{"readings": ["nú mi hú deu"], "meanings": ["Customers who are easily tricked (pigeons)"]}]}
@@ -9937,7 +9937,7 @@
 {"word": "咕", "definitions": [{"readings": ["kú"], "meanings": ["To mutter"]}]}
 {"word": "過", "definitions": [{"readings": ["kú"], "meanings": ["To move or pass", "To exceed", "To rinse", "To stir", "To infect (as in disease)", "(Particle) past tense"]}]}
 {"word": "〓", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
-{"word": "[𠂎己]", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
+{"word": "⿰𠂎己", "definitions": [{"readings": ["kú"], "meanings": ["To be bloated"]}]}
 {"word": "鼓", "definitions": [{"readings": ["kú"], "meanings": ["Bloated"]}]}
 {"word": "股", "definitions": [{"readings": ["kú"], "meanings": ["Classifier for smells"]}]}
 {"word": "唱歌", "definitions": [{"readings": ["ts'ong kú"], "meanings": ["To sing a song", "To pee"]}]}
@@ -11658,7 +11658,7 @@
 {"word": "打滑澾", "definitions": [{"readings": ["táng wah t'ah"], "meanings": ["To slip", "When a screw is worn"]}]}
 {"word": "打滑遢", "definitions": [{"readings": ["táng wah dah"], "meanings": ["To slip and slide"]}]}
 {"word": "〓走", "definitions": [{"readings": ["gyá tseu"], "meanings": ["Learning to walk as a child"]}]}
-{"word": "[身建]走", "definitions": [{"readings": ["gyá tseu"], "meanings": ["Learning to walk as a child"]}]}
+{"word": "⿰身建走", "definitions": [{"readings": ["gyá tseu"], "meanings": ["Learning to walk as a child"]}]}
 {"word": "𨂝", "definitions": [{"readings": ["ban"], "meanings": ["To crawl"]}]}
 {"word": "爿", "definitions": [{"readings": ["ban"], "meanings": ["Classifier for shops", "Classifier for fields"]}]}
 {"word": "𨂝𨂞", "definitions": [{"readings": ["ban t'an"], "meanings": ["To be paralysed"]}]}
@@ -13326,7 +13326,7 @@
 {"word": "着力", "definitions": [{"readings": ["dsáh lih"], "meanings": ["Great", "Powerful", "Awesome"]}]}
 {"word": "境況", "definitions": [{"readings": ["kyung kw'ong"], "meanings": ["Situation and circumstances"]}]}
 {"word": "〓", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
-{"word": "[身建]", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
+{"word": "⿰身建", "definitions": [{"readings": ["gyá"], "meanings": ["Physically fit", "Competent and capable"]}]}
 {"word": "𧻙", "definitions": [{"readings": ["máh"], "meanings": ["Slow (as in walking)"]}]}
 {"word": "喥", "definitions": [{"readings": ["doh"], "meanings": ["Retarded"]}]}
 {"word": "癡癡哈哈", "definitions": [{"readings": ["ts'z ts'z h'á h'á"], "meanings": ["Crazy, erratic, obssessed girl (spastic)"]}]}
@@ -15524,7 +15524,7 @@
 {"word": "翁嗡嗡", "definitions": [{"readings": ["úng úng úng"], "meanings": ["Mosquito, insect flying sound"]}]}
 {"word": "𣌮𣌮𣌮", "definitions": [{"readings": ["tsoh tsoh tsoh"], "meanings": ["Chicken clucking sound"]}]}
 {"word": "玆玆玆", "definitions": [{"readings": ["tsz tsz tsz"], "meanings": ["Rat squeaking sound"]}]}
-{"word": "[口玆][口玆][口玆]", "definitions": [{"readings": ["tsz tsz tsz"], "meanings": ["Rat squeaking sound"]}]}
+{"word": "⿰口玆⿰口玆⿰口玆", "definitions": [{"readings": ["tsz tsz tsz"], "meanings": ["Rat squeaking sound"]}]}
 {"word": "索落落", "definitions": [{"readings": ["soh loh loh"], "meanings": ["Animal scurrying sound", "Scattering of objects sound", "Sound of tears from crying"]}]}
 {"word": "撲龍同", "definitions": [{"readings": ["bóh lúng dúng"], "meanings": ["Dropping of large object sound", "Falling over sound"]}]}
 {"word": "壳龍通", "definitions": [{"readings": ["k'oh lúng t'úng"], "meanings": ["Sound of objects falling into water"]}]}
@@ -17390,7 +17390,7 @@
 {"word": "阿王炒年糕", "definitions": [{"readings": ["ah wong ts'au nyin kau"], "meanings": ["(Wang frying rice cake)", "To not be appreciated for one's work"]}]}
 {"word": "阿木林關進", "definitions": [{"readings": ["ah móh ling kwan tsing"], "meanings": ["As a moron, you got scammed"]}]}
 {"word": "阿拉勿睬儂", "definitions": [{"readings": ["áh lah veh ts'e núng"], "meanings": ["I don't want to recognise, talk, respond to you"]}]}
-{"word": "阿要難爲情", "definitions": [{"readings": ["ah y'au nan we dsing"], "meanings": ["Aren't you ashamed〓"]}]}
+{"word": "阿要難爲情", "definitions": [{"readings": ["ah y'au nan we dsing"], "meanings": ["Aren't you ashamed"]}]}
 {"word": "陳年宿古董", "definitions": [{"readings": ["dsung nyin sóh kú túng"], "meanings": ["Antiques"]}]}
 {"word": "良心像煤球", "definitions": [{"readings": ["liáng sing ziáng me gyeu"], "meanings": ["One's black conscience (no conscience)"]}]}
 {"word": "忍痛行一記", "definitions": [{"readings": ["nyung t'úng hong ih kyi"], "meanings": ["To do a painful task once"]}]}
