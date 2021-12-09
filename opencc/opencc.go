@@ -8,6 +8,7 @@ package opencc
 import "C"
 import (
 	"errors"
+	"runtime"
 	"unsafe"
 )
 
@@ -24,13 +25,16 @@ func New(configFile string) (*Converter, error) {
 	if c == nil {
 		return nil, errors.New(C.GoString(C.opencc_error()))
 	}
-	return &Converter{c}, nil
+	conv := &Converter{c}
+	runtime.SetFinalizer(conv, func(c *Converter) { c.Close() })
+	return conv, nil
 }
 
 func (c *Converter) Close() error {
 	if result := C.opencc_close(c.ptr); result != 0 {
 		return errors.New(C.GoString(C.opencc_error()))
 	}
+	runtime.SetFinalizer(c, nil)
 	return nil
 }
 
