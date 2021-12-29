@@ -20,12 +20,6 @@ import (
 	_ "github.com/blevesearch/bleve/v2/analysis/tokenizer/whitespace"
 )
 
-type shdefActionGoToPage struct {
-	Query  string `json:"query"`
-	Source string `json:"source"`
-	Page   int    `json:"page"`
-}
-
 const (
 	customIDPrefixShdefGoToPage string = "shdef:goToPage"
 	customIDPrefixShdefSelect   string = "shdef:select"
@@ -86,89 +80,6 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 	}
 
 	return entries, nil
-}
-
-func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
-	customID := i.Interaction.MessageComponentData().CustomID
-
-	pipeIndex := strings.IndexRune(customID, '|')
-	prefix := customID[:pipeIndex]
-	rawPayload := []byte(customID[pipeIndex+1:])
-
-	switch prefix {
-	case customIDPrefixShdefGoToPage:
-		var payload shdefActionGoToPage
-		if err := json.Unmarshal(rawPayload, &payload); err != nil {
-			log.Printf("Failed to unmarshal payload words: %s", err)
-			return
-		}
-
-		results, count, err := b.lookup(ctx, payload.Query, payload.Source, queryLimit+1, payload.Page*queryLimit)
-		if err != nil {
-			log.Printf("Failed to find words: %s", err)
-			return
-		}
-
-		hasNext := false
-		if len(results) > queryLimit {
-			results = results[:queryLimit]
-			hasNext = true
-		}
-
-		resultIDs := make([]string, len(results))
-		for i, r := range results {
-			resultIDs[i] = r.id
-		}
-
-		entries, err := b.findEntries(ctx, resultIDs)
-		if err != nil {
-			log.Printf("Failed to find entries: %s", err)
-			return
-		}
-
-		searchOutput, err := makeSearchOutput(payload.Query, payload.Source, count, resultIDs, entries, payload.Page, hasNext)
-		if err != nil {
-			log.Printf("Failed to make search output: %s", err)
-			return
-		}
-
-		if err := b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{Type: discordgo.InteractionResponseDeferredMessageUpdate}); err != nil {
-			log.Printf("Failed to respond: %s", err)
-			return
-		}
-
-		if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, searchOutput); err != nil {
-			log.Printf("Failed to edit response: %s", err)
-			return
-		}
-
-	case customIDPrefixShdefSelect:
-		word := i.Interaction.MessageComponentData().Values[0]
-
-		entries, err := b.findEntries(ctx, []string{word})
-		if err != nil {
-			log.Printf("Failed to get entries: %s", err)
-			return
-		}
-
-		entry, ok := entries[word]
-		if !ok {
-			log.Printf("Failed to get entry")
-			return
-		}
-
-		if err := b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{Type: discordgo.InteractionResponseDeferredMessageUpdate}); err != nil {
-			log.Printf("Failed to respond: %s", err)
-			return
-		}
-
-		if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, &discordgo.WebhookEdit{
-			Embeds: []*discordgo.MessageEmbed{makeEntryOutput(entry)},
-		}); err != nil {
-			log.Printf("Failed to edit response: %s", err)
-			return
-		}
-	}
 }
 
 type result struct {
@@ -290,7 +201,7 @@ func truncate(s string, length int, ellipsis string) string {
 	return buf.String() + ellipsis
 }
 
-func makeSearchOutput(query string, source string, count uint64, ids []string, entries map[string]entry, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
+func makeSearchOutput(query string, source string, count uint64, ids []string, entries map[string]entry, page int, hasNext bool, customIDPrefix string) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
 	for _, id := range ids {
 		entry := entries[id]
@@ -319,12 +230,12 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 	} else {
 		title = fmt.Sprintf("%d results for “%s”", count, query)
 
-		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Source: source, Page: page - 1})
+		prevPagePayload, err := json.Marshal(actionGoToPage{Query: query, Source: source, Page: page - 1})
 		if err != nil {
 			return nil, err
 		}
 
-		nextPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Source: source, Page: page + 1})
+		nextPagePayload, err := json.Marshal(actionGoToPage{Query: query, Source: source, Page: page + 1})
 		if err != nil {
 			return nil, err
 		}
@@ -346,14 +257,14 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 						Label:    "Previous Page",
 						Style:    discordgo.SecondaryButton,
 						Disabled: page == 0,
-						CustomID: customIDPrefixShdefGoToPage + "|" + string(prevPagePayload),
+						CustomID: customIDPrefix + "|" + string(prevPagePayload),
 					},
 					discordgo.Button{
 						Emoji:    discordgo.ComponentEmoji{Name: "▶️"},
 						Label:    "Next Page",
 						Style:    discordgo.SecondaryButton,
 						Disabled: !hasNext,
-						CustomID: customIDPrefixShdefGoToPage + "|" + string(nextPagePayload),
+						CustomID: customIDPrefix + "|" + string(nextPagePayload),
 					},
 				},
 			},
@@ -476,49 +387,25 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 		hasNext = true
 	}
 
-	resultIDs := make([]string, len(results))
-	for i, r := range results {
-		resultIDs[i] = r.id
-	}
+	b.handleGoToInitialPage(ctx, i.Interaction, results, query, source, count, hasNext, customIDPrefixShdefGoToPage)
+}
 
-	entries, err := b.findEntries(ctx, resultIDs)
+func (b *bot) handleShdefGoToPage(ctx context.Context, interaction *discordgo.Interaction, query string, source string, page int) {
+	results, count, err := b.lookup(ctx, query, source, queryLimit+1, page*queryLimit)
 	if err != nil {
-		log.Printf("Failed to find meanings: %s", err)
+		log.Printf("Failed to find words: %s", err)
 		return
 	}
 
-	searchOutput, err := makeSearchOutput(query, source, count, resultIDs, entries, 0, hasNext)
-	if err != nil {
-		log.Printf("Failed to make search output: %s", err)
-		return
+	hasNext := false
+	if len(results) > queryLimit {
+		results = results[:queryLimit]
+		hasNext = true
 	}
 
-	var embeds []*discordgo.MessageEmbed
-	if len(results) == 1 || (len(results) > 0 && isExactMatch(results[0], query) && !isExactMatch(results[1], query)) {
-		entries, err := b.findEntries(ctx, resultIDs)
-		if err != nil {
-			log.Printf("Failed to get entries: %s", err)
-			return
-		}
+	b.handleGoToPage(ctx, interaction, results, query, source, count, page, hasNext, customIDPrefixShdefGoToPage)
+}
 
-		entry, ok := entries[resultIDs[0]]
-		if !ok {
-			log.Printf("Failed to get definitions")
-			return
-		}
-
-		embeds = []*discordgo.MessageEmbed{makeEntryOutput(entry)}
-	}
-
-	if err := b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-		Type: discordgo.InteractionResponseChannelMessageWithSource,
-		Data: &discordgo.InteractionResponseData{
-			Embeds:     embeds,
-			Content:    searchOutput.Content,
-			Components: searchOutput.Components,
-		},
-	}); err != nil {
-		log.Printf("Failed to send interaction: %s", err)
-		return
-	}
+func (b *bot) handleShdefSelect(ctx context.Context, interaction *discordgo.Interaction, word string) {
+	b.handleWordSelect(ctx, interaction, word)
 }

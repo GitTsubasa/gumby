@@ -2,10 +2,12 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"log"
 	"os"
 	"os/signal"
 	"sort"
+	"strings"
 
 	"github.com/blevesearch/bleve/v2"
 	"github.com/bwmarrin/discordgo"
@@ -29,6 +31,12 @@ type bot struct {
 	discord *discordgo.Session
 }
 
+type actionGoToPage struct {
+	Query  string `json:"query"`
+	Source string `json:"source"`
+	Page   int    `json:"page"`
+}
+
 var defaultFooter = &discordgo.MessageEmbedFooter{
 	Text: "www.shanghaivernacular.com",
 }
@@ -42,6 +50,8 @@ func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCre
 			b.handleHelp(ctx, i)
 		case "def":
 			b.handleShdef(ctx, i, "")
+		case "homophone":
+			b.handleHomophone(ctx, i, "qianplus")
 		default:
 			b.handleShdef(ctx, i, name)
 		}
@@ -78,6 +88,28 @@ func (b *bot) handleHelp(ctx context.Context, i *discordgo.InteractionCreate) {
 			},
 		},
 	})
+}
+
+func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
+	customID := i.Interaction.MessageComponentData().CustomID
+
+	pipeIndex := strings.IndexRune(customID, '|')
+	prefix := customID[:pipeIndex]
+	rawPayload := []byte(customID[pipeIndex+1:])
+
+	switch prefix {
+	case customIDPrefixShdefGoToPage:
+		var payload actionGoToPage
+		if err := json.Unmarshal(rawPayload, &payload); err != nil {
+			log.Printf("Failed to unmarshal payload words: %s", err)
+			return
+		}
+		b.handleShdefGoToPage(ctx, i.Interaction, payload.Query, payload.Source, payload.Page)
+
+	case customIDPrefixShdefSelect:
+		word := i.Interaction.MessageComponentData().Values[0]
+		b.handleShdefSelect(ctx, i.Interaction, word)
+	}
 }
 
 var sources = map[string]string{
@@ -136,6 +168,18 @@ func main() {
 				},
 			},
 		},
+		{
+			Name:        "homophone",
+			Description: "Find homophones",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "query",
+					Description: "Characters to look up",
+					Required:    true,
+				},
+			},
+		},
 	}
 	for k, v := range sources {
 		commands = append(commands, &discordgo.ApplicationCommand{
@@ -183,4 +227,107 @@ func main() {
 	stop := make(chan os.Signal)
 	signal.Notify(stop, os.Interrupt)
 	<-stop
+}
+
+func (b *bot) handleWordSelect(ctx context.Context, interaction *discordgo.Interaction, word string) {
+	entries, err := b.findEntries(ctx, []string{word})
+	if err != nil {
+		log.Printf("Failed to get entries: %s", err)
+		return
+	}
+
+	entry, ok := entries[word]
+	if !ok {
+		log.Printf("Failed to get entry")
+		return
+	}
+
+	if err := b.discord.InteractionRespond(interaction, &discordgo.InteractionResponse{Type: discordgo.InteractionResponseDeferredMessageUpdate}); err != nil {
+		log.Printf("Failed to respond: %s", err)
+		return
+	}
+
+	if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, interaction, &discordgo.WebhookEdit{
+		Embeds: []*discordgo.MessageEmbed{makeEntryOutput(entry)},
+	}); err != nil {
+		log.Printf("Failed to edit response: %s", err)
+		return
+	}
+}
+
+func (b *bot) handleGoToPage(ctx context.Context, interaction *discordgo.Interaction, results []result, query string, source string, count uint64, page int, hasNext bool, customIDPrefix string) {
+	resultIDs := make([]string, len(results))
+	for i, r := range results {
+		resultIDs[i] = r.id
+	}
+
+	entries, err := b.findEntries(ctx, resultIDs)
+	if err != nil {
+		log.Printf("Failed to find entries: %s", err)
+		return
+	}
+
+	searchOutput, err := makeSearchOutput(query, source, count, resultIDs, entries, page, hasNext, customIDPrefix)
+	if err != nil {
+		log.Printf("Failed to make search output: %s", err)
+		return
+	}
+
+	if err := b.discord.InteractionRespond(interaction, &discordgo.InteractionResponse{Type: discordgo.InteractionResponseDeferredMessageUpdate}); err != nil {
+		log.Printf("Failed to respond: %s", err)
+		return
+	}
+
+	if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, interaction, searchOutput); err != nil {
+		log.Printf("Failed to edit response: %s", err)
+		return
+	}
+}
+
+func (b *bot) handleGoToInitialPage(ctx context.Context, interaction *discordgo.Interaction, results []result, query string, source string, count uint64, hasNext bool, customIDPrefix string) {
+	resultIDs := make([]string, len(results))
+	for i, r := range results {
+		resultIDs[i] = r.id
+	}
+
+	entries, err := b.findEntries(ctx, resultIDs)
+	if err != nil {
+		log.Printf("Failed to find meanings: %s", err)
+		return
+	}
+
+	searchOutput, err := makeSearchOutput(query, source, count, resultIDs, entries, 0, hasNext, customIDPrefix)
+	if err != nil {
+		log.Printf("Failed to make search output: %s", err)
+		return
+	}
+
+	var embeds []*discordgo.MessageEmbed
+	if len(results) == 1 || (len(results) > 0 && isExactMatch(results[0], query) && !isExactMatch(results[1], query)) {
+		entries, err := b.findEntries(ctx, resultIDs)
+		if err != nil {
+			log.Printf("Failed to get entries: %s", err)
+			return
+		}
+
+		entry, ok := entries[resultIDs[0]]
+		if !ok {
+			log.Printf("Failed to get definitions")
+			return
+		}
+
+		embeds = []*discordgo.MessageEmbed{makeEntryOutput(entry)}
+	}
+
+	if err := b.discord.InteractionRespond(interaction, &discordgo.InteractionResponse{
+		Type: discordgo.InteractionResponseChannelMessageWithSource,
+		Data: &discordgo.InteractionResponseData{
+			Embeds:     embeds,
+			Content:    searchOutput.Content,
+			Components: searchOutput.Components,
+		},
+	}); err != nil {
+		log.Printf("Failed to send interaction: %s", err)
+		return
+	}
 }
