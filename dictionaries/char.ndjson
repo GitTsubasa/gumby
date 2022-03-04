@@ -2719,7 +2719,7 @@
 {"word": "恘", "definitions": [{"readings": ["ky'eu"], "meanings": ["Bad, vicious"]}]}
 {"word": "悍", "definitions": [{"readings": ["hön"], "meanings": ["Cruel"]}]}
 {"word": "患", "definitions": [{"readings": ["w'an", "wan"], "meanings": ["Evil, afflicted"]}]}
-{"word": "悔", "definitions": [{"readings": ["*hwöi", "hwe"], "meanings": ["To repent, reform"]}]}
+{"word": "悔", "definitions": [{"readings": ["hwöi", "hwe"], "meanings": ["To repent, reform"]}]}
 {"word": "悁", "definitions": [{"readings": ["kyön"], "meanings": ["Distressed, anxious"]}]}
 {"word": "悖", "definitions": [{"readings": ["be", "beh"], "meanings": ["To oppose, rebel"]}]}
 {"word": "悃", "definitions": [{"readings": ["kw'ung"], "meanings": ["Single minded, sincere"]}]}
@@ -3915,7 +3915,7 @@
 {"word": "殺", "definitions": [{"readings": ["sah", "sá"], "meanings": ["To kill"]}, {"readings": ["se", "sá"], "meanings": ["to pare off (trim), reduce"]}]}
 {"word": "殽", "definitions": [{"readings": ["yau"], "meanings": ["Mixed food, to confuse"]}]}
 {"word": "殼", "definitions": [{"readings": ["k'oh", "ky'áh"], "meanings": ["Husk, skin of fruit"]}]}
-{"word": "毀", "definitions": [{"readings": ["hwe"], "meanings": ["Break down, demolish"]}]}
+{"word": "毀", "definitions": [{"readings": ["hwöi", "hwe"], "meanings": ["Break down, demolish"]}]}
 {"word": "殿", "definitions": [{"readings": ["din"], "meanings": ["A hall, temple"]}, {"readings": ["tin"], "meanings": ["Rear of army, the hindermost"]}]}
 {"word": "毅", "definitions": [{"readings": ["nyi"], "meanings": ["Resolute, firm"]}]}
 {"word": "毆", "definitions": [{"readings": ["eu"], "meanings": ["To strike"]}]}
@@ -4322,7 +4322,7 @@
 {"word": "炎", "definitions": [{"readings": ["*yi", "yan"], "meanings": ["A flame, to blaze"]}]}
 {"word": "灵", "definitions": [{"readings": ["ling"], "meanings": ["Spirit, soul"]}]}
 {"word": "靈", "definitions": [{"readings": ["ling"], "meanings": ["Spirit, soul, ingenious, efficacious"]}]}
-{"word": "炸", "definitions": [{"readings": ["tsó", "zah"], "meanings": ["To boil, to scald with water"]}]}
+{"word": "炸", "definitions": [{"readings": ["tsó", "zah", "tsá"], "meanings": ["To boil, to scald with water"]}]}
 {"word": "炤", "definitions": [{"readings": ["tsau"], "meanings": ["To shine upon"]}]}
 {"word": "照", "definitions": [{"readings": ["tsau"], "meanings": ["According to", "To shine upon"]}]}
 {"word": "炷", "definitions": [{"readings": ["tsû"], "meanings": ["Tongues of fire"]}]}
@@ -6778,8 +6778,8 @@
 {"word": "譒", "definitions": [{"readings": ["pú"], "meanings": ["To spread abroad"]}]}
 {"word": "識", "definitions": [{"readings": ["suh"], "meanings": ["To know, recognise"]}, {"readings": ["tsz"], "meanings": ["Keep in mind"]}]}
 {"word": "譙", "definitions": [{"readings": ["dsiau", "ts'iau"], "meanings": ["To revile"]}]}
-{"word": "譭", "definitions": [{"readings": ["*hwöi", "hwe"], "meanings": ["To revile"]}]}
-{"word": "毁", "definitions": [{"readings": ["*hwöi", "hwe"], "meanings": ["To revile"]}]}
+{"word": "譭", "definitions": [{"readings": ["hwöi", "hwe"], "meanings": ["To revile"]}]}
+{"word": "毁", "definitions": [{"readings": ["hwöi", "hwe"], "meanings": ["To revile"]}]}
 {"word": "議", "definitions": [{"readings": ["nyi"], "meanings": ["To deliberate, discuss"]}]}
 {"word": "警", "definitions": [{"readings": ["kyung"], "meanings": ["To warn, caution"]}]}
 {"word": "譬", "definitions": [{"readings": ["p'i"], "meanings": ["Similar, compare, like as"]}]}

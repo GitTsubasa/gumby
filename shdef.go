@@ -242,7 +242,7 @@ func (b *bot) lookup(ctx context.Context, q string, source string, limit int, of
 
 	var sourceMatch query.Query = bleve.NewMatchAllQuery()
 	if source != "" {
-		realSourceMatch := bleve.NewMatchPhraseQuery(source)
+		realSourceMatch := bleve.NewTermQuery(source)
 		realSourceMatch.SetField("source")
 		sourceMatch = realSourceMatch
 	}

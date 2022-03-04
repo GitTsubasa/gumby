@@ -3887,7 +3887,7 @@
 {"word": "豬頭肉", "definitions": [{"readings": ["tsû deu nyóh"], "meanings": ["Pork head meat"]}]}
 {"word": "豬頭頸", "definitions": [{"readings": ["tsû deu kyung"], "meanings": ["Pork neck meat"]}]}
 {"word": "爛糊肉絲", "definitions": [{"readings": ["lan hú nyóh sz"], "meanings": ["Fried pork strips thickened with starch"]}]}
-{"word": "門腔", "definitions": [{"readings": ["mung kyáng"], "meanings": ["Pork tongue", "Human tongue"]}]}
+{"word": "門腔", "definitions": [{"readings": ["mung ky'áng"], "meanings": ["Pork tongue", "Human tongue"]}]}
 {"word": "豬舌頭", "definitions": [{"readings": ["tsû zeh deu"], "meanings": ["Pork tongue"]}]}
 {"word": "鼻沖", "definitions": [{"readings": ["bih ts'úng"], "meanings": ["Pork snout"]}]}
 {"word": "坐臀肉", "definitions": [{"readings": ["zú dung nyóh"], "meanings": ["Pork buttocks"]}]}
@@ -11367,10 +11367,10 @@
 {"word": "擼脫", "definitions": [{"readings": ["l'ú t'eh"], "meanings": ["To erase or wipe out everything"]}]}
 {"word": "攤牀", "definitions": [{"readings": ["t'an zong"], "meanings": ["To make bed"]}]}
 {"word": "攤開來", "definitions": [{"readings": ["t'an k'e le"], "meanings": ["To spread open"]}]}
-{"word": "捊", "definitions": [{"readings": ["leh"], "meanings": ["To pick something from high up (ie. leaves)", "To hold"]}]}
+{"word": "捋", "definitions": [{"readings": ["löh"], "meanings": ["To pick something from high up (ie. leaves)", "To hold"]}]}
 {"word": "𢫫", "definitions": [{"readings": ["leh"], "meanings": ["To roll up or down one's sleeves"]}]}
-{"word": "捊奶", "definitions": [{"readings": ["leh ná"], "meanings": ["To pull udders", "To milk"]}]}
-{"word": "捊袖子管", "definitions": [{"readings": ["leh zieu tsz kwen"], "meanings": ["To roll up or down one's sleeves"]}]}
+{"word": "捋奶", "definitions": [{"readings": ["löh ná"], "meanings": ["To pull udders", "To milk"]}]}
+{"word": "捋袖子管", "definitions": [{"readings": ["löh zieu tsz kwen"], "meanings": ["To roll up or down one's sleeves"]}]}
 {"word": "𢴳勿牢", "definitions": [{"readings": ["t'ong veh lau"], "meanings": ["Unblockable", "Unbearable", "Unable to deal with someone"]}]}
 {"word": "摜", "definitions": [{"readings": ["gwan"], "meanings": ["To throw", "To fall over", "To put aside"]}]}
 {"word": "摜脫", "definitions": [{"readings": ["gwan t'eh"], "meanings": ["To throw away"]}]}
