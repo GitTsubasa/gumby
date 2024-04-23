@@ -212,7 +212,7 @@ func fieldToStringList(v interface{}) []string {
 		return []string{single}
 	}
 
-	fields := v.([]interface{})
+	fields, ok := v.([]interface{})
 	out := make([]string, len(fields))
 
 	for i, f := range fields {
