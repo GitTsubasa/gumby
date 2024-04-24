@@ -23,7 +23,7 @@ import (
 
 var (
 	indexPath     = flag.String("index_path", "dict.bleve", "Path to index.")
-	inputPath     = flag.String("input_path", "dictionaries", "Path to input.")
+	inputPath     = flag.String("input_path", "../dictionaries", "Path to input.")
 	t2sPath       = flag.String("t2s_path", "/usr/share/opencc/t2s.json", "Path to t2s.json")
 	writeToStdout = flag.Bool("write_to_stdout", false, "Write augmented entries to stdout?")
 )
@@ -234,6 +234,8 @@ func main() {
 
 	inputs, err := os.ReadDir(*inputPath)
 	if err != nil {
+		wd, _ := os.Getwd()
+		log.Println("os", wd)
 		log.Fatalf("Failed to list inputs: %s", err)
 	}
 

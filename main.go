@@ -178,6 +178,7 @@ func main() {
 
 	discord.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		bot.handleInteraction(context.Background(), i)
+		log.Println("hello from addhandler")
 	})
 
 	stop := make(chan os.Signal)
