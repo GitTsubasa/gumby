@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	// "github.com/GitTsubasa/gumby/opencc"
+	"github.com/GitTsubasa/gumby/opencc"
 	"github.com/blevesearch/bleve/v2"
 	"github.com/blevesearch/bleve/v2/analysis/analyzer/custom"
 	"github.com/blevesearch/bleve/v2/analysis/lang/en"
@@ -22,9 +22,10 @@ import (
 )
 
 var (
-	indexPath     = flag.String("index_path", "dict.bleve", "Path to index.")
-	inputPath     = flag.String("input_path", "../dictionaries", "Path to input.")
-	t2sPath       = flag.String("t2s_path", "/usr/share/opencc/t2s.json", "Path to t2s.json")
+	indexPath = flag.String("index_path", "dict.bleve", "Path to index.")
+	inputPath = flag.String("input_path", "../dictionaries", "Path to input.")
+	// t2sPath       = flag.String("t2s_path", "../../../usr/share/opencc/data/config/t2s.json", "Path to t2s.json")
+	t2sPath       = flag.String("t2s_path", "../opencc/opencc/data/config/t2s.json", "Path to t2s.json")
 	writeToStdout = flag.Bool("write_to_stdout", false, "Write augmented entries to stdout?")
 )
 
@@ -125,16 +126,16 @@ func buildIndexMapping() (mapping.IndexMapping, error) {
 
 const batchSize = 10000
 
-// var t2s *opencc.Converter
+var t2s *opencc.Converter
 
 func augmentEntry(doc map[string]interface{}) error {
-	// word := doc["word"].(string)
-	// simplified, err := t2s.Convert(word)
-	// if err != nil {
-	// 	return err
-	// }
+	word := doc["word"].(string)
+	simplified, err := t2s.Convert(word)
+	if err != nil {
+		return err
+	}
 
-	// doc["simplified"] = []string{simplified}
+	doc["simplified"] = []string{simplified}
 
 	definitions := doc["definitions"].([]interface{})
 	for _, def := range definitions {
@@ -216,10 +217,10 @@ func main() {
 	flag.Parse()
 
 	var err error
-	// t2s, err = opencc.New(*t2sPath)
-	// if err != nil {
-	// 	log.Fatalf("Failed to initialize opencc: %s", err)
-	// }
+	t2s, err = opencc.New(*t2sPath)
+	if err != nil {
+		log.Fatalf("Failed to initialize opencc: %s", err)
+	}
 
 	mapping, err := buildIndexMapping()
 	if err != nil {

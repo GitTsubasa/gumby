@@ -92,7 +92,8 @@ func main() {
 		log.Fatalf("Failed to parse envconfing: %s", err)
 	}
 
-	index, err := bleve.Open(c.IndexPath)
+	// index, err := bleve.Open(c.IndexPath)
+	index, err := bleve.Open("./importer/dict.bleve")
 	if err != nil {
 		log.Fatalf("Unable to open index: %v\n", err)
 	}
