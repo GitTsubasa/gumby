@@ -3,7 +3,7 @@ package opencc
 // #cgo LDFLAGS: -lopencc
 /*
 #include <stdlib.h>
-#include <opencc/opencc.h>
+#include <opencc/src/opencc.h>
 */
 import "C"
 import (
