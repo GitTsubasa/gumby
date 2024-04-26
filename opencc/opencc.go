@@ -1,6 +1,6 @@
 package opencc
 
-// #cgo LDFLAGS: -lopencc
+// #cgo LDFLAGS: -L${SRCDIR}/opencc -lopencc
 /*
 #include <stdlib.h>
 #include <opencc/src/opencc.h>

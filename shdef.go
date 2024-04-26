@@ -45,7 +45,6 @@ type definition struct {
 
 func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, error) {
 	entries := make(map[string]entry)
-	log.Println("entries", entries)
 	for _, id := range ids {
 		doc, err := b.index.Document(id)
 		if err != nil {
@@ -208,12 +207,11 @@ func isExactMatch(r result, q string) bool {
 
 func fieldToStringList(v interface{}) []string {
 	single, ok := v.(string)
-	log.Println("fieldtostringlist", single)
 	if ok {
 		return []string{single}
 	}
 
-	fields, ok := v.([]interface{})
+	fields := v.([]interface{})
 	out := make([]string, len(fields))
 
 	for i, f := range fields {
