@@ -136,7 +136,8 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, searchOutput); err != nil {
+		// if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, searchOutput); err != nil {
+		if _, err := b.discord.InteractionResponseEdit(i.Interaction, searchOutput); err != nil {
 			log.Printf("Failed to edit response: %s", err)
 			return
 		}
@@ -160,9 +161,9 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			log.Printf("Failed to respond: %s", err)
 			return
 		}
-
-		if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, &discordgo.WebhookEdit{
-			Embeds: []*discordgo.MessageEmbed{makeEntryOutput(entry)},
+		// if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, &discordgo.WebhookEdit{
+		if _, err := b.discord.InteractionResponseEdit(i.Interaction, &discordgo.WebhookEdit{
+			Embeds: &[]*discordgo.MessageEmbed{makeEntryOutput(entry)},
 		}); err != nil {
 			log.Printf("Failed to edit response: %s", err)
 			return
@@ -273,9 +274,9 @@ func (b *bot) lookup(ctx context.Context, q string, source string, limit int, of
 
 func truncate(s string, length int, ellipsis string) string {
 	if len(s) <= length {
+		log.Println("truncate", s, length, ellipsis)
 		return s
 	}
-
 	length -= len(ellipsis)
 	var buf strings.Builder
 	for _, r := range []rune(s) {
@@ -289,8 +290,10 @@ func truncate(s string, length int, ellipsis string) string {
 	return buf.String() + ellipsis
 }
 
+// query is the entry word
 func makeSearchOutput(query string, source string, count uint64, ids []string, entries map[string]entry, page int, hasNext bool) (*discordgo.WebhookEdit, error) {
 	var selectMenuOptions []discordgo.SelectMenuOption
+	// loops through all the entries that include the word
 	for _, id := range ids {
 		entry := entries[id]
 
@@ -309,14 +312,19 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 			Description: truncate(strings.Join(meanings, "; "), 100, "..."),
 			Value:       id,
 		})
+		log.Println("searchoutput", selectMenuOptions)
+		// log.Println("params", readings)
 	}
 
-	var title string
-	var components []discordgo.MessageComponent
+	// var title *string
+	// var components *[]discordgo.MessageComponent
+	title := new(string)
+	components := new([]discordgo.MessageComponent)
 	if count == 1 {
-		title = fmt.Sprintf("1 result for “%s”", query)
+		title = new(string)
+		*title = fmt.Sprintf("1 result for “%s”", query)
 	} else {
-		title = fmt.Sprintf("%d results for “%s”", count, query)
+		*title = fmt.Sprintf("%d results for “%s”", count, query)
 
 		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Source: source, Page: page - 1})
 		if err != nil {
@@ -328,7 +336,7 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 			return nil, err
 		}
 
-		components = []discordgo.MessageComponent{
+		*components = []discordgo.MessageComponent{
 			discordgo.ActionsRow{
 				Components: []discordgo.MessageComponent{
 					discordgo.SelectMenu{
@@ -341,14 +349,14 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 			discordgo.ActionsRow{
 				Components: []discordgo.MessageComponent{
 					discordgo.Button{
-						Emoji:    discordgo.ComponentEmoji{Name: "◀️"},
+						// Emoji:    discordgo.ComponentEmoji{Name: "◀️"},
 						Label:    "Previous Page",
 						Style:    discordgo.SecondaryButton,
 						Disabled: page == 0,
 						CustomID: customIDPrefixShdefGoToPage + "|" + string(prevPagePayload),
 					},
 					discordgo.Button{
-						Emoji:    discordgo.ComponentEmoji{Name: "▶️"},
+						// Emoji:    discordgo.ComponentEmoji{Name: "▶️"},
 						Label:    "Next Page",
 						Style:    discordgo.SecondaryButton,
 						Disabled: !hasNext,
@@ -360,11 +368,13 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 	}
 
 	return &discordgo.WebhookEdit{
-		Content:    fmt.Sprintf("**%s**", title),
+		// Content:    fmt.Sprintf("**%s**", *title),
+		Content:    title,
 		Components: components,
 	}, nil
 }
 
+// handles the output with romanization + characters + definition
 func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 	prettyDefs := make([]string, len(e.definitions))
 	for i, def := range e.definitions {
@@ -509,8 +519,8 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData{
 			Embeds:     embeds,
-			Content:    searchOutput.Content,
-			Components: searchOutput.Components,
+			Content:    *searchOutput.Content,
+			Components: *searchOutput.Components,
 		},
 	}); err != nil {
 		log.Printf("Failed to send interaction: %s", err)

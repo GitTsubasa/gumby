@@ -150,6 +150,7 @@ func main() {
 
 	discord.AddHandler(func(d *discordgo.Session, g *discordgo.GuildCreate) {
 		oldCmds, err := discord.ApplicationCommands(discord.State.User.ID, g.Guild.ID)
+		log.Println(discord.State.User.ID, g.Guild.ID)
 		if err != nil {
 			log.Printf("Unable to get commands for %s: %v\n", g.Guild.ID, err)
 			return
