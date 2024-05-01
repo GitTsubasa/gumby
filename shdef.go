@@ -407,7 +407,6 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 		Title:       title,
 		Color:       0x005BAC,
 		Description: fmt.Sprintf("%s\n\n_%s_", strings.Join(prettyDefs, "\n\n"), sources[e.source]),
-		Footer:      defaultFooter,
 	}
 }
 
@@ -426,7 +425,6 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 					{
 						Color:       0xDC2626,
 						Description: "You have to provide something to look up!",
-						Footer:      defaultFooter,
 					},
 				},
 			},
@@ -443,7 +441,6 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 					{
 						Color:       0xDC2626,
 						Description: "An error occurred.",
-						Footer:      defaultFooter,
 					},
 				},
 			},
@@ -461,7 +458,6 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 					{
 						Color:       0x4B5563,
 						Description: "No results found.",
-						Footer:      defaultFooter,
 					},
 				},
 			},

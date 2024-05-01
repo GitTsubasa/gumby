@@ -29,10 +29,6 @@ type bot struct {
 	discord *discordgo.Session
 }
 
-var defaultFooter = &discordgo.MessageEmbedFooter{
-	Text: "www.shanghaivernacular.com",
-}
-
 func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
 	switch i.Type {
 	case discordgo.InteractionApplicationCommand:
@@ -73,7 +69,7 @@ func (b *bot) handleHelp(ctx context.Context, i *discordgo.InteractionCreate) {
 					Title:       "Hi! I'm Gumby!",
 					Description: "I'm a bot that looks up words in Shanghainese dictionaries! Here's a list of dictionaries you can use below, or you can use **`/def`** to search all dictionaries!",
 					Fields:      fields,
-					Footer:      defaultFooter,
+					// Footer:      defaultFooter,
 				},
 			},
 		},
