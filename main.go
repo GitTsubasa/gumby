@@ -69,7 +69,6 @@ func (b *bot) handleHelp(ctx context.Context, i *discordgo.InteractionCreate) {
 					Title:       "Hi! I'm Gumby!",
 					Description: "I'm a bot that looks up words in Shanghainese dictionaries! Here's a list of dictionaries you can use below, or you can use **`/def`** to search all dictionaries!",
 					Fields:      fields,
-					// Footer:      defaultFooter,
 				},
 			},
 		},
@@ -88,8 +87,8 @@ func main() {
 		log.Fatalf("Failed to parse envconfing: %s", err)
 	}
 
-	// index, err := bleve.Open(c.IndexPath)
-	index, err := bleve.Open("./importer/dict.bleve")
+	index, err := bleve.Open(c.IndexPath)
+	// index, err := bleve.Open("./importer/dict.bleve")
 	if err != nil {
 		log.Fatalf("Unable to open index: %v\n", err)
 	}
