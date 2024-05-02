@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"log"
 	"os"
 	"os/signal"
@@ -29,32 +28,26 @@ type bot struct {
 	discord *discordgo.Session
 }
 
-func (b *bot) handleInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
+func (b *bot) handleInteraction(i *discordgo.InteractionCreate) {
 	switch i.Type {
 	case discordgo.InteractionApplicationCommand:
 		name := i.ApplicationCommandData().Name
 		switch name {
 		case "gumby":
-			b.handleHelp(ctx, i)
+			b.handleHelp(i)
 		case "def":
-			b.handleShdef(ctx, i, "")
+			b.handleShdef(i, "")
 		default:
-			b.handleShdef(ctx, i, name)
+			b.handleShdef(i, name)
 		}
 
 	case discordgo.InteractionMessageComponent:
-		b.handleComponentInteraction(ctx, i)
+		b.handleComponentInteraction(i)
 	}
 }
 
-func (b *bot) handleHelp(ctx context.Context, i *discordgo.InteractionCreate) {
+func (b *bot) handleHelp(i *discordgo.InteractionCreate) {
 	var fields []*discordgo.MessageEmbedField
-	for k, v := range sources {
-		fields = append(fields, &discordgo.MessageEmbedField{
-			Name:  "`/" + k + "`",
-			Value: v,
-		})
-	}
 
 	sort.Slice(fields, func(i int, j int) bool {
 		return fields[i].Name < fields[j].Name
@@ -75,12 +68,6 @@ func (b *bot) handleHelp(ctx context.Context, i *discordgo.InteractionCreate) {
 	})
 }
 
-var sources = map[string]string{
-	"char":     "Chinese characters used between 1870–1910",
-	"repub":    "Formal Republican terms",
-	"qianplus": "Qian Nairong's dictionary 2nd ed. + extras",
-}
-
 func main() {
 	var c config
 	if err := envconfig.Process("gumby", &c); err != nil {
@@ -88,7 +75,6 @@ func main() {
 	}
 
 	index, err := bleve.Open(c.IndexPath)
-	// index, err := bleve.Open("./importer/dict.bleve")
 	if err != nil {
 		log.Fatalf("Unable to open index: %v\n", err)
 	}
@@ -133,20 +119,6 @@ func main() {
 			},
 		},
 	}
-	for k, v := range sources {
-		commands = append(commands, &discordgo.ApplicationCommand{
-			Name:        k,
-			Description: "Look up in dictionary: " + v,
-			Options: []*discordgo.ApplicationCommandOption{
-				{
-					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "query",
-					Description: "What to look up (by word, meaning, or reading)",
-					Required:    true,
-				},
-			},
-		})
-	}
 
 	discord.AddHandler(func(d *discordgo.Session, g *discordgo.GuildCreate) {
 		oldCmds, err := discord.ApplicationCommands(discord.State.User.ID, g.Guild.ID)
@@ -174,10 +146,10 @@ func main() {
 	})
 
 	discord.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
-		bot.handleInteraction(context.Background(), i)
+		bot.handleInteraction(i)
 	})
 
-	stop := make(chan os.Signal)
+	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, os.Interrupt)
 	<-stop
 }

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -43,7 +42,7 @@ type definition struct {
 	meanings []string
 }
 
-func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, error) {
+func (b *bot) findEntries(ids []string) (map[string]entry, error) {
 	entries := make(map[string]entry)
 	for _, id := range ids {
 		doc, err := b.index.Document(id)
@@ -87,7 +86,7 @@ func (b *bot) findEntries(ctx context.Context, ids []string) (map[string]entry, 
 	return entries, nil
 }
 
-func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.InteractionCreate) {
+func (b *bot) handleComponentInteraction(i *discordgo.InteractionCreate) {
 	customID := i.Interaction.MessageComponentData().CustomID
 
 	pipeIndex := strings.IndexRune(customID, '|')
@@ -102,7 +101,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		results, count, err := b.lookup(ctx, payload.Query, payload.Source, queryLimit+1, payload.Page*queryLimit)
+		results, count, err := b.lookup(payload.Query, payload.Source, queryLimit+1, payload.Page*queryLimit)
 		if err != nil {
 			log.Printf("Failed to find words: %s", err)
 			return
@@ -119,7 +118,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			resultIDs[i] = r.id
 		}
 
-		entries, err := b.findEntries(ctx, resultIDs)
+		entries, err := b.findEntries(resultIDs)
 		if err != nil {
 			log.Printf("Failed to find entries: %s", err)
 			return
@@ -136,7 +135,6 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			return
 		}
 
-		// if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, searchOutput); err != nil {
 		if _, err := b.discord.InteractionResponseEdit(i.Interaction, searchOutput); err != nil {
 			log.Printf("Failed to edit response: %s", err)
 			return
@@ -145,7 +143,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 	case customIDPrefixShdefSelect:
 		word := i.Interaction.MessageComponentData().Values[0]
 
-		entries, err := b.findEntries(ctx, []string{word})
+		entries, err := b.findEntries([]string{word})
 		if err != nil {
 			log.Printf("Failed to get entries: %s", err)
 			return
@@ -161,7 +159,7 @@ func (b *bot) handleComponentInteraction(ctx context.Context, i *discordgo.Inter
 			log.Printf("Failed to respond: %s", err)
 			return
 		}
-		// if _, err := b.discord.InteractionResponseEdit(b.discord.State.User.ID, i.Interaction, &discordgo.WebhookEdit{
+
 		if _, err := b.discord.InteractionResponseEdit(i.Interaction, &discordgo.WebhookEdit{
 			Embeds: &[]*discordgo.MessageEmbed{makeEntryOutput(entry)},
 		}); err != nil {
@@ -222,7 +220,7 @@ func fieldToStringList(v interface{}) []string {
 	return out
 }
 
-func (b *bot) lookup(ctx context.Context, q string, source string, limit int, offset int) ([]result, uint64, error) {
+func (b *bot) lookup(q string, source string, limit int, offset int) ([]result, uint64, error) {
 	q = strings.TrimSpace(q)
 
 	meaningMatch := bleve.NewMatchPhraseQuery(q)
@@ -274,12 +272,12 @@ func (b *bot) lookup(ctx context.Context, q string, source string, limit int, of
 
 func truncate(s string, length int, ellipsis string) string {
 	if len(s) <= length {
-		log.Println("truncate", s, length, ellipsis)
 		return s
 	}
 	length -= len(ellipsis)
 	var buf strings.Builder
-	for _, r := range []rune(s) {
+	log.Println("truncate", s, length)
+	for _, r := range s {
 		next := string(r)
 		if buf.Len()+len(next) > length {
 			break
@@ -312,19 +310,15 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 			Description: truncate(strings.Join(meanings, "; "), 100, "..."),
 			Value:       id,
 		})
-		log.Println("searchoutput", selectMenuOptions)
-		// log.Println("params", readings)
 	}
 
-	// var title *string
-	// var components *[]discordgo.MessageComponent
 	title := new(string)
 	components := new([]discordgo.MessageComponent)
 	if count == 1 {
 		title = new(string)
-		*title = fmt.Sprintf("1 result for “%s”", query)
+		*title = fmt.Sprintf("**1 result for “%s”**", query)
 	} else {
-		*title = fmt.Sprintf("%d results for “%s”", count, query)
+		*title = fmt.Sprintf("**%d results for “%s”**", count, query)
 
 		prevPagePayload, err := json.Marshal(shdefActionGoToPage{Query: query, Source: source, Page: page - 1})
 		if err != nil {
@@ -349,14 +343,14 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 			discordgo.ActionsRow{
 				Components: []discordgo.MessageComponent{
 					discordgo.Button{
-						// Emoji:    discordgo.ComponentEmoji{Name: "◀️"},
+						Emoji:    &discordgo.ComponentEmoji{Name: "◀️"},
 						Label:    "Previous Page",
 						Style:    discordgo.SecondaryButton,
 						Disabled: page == 0,
 						CustomID: customIDPrefixShdefGoToPage + "|" + string(prevPagePayload),
 					},
 					discordgo.Button{
-						// Emoji:    discordgo.ComponentEmoji{Name: "▶️"},
+						Emoji:    &discordgo.ComponentEmoji{Name: "▶️"},
 						Label:    "Next Page",
 						Style:    discordgo.SecondaryButton,
 						Disabled: !hasNext,
@@ -368,7 +362,6 @@ func makeSearchOutput(query string, source string, count uint64, ids []string, e
 	}
 
 	return &discordgo.WebhookEdit{
-		// Content:    fmt.Sprintf("**%s**", *title),
 		Content:    title,
 		Components: components,
 	}, nil
@@ -416,13 +409,13 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 	return &discordgo.MessageEmbed{
 		Title:       title,
 		Color:       0x005BAC,
-		Description: fmt.Sprintf("%s\n\n_%s_", strings.Join(prettyDefs, "\n\n"), sources[e.source]),
+		Description: strings.Join(prettyDefs, "\n\n"),
 	}
 }
 
 const queryLimit = 25
 
-func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, source string) {
+func (b *bot) handleShdef(i *discordgo.InteractionCreate, source string) {
 	options := i.ApplicationCommandData().Options
 
 	query := strings.TrimSpace(options[0].StringValue())
@@ -442,7 +435,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 		return
 	}
 
-	results, count, err := b.lookup(ctx, query, source, queryLimit+1, 0)
+	results, count, err := b.lookup(query, source, queryLimit+1, 0)
 	if err != nil {
 		b.discord.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -486,7 +479,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 		resultIDs[i] = r.id
 	}
 
-	entries, err := b.findEntries(ctx, resultIDs)
+	entries, err := b.findEntries(resultIDs)
 	if err != nil {
 		log.Printf("Failed to find meanings: %s", err)
 		return
@@ -500,7 +493,7 @@ func (b *bot) handleShdef(ctx context.Context, i *discordgo.InteractionCreate, s
 
 	var embeds []*discordgo.MessageEmbed
 	if len(results) == 1 || (len(results) > 0 && isExactMatch(results[0], query) && !isExactMatch(results[1], query)) {
-		entries, err := b.findEntries(ctx, resultIDs)
+		entries, err := b.findEntries(resultIDs)
 		if err != nil {
 			log.Printf("Failed to get entries: %s", err)
 			return
