@@ -42,7 +42,7 @@ type definition struct {
 	meanings []string
 }
 
-func (b *bot) findEntries(ids []string) (map[string]entry, error) {
+func (b *Bot) findEntries(ids []string) (map[string]entry, error) {
 	entries := make(map[string]entry)
 	for _, id := range ids {
 		doc, err := b.index.Document(id)
@@ -86,7 +86,7 @@ func (b *bot) findEntries(ids []string) (map[string]entry, error) {
 	return entries, nil
 }
 
-func (b *bot) handleComponentInteraction(i *discordgo.InteractionCreate) {
+func (b *Bot) HandleComponentInteraction(i *discordgo.InteractionCreate) {
 	customID := i.Interaction.MessageComponentData().CustomID
 
 	pipeIndex := strings.IndexRune(customID, '|')
@@ -220,7 +220,7 @@ func fieldToStringList(v interface{}) []string {
 	return out
 }
 
-func (b *bot) lookup(q string, source string, limit int, offset int) ([]result, uint64, error) {
+func (b *Bot) lookup(q string, source string, limit int, offset int) ([]result, uint64, error) {
 	q = strings.TrimSpace(q)
 
 	meaningMatch := bleve.NewMatchPhraseQuery(q)
@@ -415,7 +415,7 @@ func makeEntryOutput(e entry) *discordgo.MessageEmbed {
 
 const queryLimit = 25
 
-func (b *bot) handleShdef(i *discordgo.InteractionCreate, source string) {
+func (b *Bot) HandleShdef(i *discordgo.InteractionCreate, source string) {
 	options := i.ApplicationCommandData().Options
 
 	query := strings.TrimSpace(options[0].StringValue())

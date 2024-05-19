@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"net/http"
 	"os"
 	"os/signal"
 	"sort"
@@ -23,12 +24,12 @@ type config struct {
 	IndexPath    string
 }
 
-type bot struct {
+type Bot struct {
 	index   bleve.Index
 	discord *discordgo.Session
 }
 
-func (b *bot) handleInteraction(i *discordgo.InteractionCreate) {
+func (b *Bot) handleInteraction(i *discordgo.InteractionCreate) {
 	switch i.Type {
 	case discordgo.InteractionApplicationCommand:
 		name := i.ApplicationCommandData().Name
@@ -36,17 +37,17 @@ func (b *bot) handleInteraction(i *discordgo.InteractionCreate) {
 		case "gumby":
 			b.handleHelp(i)
 		case "def":
-			b.handleShdef(i, "")
+			b.HandleShdef(i, "")
 		default:
-			b.handleShdef(i, name)
+			b.HandleShdef(i, name)
 		}
 
 	case discordgo.InteractionMessageComponent:
-		b.handleComponentInteraction(i)
+		b.HandleComponentInteraction(i)
 	}
 }
 
-func (b *bot) handleHelp(i *discordgo.InteractionCreate) {
+func (b *Bot) handleHelp(i *discordgo.InteractionCreate) {
 	var fields []*discordgo.MessageEmbedField
 
 	sort.Slice(fields, func(i int, j int) bool {
@@ -60,7 +61,7 @@ func (b *bot) handleHelp(i *discordgo.InteractionCreate) {
 				{
 					Color:       0x005BAC,
 					Title:       "Hi! I'm Gumby!",
-					Description: "I'm a bot that looks up words in Shanghainese dictionaries! Here's a list of dictionaries you can use below, or you can use **`/def`** to search all dictionaries!",
+					Description: "I'm a Bot that looks up words in Shanghainese dictionaries! Here's a list of dictionaries you can use below, or you can use **`/def`** to search all dictionaries!",
 					Fields:      fields,
 				},
 			},
@@ -68,20 +69,23 @@ func (b *bot) handleHelp(i *discordgo.InteractionCreate) {
 	})
 }
 
-func main() {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	var c config
 	if err := envconfig.Process("gumby", &c); err != nil {
 		log.Fatalf("Failed to parse envconfing: %s", err)
 	}
+	// IndexPath := os.Getenv("INDEXPATH")
+	// index, err := bleve.Open(IndexPath)
+	index, err := bleve.Open("../importer/dict.bleve")
 
-	index, err := bleve.Open(c.IndexPath)
 	if err != nil {
 		log.Fatalf("Unable to open index: %v\n", err)
 	}
 
 	log.Printf("Connected to database.")
 
-	discord, err := discordgo.New(c.DiscordToken)
+	DiscordToken := os.Getenv("DISCORDTOKEN")
+	discord, err := discordgo.New(DiscordToken)
 	if err != nil {
 		log.Fatalf("Unable to connect to Discord: %v\n", err)
 	}
@@ -99,7 +103,7 @@ func main() {
 
 	defer discord.Close()
 
-	bot := bot{index: index, discord: discord}
+	Bot := Bot{index: index, discord: discord}
 
 	commands := []*discordgo.ApplicationCommand{
 		{
@@ -146,7 +150,7 @@ func main() {
 	})
 
 	discord.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
-		bot.handleInteraction(i)
+		Bot.handleInteraction(i)
 	})
 
 	stop := make(chan os.Signal, 1)
